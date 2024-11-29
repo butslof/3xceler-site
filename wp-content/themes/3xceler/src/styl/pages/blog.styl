@@ -1,0 +1,231 @@
+
+@import '../global-variables' 
+.int-blog 
+    position relative
+    .title-large.search-page 
+        .bg-title
+            @media screen and (min-width: desktop-min)  
+                line-height 60px 
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max)    
+                font-size 28.5px   
+                line-height 38px 
+    .title-large   
+        .bg-title 
+            font-size 55.6666px 
+            position relative 
+            border none
+            height auto
+            padding-top 2px
+            padding-bottom 13px
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max)    
+                font-size 28.5px   
+    
+    
+            .text-background
+                height: 10px;
+                top: 9%;
+                &:before 
+                    top: -3px;
+                    left: 0;
+                    width: 0;
+                    height: 0;
+                    border-color: transparent transparent transparent #b06eab;
+                    border-style: solid;
+                    border-width: 3px 0 3px 220px; 
+                    content: "";
+                    position: absolute;
+
+                &:after 
+                    width: 0;
+                    height: 0;
+                    bottom: -3px;
+                    right: 0;
+                    border-color: transparent #b06eab transparent transparent;
+                    border-style: solid;
+                    border-width: 3px 220px 3px 0; 
+                    content: "";
+                    position: absolute;  
+    .sub-title  
+        @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+            font-size 17.1056px 
+            margin-top -11px
+#blog 
+    padding-top 300px 
+    @media screen and (min-width: mobile-min) and (max-width: tablet-max)    
+        padding-top 263px
+    #content-blog  
+        position relative
+
+
+        .line-intro 
+            .bg-top 
+                position absolute
+                top -120px
+                right 0
+                width 633px
+                z-index -1 
+            .shiny-purple 
+                position absolute 
+                right 0 
+                top 54px
+                width 200px
+                z-index 1
+        .container-posts 
+            margin-top 50px 
+            .line-post 
+                align-items center 
+                width 100%          
+                .col-text                    
+                    .content-box  
+                        max-width 617px 
+                        @media screen and (min-width: mobile-min) and (max-width: tablet-max)    
+                            text-align left   
+                            margin-bottom 70px
+                        .img-post-mob 
+                            @media screen and (min-width: mobile-min) and (max-width: tablet-max)    
+                                width 100% 
+                                height 162px
+                                object-fit cover
+
+                        .title-posts
+                            font-size 55px 
+                            font-weight weight-strong 
+                            color primaryColor  
+                            line-height 63.25px    
+                            @media screen and (min-width: mobile-min) and (max-width: tablet-max)    
+                                font-size 20.2112px 
+                                line-height 23.2429px
+                                margin-top 10px
+                                margin-bottom 21px
+                        a 
+                            &:hover  
+                                .title-posts 
+                                    color secondaryColor 
+                                    transition 1s 
+
+                        .info-post 
+                            color primaryColor
+                            .autor 
+                                font-weight weight-strong 
+                                color secondaryColor  
+                                @media screen and (min-width: mobile-min) and (max-width: tablet-max)    
+                                    font-size 12px  
+                            .date 
+                                @media screen and (min-width: mobile-min) and (max-width: tablet-max)    
+                                    font-size 12px
+                            @media screen and (min-width: mobile-min) and (max-width: tablet-max)    
+                                margin-top 10px    
+                                font-size 12px 
+                                    
+                                .mobile-author-avatar
+                                    width 40px
+                                    height 40px
+                                .mobile-author-avatar-wrapper   
+                                    margin-right 9px
+                                    &:before 
+                                        content ""
+                                        display block
+                                        background-color #b06eab
+                                        position absolute
+                                        z-index -1
+                                        height 42px
+                                        width 42px
+                                        transform translate(3px)
+                                        margin-left -3px
+                        .button-veja-mais 
+                            width 100%
+
+                .text-right 
+                    text-align right 
+                    .content-box 
+                        margin-left auto 
+                        margin-right 25px 
+                .text-left
+                    text-align left  
+                    .content-box 
+                        margin-left right 
+                        margin-left 25px 
+                .col-img    
+                    padding-top 34.5%
+                    position relative 
+                    img 
+                        position absolute
+                        right 0
+                        width 100%
+                        height 100%
+                        top 0
+                        object-fit contain   
+                    .prop-rectangle-feed 
+                        z-index -1
+                        margin-top 34px
+                        visibility hidden
+                    .link-circle 
+                        background-color #cbdb2a
+                        color #1b1437
+                        border-radius 50%
+                        position absolute
+                        text-align center
+                        width 119px
+                        height 119px
+                        font-size 20px
+                        line-height 119px
+                        -webkit-backface-visibility hidden
+                        backface-visibility: hidden
+                        z-index 3
+                        visibility hidden
+                        top 0 
+                        left 0
+                        &:hover 
+                            cursor none 
+                        a 
+                            &:hover 
+                                .link-circle 
+                                    opacity 100%
+            .line-right 
+                margin-left auto
+            .line-left 
+                margin-right auto 
+    #form-search 
+        margin-top 30px
+        .search-button
+            border none 
+            background transparent 
+            position absolute  
+            right 13px
+            top 10px   
+            i 
+                color tertiaryColor
+        .search-field 
+            height 40px
+            border 1px solid secondaryColor 
+            padding 5px 13px
+            transition all .35s ease-in-out
+            color #6d6e71
+            font-size 14px
+            width 300px
+        .field-wrapper
+            position relative  
+    .container-mais-acessados
+        margin-top 30px
+        .title-large 
+            margin-bottom 49px   
+    
+        .gif-loader{
+            animation: rotation 8s infinite linear; 
+            display: none; 
+            margin 0 auto 
+            margin-bottom 30px
+        }
+
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(359deg);
+            }
+        }
+    @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+        .button-veja-mais 
+            width 100%
+        

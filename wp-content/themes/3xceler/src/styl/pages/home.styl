@@ -1,0 +1,461 @@
+@import '../global-variables'
+
+#home 
+    
+    #bg-top-home
+        
+        height 940px 
+        background-position:center top
+        background-repeat no-repeat
+        background-size cover 
+        margin-top -122px  
+        padding-top 249px
+        
+        /* Large and up */
+        @media screen and (min-width: desktop-min) 
+            background url('../../imgs/banner/bg-topo-home.jpg') 
+        @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+            margin-top 122px  
+            background url('../../imgs/banner/bg-topo-home-mobile.jpg')  
+            background-repeat no-repeat 
+            height 284px  
+            padding-top 16px 
+            background-size cover 
+        .title-large
+            margin-bottom 21px 
+            color branco  
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max)    
+                font-size 48px 
+                line-height 41px
+            span  
+                color branco 
+                font-size 70px 
+                @media screen and (min-width: mobile-min) and (max-width: tablet-max)    
+                    font-size 30px
+        p 
+            max-width 456px 
+            font-size 16px 
+            color branco
+        .col-img 
+            img 
+                margin-left -31px 
+    #sobre 
+        padding-top 169px
+        position relative
+        height 1039px
+        background-position center top 
+        background-repeat no-repeat
+        background-size cover    
+        /* Large and up */
+        @media screen and (min-width: desktop-min)  
+            background url('../../imgs/banner/bg-purple-dots.jpg') 
+        @media screen and (min-width: mobile-min) and (max-width: tablet-max)    
+            padding-top 21px 
+            background url('../../imgs/banner/bg-purple-dots-mobile.jpg')
+            background-repeat no-repeat  
+            height 611px
+        .shiny-purple 
+            position absolute
+            right 0
+            margin-top -235px
+        .line-1 
+            .col-text
+                p 
+                    max-width 540px  
+                
+                /* Large and up */
+                @media screen and (min-width: desktop-min)  
+                    .title-large 
+                        margin-bottom 34px
+            .col-img 
+                img 
+                    margin-left -186px 
+    #presenca 
+        @media screen and (min-width: desktop-min)  
+            padding-top 100px 
+        @media screen and (min-width: mobile-min) and (max-width: tablet-max)     
+            padding-top 30px
+        .map-mundi
+            position absolute
+            z-index -1
+            margin-top -100px  
+        @media screen and (min-width: desktop-min)  
+            .col-text 
+                margin-top -60px 
+                .title-large 
+                    margin-top: -14px
+            .col-imgs 
+                padding-left 100px
+        .keeps-flex 
+            flex-direction row
+            display flex
+            flex-wrap wrap  
+            margin-top 50px
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max)     
+                margin-top -8px
+            .customer-instance 
+                position relative
+                width 24.91%
+                border 1px solid rgba(0,0,0,.05);
+                height 87px
+                img 
+                    position absolute
+                    top 50%
+                    transform translateY(-50%)
+                    left 0
+                    right 0
+                    margin auto
+                    max-width 80%
+                    max-height 80%
+                    -webkit-filter grayscale(100%)
+                    filter grayscale(100%)
+                    transition all .35s ease-in-out
+                    cursor pointer
+                    &:hover 
+                        filter none
+            .customer-instance:nth-of-type(n-4) 
+                border-top: 0;
+            
+            .customer-instance:nth-of-type(4n+5) 
+                border-left: 0; 
+            .customer-instance:first-of-type 
+                border-left 0 
+            .customer-instance:nth-of-type(4n+4) 
+                border-right  0 
+            .customer-instance:nth-of-type(n+17) 
+                border-bottom 0 
+    #nossos-projetos 
+        padding-top 45px
+        @media screen and (min-width: mobile-min) and (max-width: tablet-max)   
+            padding-top 0px
+        .col-text 
+            margin-top 58px 
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max)    
+                margin-top 18px 
+            p 
+                max-width 571px 
+            .link 
+                font-size 27.6666px
+                color secondaryColor 
+                display block 
+                margin-top 20px  
+                @media screen and (min-width: mobile-min) and (max-width: tablet-max)    
+                    font-size 22.6666px
+                img
+                    margin-top 20px
+        .col-img 
+            .notebook 
+                max-width 646px   
+            
+        .bg-itens 
+            height 1361px 
+            background-position center   
+            padding-top 564px 
+            @media screen and (min-width: desktop-min)  
+                background url('../../imgs/mask-projetos.png')  
+                margin-top -318px  
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max)   
+                background url('../../imgs/banner/bg-perks-mobile-1.png')   
+                background-repeat no-repeat 
+                background-size cover 
+                background-position center top 
+                padding-top 162px 
+                height auto
+            .prop-shiny-pink
+                position absolute
+                margin-top -303px
+                width 152px  
+            .number 
+                font-size 198.333px
+                color primaryColor 
+                z-index -1  
+                font-weight weight-strong 
+                @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+                    font-size 90px
+            .title 
+                color branco 
+                font-size 59.5px   
+                font-weight weight-strong 
+                display block
+                margin-bottom 100px  
+                @media screen and (min-width: desktop-min)  
+                    margin-top -90px 
+                    margin-left 97px
+                @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+                    font-size 36px 
+                    margin-top -47px 
+                    margin-bottom 35px
+            .col-text  
+                margin-bottom 67px 
+                display flex
+                flex-direction column
+                justify-content center
+                align-items center
+                p 
+                    color primaryColor  
+                    @media screen and (min-width: desktop-min)   
+                        padding-left 103px
+
+    #sites-que-vendem-mais 
+        padding-top 50px 
+        @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+            padding-top 39px
+        #number-page-sites 
+            font-size 271px
+            position absolute
+            font-weight weight-strong
+            z-index -1
+            margin-top: 39px
+            margin-left -9px
+            color primaryLightPink 
+        .prop-shape3d-blue 
+            position absolute
+            margin-left 1072px
+            margin-top -450px 
+        .quadrado 
+            position absolute
+            margin-left 840px
+            margin-top 139px
+            z-index -1 
+
+        .line-macbook
+            @media screen and (min-width: desktop-min) 
+                margin-top 48px
+
+        .macbook
+            @media screen and (min-width: desktop-min)   
+                background url('../../imgs/canvas-macbook.png')  
+                min-height 721px
+                background-repeat no-repeat   
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+                background url('../../imgs/canvas-macbook-mobile-home.png')  
+                height 205px
+                background-size 110% !important  
+                padding-left 10px 
+                background-repeat no-repeat 
+            .splide 
+                height 89%
+                width 80%
+                left 16.7%
+                padding-top 13px 
+                @media screen and (min-width: mobile-min) and (max-width: tablet-max)   
+                    height 205px 
+                    left 14.7%
+                    padding-top 8px
+
+                .splide__slide 
+                    height 660px 
+                    border-radius 20px 
+                    overflow auto 
+                    img 
+                        width 100%  
+                    @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+                        height 136px
+                        border-radius 0
+                        overflow auto
+                    /* Track */
+                ::-webkit-scrollbar-track {
+                    visibility hidden
+                } 
+                /* Handle */
+                ::-webkit-scrollbar-thumb {
+                    visibility hidden
+                } 
+                /* width */
+                ::-webkit-scrollbar {
+                    visibility hidden
+                }  
+                .splide__arrows 
+                    margin-top 32px
+                    display flex
+                    justify-content center
+                    .splide__arrow 
+                        position inherit  
+                        margin 65px 
+                        background transparent 
+                        font-size 16px 
+                        font-weight weight-strong 
+                        width auto  
+                        color secondaryColor 
+                        @media screen and (min-width: mobile-min) and (max-width: tablet-max)   
+                            margin: 73px;
+                            margin-left: 43px;
+                            margin-top: 20px;
+                    .splide__arrow--prev 
+                        i 
+                            margin-right 10px 
+                            color secondaryColor
+                    .splide__arrow--next 
+                        i 
+                            margin-left 10px 
+                            color secondaryColor
+    #social-media 
+        padding-top 21px
+        position relative
+        min-height 1844px 
+        @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+            padding-top 60px
+            min-height 1214px
+        .prop-shape-green-black 
+            position absolute
+            margin-left -178px
+            margin-top -206px
+        .col-text 
+            p:not(.title-text){
+                max-width 524px
+            } 
+            .title-large-full 
+                line-height 132px  
+                @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+                    line-height 41px
+            .title-text 
+                margin-bottom 30px 
+                @media screen and (min-width: mobile-min) and (max-width: tablet-max)   
+                    font-size 16px 
+                    line-height 19px
+
+            .link-saiba-mais 
+                display block 
+                margin-top 20px 
+        .col-imgs 
+            position relative
+            .prop-hand-iphone
+                position absolute
+                margin-left -329px
+                margin-top 255px
+                z-index -1
+                max-width 995px
+
+            /** ## Like & Love props ## **/
+            [class^="prop-like"] {
+                background: url('../../imgs/prop-like.png') no-repeat center center / contain;
+                position: absolute;
+                z-index: 8;
+            }
+            [class^="prop-love"] {
+                background: url('../../imgs/prop-love.png') no-repeat center center / contain;
+                position: absolute;
+                z-index: 8;
+            }
+            .prop-love-small-blurred {
+                width: 48px;
+                height: 48px;
+                top: -2vh;
+                background: url('../../imgs/prop-love-blurred.png') no-repeat center center / contain;
+                right: 12vw;
+                animation: fadeInUp 2s ease-in-out infinite forwards;
+            }
+            @keyframes fadeInUp {
+                0% {
+                    opacity: 1;
+                    transform: translateY(100px);
+                }
+                50% {
+                    opacity: 0.5;
+                    transform: translateY(-100px);
+                }
+                75% {
+                    opacity: 0;
+                    transform: translateY(-120px);
+                }
+                100% {
+                    opacity: 0;
+                    transform: translateY(0);
+                }
+            }
+            .prop-like-small-blurred, .prop-love-small-blurred-2 {
+                width: 50px;
+                height: 50px;
+                background: url('../../imgs/prop-like-blurred.png') no-repeat center center / contain;
+                right: 7vw;
+                top: 13vh;
+                animation: fadeInUp 2.2s ease-in-out infinite forwards;
+            }
+            .prop-love-small-blurred-2 {
+                right: 8vw;
+                top: 13vw;
+                animation: fadeInUp 2.4s ease-in-out infinite forwards;
+            }
+            .prop-love-medium, .prop-love-medium-2 {
+                width: 90px;
+                height: 90px;
+                right: 9vw;
+                top: 17vh;
+                animation: fadeInUp 2.3s ease-in-out infinite forwards;
+            }
+            .prop-love-medium-2 {
+                right: 8vw;
+                top: 18vw;
+                animation: fadeInUp 2.6s ease-in-out infinite forwards;
+            }
+            .prop-like-big, .prop-like-big-2 {
+                right: 18vw;
+                top: 22vh;
+                width: 130px;
+                height: 130px;
+                animation: fadeInUp 3s ease-in-out infinite forwards;
+            }
+            .prop-like-big-2 {
+                top: 12vh;
+                right: 1vw;
+                width: 100px;
+                height: 100px;
+                animation: fadeInUp 3.6s ease-in-out infinite forwards;
+            }
+            .prop-love-small {
+                width: 51px;
+                height: 51px;
+                top: 31vh;
+                right: 17vw;
+                animation: fadeInUp 3.3s ease-in-out infinite forwards;
+            }
+            .prop-love-small-2 {
+                top: 33vh;
+                right: 10vw;
+                animation: fadeInUp 3.8s ease-in-out infinite forwards;
+            }
+            .prop-like-small-blurred-2 {
+                background: url('../../imgs/prop-like-blurred.png') no-repeat center center / contain;
+                width: 105px;
+                height: 105px;
+                top: 37vh;
+                right: 0vw;
+                z-index: 5;
+                animation: fadeInUp 3.8s ease-in-out infinite forwards;
+            }
+            .prop-love-big-blurred {
+                width: 230px;
+                height: 230px;
+                background: url('../../imgs/prop-love-blurred.png') no-repeat center center / contain;
+                top: 38vh;
+                right: 0vw;
+                z-index: 4;
+                animation: fadeInUp 4s ease-in-out infinite forwards;
+            } 
+        .prop-social-media
+            z-index 1
+            width 100%
+            position absolute
+            left 0 
+            margin-top 850px   
+        .prop-social-media-mob 
+            width 100% 
+            margin-top 30px
+   
+    
+
+            
+            
+
+
+
+
+        
+
+
+    
+
+
+
+
+                

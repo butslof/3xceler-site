@@ -1,0 +1,851 @@
+<!doctype html>
+
+<html lang="pt">
+
+
+
+  <head><meta charset="utf-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+
+    <!-- Required meta tags -->
+
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-37425064-1"></script>
+    <script type="rocketlazyloadscript">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-37425064-1');
+    </script>
+
+    
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v19.5 (Yoast SEO v19.11) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Disavow Link do Search Console | Agência 3xceler</title><style id="rocket-critical-css">:root{--bs-blue:#0d6efd;--bs-indigo:#6610f2;--bs-purple:#6f42c1;--bs-pink:#d63384;--bs-red:#dc3545;--bs-orange:#fd7e14;--bs-yellow:#ffc107;--bs-green:#198754;--bs-teal:#20c997;--bs-cyan:#0dcaf0;--bs-white:#fff;--bs-gray:#6c757d;--bs-gray-dark:#343a40;--bs-gray-100:#f8f9fa;--bs-gray-200:#e9ecef;--bs-gray-300:#dee2e6;--bs-gray-400:#ced4da;--bs-gray-500:#adb5bd;--bs-gray-600:#6c757d;--bs-gray-700:#495057;--bs-gray-800:#343a40;--bs-gray-900:#212529;--bs-primary:#0d6efd;--bs-secondary:#6c757d;--bs-success:#198754;--bs-info:#0dcaf0;--bs-warning:#ffc107;--bs-danger:#dc3545;--bs-light:#f8f9fa;--bs-dark:#212529;--bs-primary-rgb:13,110,253;--bs-secondary-rgb:108,117,125;--bs-success-rgb:25,135,84;--bs-info-rgb:13,202,240;--bs-warning-rgb:255,193,7;--bs-danger-rgb:220,53,69;--bs-light-rgb:248,249,250;--bs-dark-rgb:33,37,41;--bs-white-rgb:255,255,255;--bs-black-rgb:0,0,0;--bs-body-color-rgb:33,37,41;--bs-body-bg-rgb:255,255,255;--bs-font-sans-serif:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--bs-font-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;--bs-gradient:linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));--bs-body-font-family:var(--bs-font-sans-serif);--bs-body-font-size:1rem;--bs-body-font-weight:400;--bs-body-line-height:1.5;--bs-body-color:#212529;--bs-body-bg:#fff}*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:var(--bs-body-font-family);font-size:var(--bs-body-font-size);font-weight:var(--bs-body-font-weight);line-height:var(--bs-body-line-height);color:var(--bs-body-color);text-align:var(--bs-body-text-align);background-color:var(--bs-body-bg);-webkit-text-size-adjust:100%}hr{margin:1rem 0;color:inherit;background-color:currentColor;border:0;opacity:.25}hr:not([size]){height:1px}h1{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}p{margin-top:0;margin-bottom:1rem}ul{padding-left:2rem}ul{margin-top:0;margin-bottom:1rem}ul ul{margin-bottom:0}strong{font-weight:bolder}small{font-size:.875em}a{color:#0d6efd;text-decoration:underline}img,svg{vertical-align:middle}label{display:inline-block}button{border-radius:0}button,input,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button{text-transform:none}[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{padding:0;border-style:none}textarea{resize:vertical}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::-webkit-file-upload-button{font:inherit}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}.container{width:100%;padding-right:var(--bs-gutter-x,.75rem);padding-left:var(--bs-gutter-x,.75rem);margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.row{--bs-gutter-x:1.5rem;--bs-gutter-y:0;display:flex;flex-wrap:wrap;margin-top:calc(-1 * var(--bs-gutter-y));margin-right:calc(-.5 * var(--bs-gutter-x));margin-left:calc(-.5 * var(--bs-gutter-x))}.row>*{flex-shrink:0;width:100%;max-width:100%;padding-right:calc(var(--bs-gutter-x) * .5);padding-left:calc(var(--bs-gutter-x) * .5);margin-top:var(--bs-gutter-y)}.col-6{flex:0 0 auto;width:50%}.col-12{flex:0 0 auto;width:100%}@media (min-width:992px){.col-lg{flex:1 0 0%}.col-lg-2{flex:0 0 auto;width:16.66666667%}.col-lg-3{flex:0 0 auto;width:25%}.col-lg-7{flex:0 0 auto;width:58.33333333%}.col-lg-9{flex:0 0 auto;width:75%}}.collapse:not(.show){display:none}.nav-link{display:block;padding:.5rem 1rem;color:#0d6efd;text-decoration:none}.navbar{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding-top:.5rem;padding-bottom:.5rem}.navbar-nav{display:flex;flex-direction:column;padding-left:0;margin-bottom:0;list-style:none}.navbar-nav .nav-link{padding-right:0;padding-left:0}.navbar-collapse{flex-basis:100%;flex-grow:1;align-items:center}@media (min-width:992px){.navbar-expand-lg{flex-wrap:nowrap;justify-content:flex-start}.navbar-expand-lg .navbar-nav{flex-direction:row}.navbar-expand-lg .navbar-nav .nav-link{padding-right:.5rem;padding-left:.5rem}.navbar-expand-lg .navbar-collapse{display:flex!important;flex-basis:auto}}.sticky-top{position:-webkit-sticky;position:sticky;top:0;z-index:1020}.d-none{display:none!important}@media (min-width:992px){.d-lg-block{display:block!important}.d-lg-none{display:none!important}}@font-face{font-family:Cera Pro;src:url(https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/fonts/Cera-Pro-Regular.otf);font-weight:400;font-display:swap}@font-face{font-family:Cera Pro;src:url(https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/fonts/Cera-Pro-Bold.otf);font-weight:700;font-display:swap}*{font-size:15.8334px;font-family:Cera Pro;padding:0;margin:0;color:#6d6e71;font-weight:500;line-height:25px}@media screen and (min-width:320px) and (max-width:63.9375em){*{font-size:16px}}.title-large{font-size:76.123px;font-weight:700;line-height:71.5508px;color:#1b1437}@media screen and (min-width:320px) and (max-width:63.9375em){.title-large{font-size:26px;line-height:30.5508px;margin-bottom:18px}}body{overflow-x:hidden!important;max-width:1920px;margin:0 auto}::-webkit-scrollbar{width:9px;border-radius:10px}::-webkit-scrollbar-track{background:#1b1437}::-webkit-scrollbar-thumb{background:#cbdb2a;border-radius:10px}::-webkit-scrollbar-thumb:hover{background:#555}html{scroll-behavior:smooth}.container{max-width:1270px}a{text-decoration:none!important}input,textarea{border-radius:0!important;margin-bottom:10px}input{height:43px!important}textarea{width:100%;height:91px;padding-left:8px}.opaque{opacity:.5}main{margin-top:-122px}strong{color:#1b1437}@media screen and (min-width:320px) and (max-width:63.9375em){*{line-height:19px}body{text-align:center}.container{max-width:320px!important}}.menu-single-page .buttons-tel a{color:#1b1437}header.int-blog{background-color:#fff!important;border-bottom:1px solid #d3d3d3;align-items:center;position:fixed;width:100%;margin:0 auto}@media screen and (min-width:64em){header.int-blog{display:flex}header.int-blog .logo-blog{display:block!important}}header.int-blog .logo-princ{display:none!important}@media screen and (min-width:320px) and (max-width:63.9375em){header.int-blog .logo-mob-princ{display:block!important}}header.int-blog .redes-sociais-menu-blog{display:flex!important;visibility:visible!important;gap:10px;margin-left:30px;margin-top:1.5px}header.int-blog .redes-sociais-menu-blog a i{color:#1b1437;font-size:20px}header{height:89px}@media screen and (min-width:64em){header{margin-top:33px;background-color:transparent}header .navbar-nav{visibility:hidden}header .button-hamb,header .buttons-tel{visibility:visible!important}}@media screen and (min-width:320px) and (max-width:63.9375em){header{background-color:#1b1437}}header .nav-link{color:#cbdb2a;text-transform:uppercase;font-weight:700;margin-left:25px}header .buttons-tel{margin-left:25px;display:block!important}header .buttons-tel a{color:#fff;font-weight:700}header .button-hamb{padding-left:30px;z-index:99999999999999}header .hamb{font-weight:700;color:#cbdb2a;background:transparent;border:0;text-transform:uppercase;z-index:10000000000000000000}header .hamb span{display:block;width:38px;background-color:#cbdb2a;height:4px;margin-left:auto;margin-top:7px}header .hamb span:last-of-type{width:21px}header .burger-overlay{display:none}header .navbar-nav{display:flex;align-items:center}header #menu-secundary{display:none}header #menu-secundary .btn-voltar{background-color:transparent;border:none}header #menu-secundary .btn-voltar img{margin-top:44px}header .second-level-menu-body{list-style:none;width:100%;max-width:1170px;margin-left:auto;margin-right:auto;left:0;right:0;position:absolute;top:50%;transform:translateY(-50%);display:flex;flex-flow:column wrap;justify-content:space-between;align-content:space-between;height:83vh}header .second-level-menu-body li{margin-bottom:30px}header .second-level-menu-body li a{font-size:25.6666px;font-weight:700;color:#fff}header .second-level-menu-body .has-children{font-size:25.6666px;font-weight:700;color:#fff}@media screen and (min-width:64em){header .second-level-menu-body .second-level-menu-body-sub li::before{content:"•";margin-right:7px;color:#cbdb2a;list-style-type:none}}header .second-level-menu-body .second-level-menu-body-sub{list-style:none;padding-left:0;margin-top:10px}header .second-level-menu-body .second-level-menu-body-sub li{margin-bottom:10px}header .second-level-menu-body .second-level-menu-body-sub a{font-weight:400;font-size:19.8334px}@media screen and (min-width:320px) and (max-width:63.9375em){header{padding-top:17px;padding-bottom:0;height:85px}header .logo-header{z-index:0;position:absolute;left:13px;margin-top:-6px}header .hamb{position:absolute;right:13px;margin-top:5px}header #menu-princ,header #menu-secundary{margin-left:0;background:#1b1437;height:100vh;width:79%;padding:0;padding-top:19px}header #menu-secundary .btn-voltar{width:100%;background:#cbdb2a;height:60px;text-align:left;padding-left:13px;margin-bottom:25px}header #menu-secundary .btn-voltar i{color:#1b1437;font-size:23px}header #menu-secundary .btn-voltar .name-buttom{font-size:26px;color:#1b1437;font-weight:bold}header #menu-princ .row,header #menu-secundary .row{display:block;text-align:left}header #menu-princ .row div,header #menu-secundary .row div{width:100%;display:block}header #menu-princ .row a,header #menu-secundary .row a{border-bottom:2px solid #cbdb2a;display:block;margin-bottom:17px;font-size:16px}header #menu-princ .row a div{width:100%;display:block}header #menu-princ .row a div br{display:none}header #menu-princ .row a span{font-weight:700;color:#fff;padding-bottom:16px;display:block;margin-left:13px}header #menu-princ .fa.fa-chevron-right,header #menu-secundary .fa.fa-chevron-right{float:right;margin-right:13px;margin-top:2px;color:#cbdb2a}header #menu-secundary .has-children{border-bottom:2px solid #cbdb2a;display:block;font-size:16px}header #menu-secundary .has-children .second-level-menu-body-sub{display:none}header #menu-secundary .second-level-menu-body{display:block;position:inherit;padding:0;margin-top:215px;height:auto}header #menu-secundary .second-level-menu-body .fa.fa-chevron-right{margin-top:18px}header #menu-secundary .second-level-menu-body li{margin:0;padding:0;line-height:47px}header #menu-secundary .second-level-menu-body li a{margin:0;padding:0;line-height:47px;padding-left:13px}header #menu-secundary .second-level-menu-body .has-children{padding-left:13px}header #menu-secundary .second-level-menu-body-sub{margin-left:-13px;height:100vh}header #menu-secundary{padding-top:0}}@media screen and (min-width:64em){header .navbar{height:100%}header .navbar #navbarNav{justify-content:end;align-items:center}}@media screen and (max-width:39.9375em){#whats-cta{display:none}}#btn-whatsapp i{color:white}#cta-trigger{display:flex;flex-direction:column;justify-content:space-between;align-items:center;z-index:999;opacity:0;visibility:hidden;position:fixed;bottom:16%;right:2.5%}#trigger-body{width:142px;height:140px;padding:16px;background:#fff;box-sizing:border-box;font-size:16px;text-align:center;border-radius:7px;box-shadow:2px 3px 0 0 rgba(0,0,0,.2),4px 7px 0 0 rgba(0,0,0,.15)}#trigger-body strong{font-size:1.25em;font-weight:600;color:#1c1835;line-height:1.35;margin-bottom:5px;display:block}#trigger-body p{font-size:14px;font-weight:400;color:#808285;line-height:1;margin-bottom:10px;display:block}button[open-modal-cta]{width:78px;height:33px;background:#25d366;border:none;text-transform:uppercase;font-size:1em;font-weight:600;color:#fff;line-height:30px;outline:0;border-radius:4px}button[open-trigger-body]{width:48px;height:48px;display:flex;justify-content:center;align-items:center;background:#cbdb2a;border-radius:50%;border:none;position:relative;margin-top:40px;margin-left:60px;outline:0}button[open-trigger-body]:before{content:"";width:calc(100% + 16px);height:calc(100% + 16px);position:absolute;top:-8px;left:-8px;background:rgba(42,214,106,.2);border-radius:50%;z-index:-1}button[close-trigger-body]{width:20px;height:20px;background:#fff;border-radius:50%;display:flex;justify-content:center;align-items:center;position:absolute;top:-8px;right:-10px;border:none;box-shadow:2px 3px 0 0 rgba(0,0,0,.2),4px 7px 0 0 rgba(0,0,0,.15)}#modal-cta{width:100%;height:100%;position:fixed;top:0;right:0;bottom:0;left:0;opacity:0;visibility:hidden;z-index:-1}#modal-overlay{width:100%;height:100%;background:#000000cf}#modal-container{width:520px;max-width:90%;height:540px;position:absolute;border-radius:10px;top:60px;right:0;bottom:0;left:0;margin:auto;background:#fff;box-shadow:16px 20px 20px 0 rgba(0,0,0,.3);padding:35px 0}.wrap-modal-btns{display:flex;align-items:center;justify-content:center}.wrap-modal-btns button:nth-child(2){border-left:1px solid rgba(0,0,0,.2);border-right:1px solid rgba(0,0,0,.2)}button[modal-tab]{width:33.333%;background:transparent;font-size:13px;font-weight:400;color:#000;text-transform:uppercase;border:none;display:flex;flex-direction:column;align-items:center;padding:0 8px}button[modal-tab] img{margin-bottom:5px}.modal-content-btns{width:100%;height:calc(100% - 15px);font-size:16px;padding:20px 90px;position:absolute;left:0;right:0;bottom:-81px;opacity:0;visibility:hidden}.modal-content-btns>p{font-size:1.2rem;font-weight:400;color:#58595b;line-height:1.4;margin-bottom:15px;display:block;text-align:center}.modal-content-btns label{display:block;margin-bottom:0px;position:relative}div.modal-content-btns label.fa-phone input[type="text"],div.modal-content-btns label.fa-user-circle input[type="text"],div.modal-content-btns label.fa-envelope input[type="email"]{padding-left:37px}.modal-content-btns label.half{width:48%;display:inline-block}.modal-content-btns label.half:nth-child(2n){float:right}.modal-content-btns label.fa-phone:before,.modal-content-btns label.fa-user-circle:before,.modal-content-btns label.fa-envelope:before{width:15px;height:15px;margin-right:10px;font-size:1rem;color:#b06eab;position:absolute;top:0;bottom:5px;margin:auto;left:10px;font-weight:600}div.modal-content-btns input[type="text"],div.modal-content-btns input[type="date"],div.modal-content-btns input[type="time"],div.modal-content-btns input[type="email"],div.modal-content-btns textarea{font-family:'Open Sans',sans-serif;width:100%;border:1px solid #b06eab;font-size:.875em;font-weight:400;border-radius:5px!important}div.modal-content-btns input[type="text"],div.modal-content-btns input[type="date"],div.modal-content-btns input[type="time"],div.modal-content-btns input[type="email"]{height:40px;padding-left:15px}.modal-content-btns textarea{height:52px;border-radius:5px;padding:15px}.modal-content-btns .btn-submit{width:100%;height:42px;border:0;background-color:#1b1437;border:1px solid #1b1437;display:block;font-size:1.25em;font-weight:600;text-transform:uppercase;line-height:42px;text-align:center;margin-bottom:13px;color:#fff;border-radius:10px}.modal-content-btns small{font-size:.875em;font-weight:400;color:#58595b;text-align:center;display:block}.modal-content-btns small span{width:23px;height:23px;border-radius:50%;background:#cbdb2a;color:#fff;display:inline-block;text-align:center}@media screen and (max-width:991px){#cta-trigger{display:none}#modal-container{padding:15px 0}.modal-content-btns{height:calc(100% - -21px);padding:30px 20px}button[modal-tab]{line-height:15px;font-size:12px}.modal-content-btns>p{font-size:1.2rem}}@media screen and (min-width:991px){#whats-cta{width:47px;height:47px;background:#01c854;border-radius:50%;z-index:999;opacity:0;visibility:hidden;font-size:1.875rem;color:#fff;display:flex;justify-content:center;align-items:center;position:fixed;right:5%;bottom:56%}#whats-cta:before{content:"";width:calc(100% + 14px);height:calc(100% + 14px);position:absolute;top:-7px;left:-7px;z-index:-1;background:rgba(1,200,84,.3);border-radius:50%;animation-name:whats-pulse;animation-duration:2s;animation-iteration-count:infinite}}@media screen and (min-width:991px){#mobile-cta{display:none}}@media screen and (max-width:990px){#cta-trigger{bottom:15%}#mobile-cta{width:100%;background:#5c5c5c;position:fixed;bottom:0;left:0;z-index:999}#mobile-cta:before{content:"";width:100%;height:5px;position:absolute;bottom:100%;left:0;background:#1d305b3d}#mobile-cta .wrap{display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;justify-content:center;text-align:center;background:#1b1437}#mobile-cta div a,#mobile-cta div button{font-size:16px}#mobile-cta #btn-whatsapp i{margin-top:13px}#mobile-cta .column-whats{background-image:-webkit-linear-gradient(90deg,rgb(85 207 97) 0%,rgb(46 184 67) 100%);height:100%}#mobile-cta #btn-whatsapp i:before{font-size:37px}.column-ligar{border-right:#fff 1px solid}#btn-whatsapp{width:42px;position:relative;font-size:1.75rem;color:#fff;line-height:42px}#btn-whatsapp:before{content:"";width:300px;height:42px;position:absolute;top:0;right:100%}#btn-ligar,#btn-open-modal{font-size:.75rem;font-weight:700;color:#fff;text-align:center;line-height:42px;text-transform:uppercase}#btn-ligar:after{content:"";width:1px;height:35px;position:absolute;top:0;bottom:0;right:0;margin:auto}#btn-open-modal{width:192px;height:45px;border:none;background:0 0}}@-moz-keyframes whats-pulse{0%{transform:scale(1)}50%{transform:scale(.9)}100%{transform:scale(1)}}@-webkit-keyframes whats-pulse{0%{transform:scale(1)}50%{transform:scale(.9)}100%{transform:scale(1)}}@-o-keyframes whats-pulse{0%{transform:scale(1)}50%{transform:scale(.9)}100%{transform:scale(1)}}@keyframes whats-pulse{0%{transform:scale(1)}50%{transform:scale(.9)}100%{transform:scale(1)}}#single-post{padding-top:300px}@media screen and (min-width:320px) and (max-width:63.9375em){#single-post{text-align:left;padding-top:195px}}@media screen and (min-width:320px) and (max-width:63.9375em){#single-post .intro{padding-top:42px}}#single-post .title-large{font-size:44px;line-height:50.6px}@media screen and (min-width:320px) and (max-width:63.9375em){#single-post .title-large{font-size:25px;line-height:29.3572px}}#single-post .line-intro .image-destaque-large{width:100%;height:auto;margin-bottom:40px}#single-post .line-intro .bg-top{position:absolute;top:-120px;right:0;width:633px;z-index:-1}#single-post .helper-header{border-bottom:1px solid #d1d0d7;background-color:#fff;position:fixed;top:89px;width:100%;left:0;z-index:19}@media screen and (min-width:320px) and (max-width:63.9375em){#single-post .helper-header{top:85px}}#single-post .helper-header p{font-size:14px;color:#1b1437;margin-top:14px}#single-post .helper-header p span{color:#b06eab}#single-post .helper-header #progress-bar{background:linear-gradient(90deg,#1b1437,#b06eab);height:5px;position:absolute;top:0;left:0;width:0%}#single-post .author-widget{text-align:center}#single-post .author-widget .author-picture{border-radius:50%;width:60px;height:60px;object-fit:cover}#single-post .author-widget .author-info{display:flex;flex-flow:column wrap;height:95%}#single-post .author-widget .author-info .autor-name{color:#b06eab!important;line-height:8px;font-weight:700}#single-post .author-widget .author-info .data{margin-top:-7px}#single-post .author-widget .social{display:flex;align-items:center;justify-content:center;margin-top:-10px}#single-post .author-widget .social .social-icon.facebook{background-color:#42579c}#single-post .author-widget .social .social-icon{height:32px;width:32px;border-radius:50%;position:relative}#single-post .author-widget .social .social-icon i{color:#fff;position:absolute;left:0;right:0;margin:auto;top:50%;transform:translateY(-50%);font-size:17px}#single-post .author-widget .social-icon.instagram{background:linear-gradient(45deg,#f09433,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888)}#single-post .author-widget .social-icon.linkedin{background-color:#3579ba}#single-post .author-widget .social-icon+.social-icon{margin-left:7px}#single-post .container-content{margin-top:30px}#single-post .container-content .content img{width:100%}@media screen and (min-width:320px) and (max-width:63.9375em){#single-post .container-content .content img{height:auto;margin-bottom:0!important}}#single-post .container-content .content img{margin-bottom:20px}#single-post .container-content .sidebar-right .top-sidebar-banner-wrapper img{width:309px}#single-post .line-intro-relacionados .author-widget{margin-bottom:44px}</style>
+	<meta name="description" content="Disavow Link do Search Console" />
+	<link rel="canonical" href="https://3xcelerserv.com.br/3xceler-site/disavow-link/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Disavow Link do Search Console" />
+	<meta property="og:description" content="Disavow Link do Search Console" />
+	<meta property="og:url" content="https://3xcelerserv.com.br/3xceler-site/disavow-link/" />
+	<meta property="og:site_name" content="Agência 3xceler" />
+	<meta property="article:author" content="https://www.facebook.com/MarceloVazzz" />
+	<meta property="article:published_time" content="2016-12-06T15:38:13+00:00" />
+	<meta property="og:image" content="https://www.3xceler.com.br/uploads/images/rejeitar-links-search-console.jpg" />
+	<meta name="author" content="Marcelo Vaz" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Marcelo Vaz" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="7 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"NewsArticle","@id":"https://3xcelerserv.com.br/3xceler-site/disavow-link/#article","isPartOf":{"@id":"https://3xcelerserv.com.br/3xceler-site/disavow-link/"},"author":{"name":"Marcelo Vaz","@id":"https://3xcelerserv.com.br/3xceler-site/#/schema/person/be4d0818733a0fb994db552504f785f5"},"headline":"Disavow Link do Search Console","datePublished":"2016-12-06T15:38:13+00:00","dateModified":"2016-12-06T15:38:13+00:00","mainEntityOfPage":{"@id":"https://3xcelerserv.com.br/3xceler-site/disavow-link/"},"wordCount":1363,"publisher":{"@id":"https://3xcelerserv.com.br/3xceler-site/#organization"},"image":{"@id":"https://3xcelerserv.com.br/3xceler-site/disavow-link/#primaryimage"},"thumbnailUrl":"https://www.3xceler.com.br/uploads/images/rejeitar-links-search-console.jpg","inLanguage":"en-US"},{"@type":"WebPage","@id":"https://3xcelerserv.com.br/3xceler-site/disavow-link/","url":"https://3xcelerserv.com.br/3xceler-site/disavow-link/","name":"Disavow Link do Search Console | Agência 3xceler","isPartOf":{"@id":"https://3xcelerserv.com.br/3xceler-site/#website"},"primaryImageOfPage":{"@id":"https://3xcelerserv.com.br/3xceler-site/disavow-link/#primaryimage"},"image":{"@id":"https://3xcelerserv.com.br/3xceler-site/disavow-link/#primaryimage"},"thumbnailUrl":"https://www.3xceler.com.br/uploads/images/rejeitar-links-search-console.jpg","datePublished":"2016-12-06T15:38:13+00:00","dateModified":"2016-12-06T15:38:13+00:00","description":"Disavow Link do Search Console","breadcrumb":{"@id":"https://3xcelerserv.com.br/3xceler-site/disavow-link/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://3xcelerserv.com.br/3xceler-site/disavow-link/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://3xcelerserv.com.br/3xceler-site/disavow-link/#primaryimage","url":"https://www.3xceler.com.br/uploads/images/rejeitar-links-search-console.jpg","contentUrl":"https://www.3xceler.com.br/uploads/images/rejeitar-links-search-console.jpg"},{"@type":"BreadcrumbList","@id":"https://3xcelerserv.com.br/3xceler-site/disavow-link/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://3xcelerserv.com.br/3xceler-site/"},{"@type":"ListItem","position":2,"name":"Disavow Link do Search Console"}]},{"@type":"WebSite","@id":"https://3xcelerserv.com.br/3xceler-site/#website","url":"https://3xcelerserv.com.br/3xceler-site/","name":"Agência 3xceler","description":"Só mais um site WordPress","publisher":{"@id":"https://3xcelerserv.com.br/3xceler-site/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://3xcelerserv.com.br/3xceler-site/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://3xcelerserv.com.br/3xceler-site/#organization","name":"3xceler","url":"https://3xcelerserv.com.br/3xceler-site/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://3xcelerserv.com.br/3xceler-site/#/schema/logo/image/","url":"http://localhost/3xceler-site-novo/wp-content/uploads/2020/08/logo-green.png","contentUrl":"http://localhost/3xceler-site-novo/wp-content/uploads/2020/08/logo-green.png","width":191,"height":59,"caption":"3xceler"},"image":{"@id":"https://3xcelerserv.com.br/3xceler-site/#/schema/logo/image/"}},{"@type":"Person","@id":"https://3xcelerserv.com.br/3xceler-site/#/schema/person/be4d0818733a0fb994db552504f785f5","name":"Marcelo Vaz","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://3xcelerserv.com.br/3xceler-site/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/77bcb49e721d6272e07705b8145b7cb9?s=96&d=mm&r=g","contentUrl":"https://secure.gravatar.com/avatar/77bcb49e721d6272e07705b8145b7cb9?s=96&d=mm&r=g","caption":"Marcelo Vaz"},"sameAs":["https://www.3xceler.com.br","https://www.facebook.com/MarceloVazzz","https://www.instagram.com/vaz.marcelo/","https://www.linkedin.com/in/marcelovazz/"],"url":"https://3xcelerserv.com.br/3xceler-site/author/marcelo/"}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//polyfill.io' />
+<link rel='dns-prefetch' href='//cdn.rawgit.com' />
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/3xcelerserv.com.br\/3xceler-site\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='preload'  href='https://3xcelerserv.com.br/3xceler-site/wp-includes/css/classic-themes.min.css?ver=1' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='preload'  href='https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/build/css/bootstrap.min.css?ver=6.1.1' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'  href='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/3xceler-site/wp-content/themes/3xceler/dist/css/main.css?ver=1670515333' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'  href='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/3xceler-site/wp-content/themes/3xceler/dist/css/font-awesome.min.css?ver=1670515333' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'  href='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/npm/@splidejs/splide@4.0.1/dist/css/splide.min.css?ver=1670515333' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link rel='preload'  href='https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/css/tracking.min.css?ver=1.0' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'  href='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/3xceler-site/wp-content/themes/3xceler/dist/css/pages/single.css?ver=1670515334' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link rel="https://api.w.org/" href="https://3xcelerserv.com.br/3xceler-site/wp-json/" /><link rel="alternate" type="application/json" href="https://3xcelerserv.com.br/3xceler-site/wp-json/wp/v2/posts/2367" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://3xcelerserv.com.br/3xceler-site/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://3xcelerserv.com.br/3xceler-site/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1.1" />
+<link rel='shortlink' href='https://3xcelerserv.com.br/3xceler-site/?p=2367' />
+<link rel="alternate" type="application/json+oembed" href="https://3xcelerserv.com.br/3xceler-site/wp-json/oembed/1.0/embed?url=https%3A%2F%2F3xcelerserv.com.br%2F3xceler-site%2Fdisavow-link%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://3xcelerserv.com.br/3xceler-site/wp-json/oembed/1.0/embed?url=https%3A%2F%2F3xcelerserv.com.br%2F3xceler-site%2Fdisavow-link%2F&#038;format=xml" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script>
+    <script type="rocketlazyloadscript">
+
+    if ( window.history.replaceState ) {
+
+        window.history.replaceState( null, null, window.location.href );
+
+    }
+
+    </script>
+    
+    <!-- Google Tag Manager -->
+    <script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WN2LCGM');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Facebook Pixel Code -->
+    <script type="rocketlazyloadscript">
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '243281417202559');
+      fbq('track', 'PageView');
+    </script>
+    
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=243281417202559&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+  </head>
+    <body class="" >
+      
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WN2LCGM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- HEADER -->
+
+    <header class="sticky-top menu-single-page int-blog" id="menu-top" >
+
+      <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-3 col-12">
+
+              <a href="https://3xcelerserv.com.br/3xceler-site/" title="Agencia 3xceler"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Agencia 3xceler" title="Agencia 3xceler" class="logo-header logo-princ d-lg-block d-none" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo.png" alt="Agencia 3xceler" title="Agencia 3xceler" class="logo-header logo-princ d-lg-block d-none"></noscript></a>
+              <a href="https://3xcelerserv.com.br/3xceler-site/" title="Agencia 3xceler"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Agencia 3xceler" title="Agencia 3xceler" class="logo-princ logo-mob-princ logo-header d-lg-none" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo-3xceler-header-mobile.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo-3xceler-header-mobile.png" alt="Agencia 3xceler" title="Agencia 3xceler" class="logo-princ logo-mob-princ logo-header d-lg-none"></noscript></a>
+              <a href="https://3xcelerserv.com.br/3xceler-site/" title="Agencia 3xceler"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Agencia 3xceler" title="Agencia 3xceler" class="logo-header logo-blog d-none" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo-minimal.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo-minimal.png" alt="Agencia 3xceler" title="Agencia 3xceler" class="logo-header logo-blog d-none"></noscript></a>
+
+              <button class="hamb d-lg-none"><span></span><span></span><span></span></button>
+
+            </div>
+
+            <div class="col-lg-9 col-12" id="nav-menu-container">
+
+              <nav class="navbar navbar-expand-lg">
+
+                <div class="collapse navbar-collapse offcanvas-collapse" id="navbarNav">
+                                    <ul class="navbar-nav">
+                    <!--                     -->
+                    <li class="nav-item">
+                      <a class="nav-link" title="Home" href="https://3xcelerserv.com.br/3xceler-site/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" title="Sobre Nós" href="https://3xcelerserv.com.br/3xceler-site/#sobre">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item button-open-service">
+                      <a class="nav-link" title="Serviços" href="#">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" title="Blog" href="https://3xcelerserv.com.br/3xceler-site/blog/">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" title="Contato" href="https://3xcelerserv.com.br/3xceler-site/#contact-footer">Contato</a>
+                    </li>
+                    <li class="nav-item buttons-tel">
+                      <a href="tel:011272985811" title="telefone">11 2729.8581 /</a>
+                      <a href="tel:01127298583" title="telefone"> 11 2729.8583</a>
+                    </li>
+                    <li class="nav-item redes-sociais-menu-blog d-none">
+                      <a href="https://www.facebook.com/agencia3xceler" target="_blank" title="Nosso Facebook">
+                        <i class="fa fa-facebook-square"></i>
+                      </a>
+                      <a href="https://www.instagram.com/agencia3xceler/" target="_blank" title="Nosso Instagram">
+                        <i class="fa fa-instagram"></i>
+                      </a>       
+                      <a href="https://br.linkedin.com/organization-guest/company/agencia-3xceler?challengeId=AQG_iY9S8-VyJQAAAXNtNZccJxR6Jal2Vr9ItR0NFsG5oLB_2KeYg03ymoqce7mKXMzTb7LpXOEtlwMDEq3J8_gqfmG0-p7pSA&submissionId=bac6d9e9-2685-2316-29fd-46b7cc4ff00b" target="_blank" title="Nosso Linkedin">
+                        <i class="fa fa-linkedin-square"></i>
+                      </a>                    
+                    </li>
+                    <li class="nav-item button-hamb">
+                      <button class="hamb is-open"><span></span><span></span><span></span></button>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+        </div>
+     
+        <div class="burger-overlay">
+            <div class="container" id="menu-princ">
+              <div class="row line-1" >
+                <div class="col-6 box-1 box">
+                  <a href="https://3xcelerserv.com.br/3xceler-site/#sobre" class="close-menu" title="Sobre Nós">
+                    <div class="box-vertical">
+                      <span class="title-menu">
+                        Sobre<br>
+                        Nós
+                      </span>
+                      <p class="d-lg-block d-none">
+                        Movidos pela <br> paixão                   
+                        <i class="fa fa-long-arrow-right"></i>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 box-2 box">
+                  <a href="https://3xcelerserv.com.br/3xceler-site/blog/" title="blog">
+                    <div class="box-horizontal">
+                      <span class="title-menu">
+                        Blog
+                      </span>
+                      <p class="d-lg-block d-none">
+                        Dicas, Novidades e Curiosidades               
+                        <i class="fa fa-long-arrow-right"></i>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="row line-2">
+                <div class="col-12 box-3 box">
+                  <a href="#" title="Portfólio">
+                    <div class="box-horizontal">
+                      <span class="title-menu opaque">
+                        Portfólio
+                      </span>
+                      <p class="opaque d-lg-block d-none">
+                        Orgulho do que fazemos               
+                        <i class="fa fa-long-arrow-right"></i>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="row line-3">
+                <div class="col-6 box-4 box">
+                  <a href="#" class="button-open-service" data-name-button="Serviços" title="Serviços">
+                    <div class="box-horizontal">
+                      <span class="title-menu">
+                        Serviços <i class="fa fa-chevron-right d-lg-none"></i>
+                      </span>
+                      <p class="d-lg-block d-none">
+                        Como podemos te ajudar      
+                        <i class="fa fa-long-arrow-right"></i>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 box-5 box">
+                  <a href="https://3xcelerserv.com.br/3xceler-site/#contact-footer" class="close-menu" title="Contato">
+                    <div class="box-vertical">
+                      <span class="title-menu">
+                        Contato
+                      </span>
+                      <p class="d-lg-block d-none">
+                        Venha tomar um café                   
+                        <i class="fa fa-long-arrow-right"></i>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="container" id="menu-secundary">
+              <div class="row">
+                <div class="col-12">
+                  <button class="btn-voltar button-close-service">
+                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="d-none d-lg-block"  alt="Voltar ao menu anterior" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/icon-arrow-left-tertiary.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/icon-arrow-left-tertiary.png" class="d-none d-lg-block"  alt="Voltar ao menu anterior"></noscript>
+                    <i class="fa fa-long-arrow-left d-lg-none"></i>
+                    <span  class="d-lg-none name-buttom">
+                      
+                    </span>
+                  </button>
+                  <ul class="second-level-menu-body">
+                    <li>
+                      <a href="https://3xcelerserv.com.br/3xceler-site/otimizacao-de-sites/" title="Otimização de Sites">Otimização de Sites</a>
+                    </li>
+                    <li>
+                      <a href="https://3xcelerserv.com.br/3xceler-site/criacao-de-sites/" title="Criação de Sites">Criação de Sites</a>
+                    </li>
+                    <li>
+                      <a href="https://3xcelerserv.com.br/3xceler-site/links-patrocinados/" title="Links Patrocinados">Links Patrocinados</a>
+                    </li>
+                    <li>
+                      <a class="opaque" href="#" title="Landing Pages">Landing Pages</a>
+                    </li>
+                    <li>
+                      <a class="opaque" href="#" title="Social Media">Social Media</a>
+                    </li>
+                    <li class="has-children opaque">Branding <ul class="second-level-menu-body-sub">
+                        <li>
+                          <a class="opaque" href="#" title="Design de Marcas">Design de Marcas</a>
+                        </li>
+                        <li>
+                          <a class="opaque" href="#" title="Identidade Visual">Identidade Visual</a>
+                        </li>
+                        <li>
+                          <a class="opaque" href="#" title="Naming">Naming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a class="opaque" href="#" title="Marketing de Conteúdo">Marketing de Conteúdo</a>
+                    </li>
+                    <li class="has-children"  data-id-button="performance" data-name-button="Performance">Performance <i class="fa fa-chevron-right d-lg-none"></i>
+                      <ul class="second-level-menu-body-sub" id="body-sub-menu-performance">
+                        <li>
+                          <a class="opaque" href="#" title="FaceAds / InstaAds / WhatsappAds">FaceAds / InstaAds / WhatsappAds</a>
+                        </li>
+                        <li>
+                          <a class="opaque" href="#" title="LinkedinAds">LinkedinAds</a>
+                        </li>
+                        <li>
+                          <a href="https://3xcelerserv.com.br/3xceler-site/links-patrocinados/" title="Gestão de Links Patrocinados">Gestão de Links Patrocinados</a>
+                        </li>
+                        <li>
+                          <a class="opaque" href="#" title="Conversion Rate Optimization (CRO)">Conversion Rate Optimization (CRO)</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="has-children" data-id-button="consultoria" data-name-button="Consultoria">Consultoria <i class="fa fa-chevron-right d-lg-none"></i>
+                      <ul class="second-level-menu-body-sub" id="body-sub-menu-consultoria">
+                        <li>
+                          <a href="https://3xcelerserv.com.br/3xceler-site/otimizacao-de-sites/" title="Otimização de Sites">Otimização de Sites</a>
+                        </li>
+                        <li>
+                          <a href="https://3xcelerserv.com.br/3xceler-site/links-patrocinados/" title="Links Patrocinados" >Links Patrocinados</a>
+                        </li>
+                        <li>
+                          <a class="opaque" href="#" title="Digital Strategy Planning">Digital Strategy Planning</a>
+                        </li>
+                        <li>
+                          <a class="opaque" href="#" title="Conversion Rate Optimization (CRO)">Conversion Rate Optimization (CRO)</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- FIM HEADER -->
+
+    <main id="single-post" class="int-blog">
+
+
+
+
+
+
+
+
+
+
+<div class="helper-header">
+    <div id="progress-bar" class="scroll-bar"></div>    
+    <div class="container d-none d-lg-block">
+        <div class="row">
+            <div class="col-12">
+                <div class="center-content flexed row jf-between ai-center">
+                    <p class="t-s t-primary">
+                    <span class="t-secondary">•</span> Disavow Link do Search Console                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="intro">
+    <div class="container">
+        <div class="row line-intro">
+            <div class="col-lg col-12">
+                                <h1 class="title-large">
+                Disavow Link do Search Console                </h1>
+            </div>
+            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="bg-top" title="bg" alt="bg" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/blog-prop-circled-upper-right.jpg"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/blog-prop-circled-upper-right.jpg" class="bg-top" title="bg" alt="bg"></noscript>
+        </div>
+    </div>
+    <hr>
+</div>
+<div class="container container-content">
+    <div class="row">
+        <div class="col-12 col-lg-2 sidebar-left d-none d-lg-block">
+            <aside class="author-widget">
+                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="author-picture margin-s" alt="Marcelo Vaz" title="Marcelo Vaz" data-lazy-src="https://secure.gravatar.com/avatar/77bcb49e721d6272e07705b8145b7cb9?s=96&d=mm&r=g"><noscript><img src="https://secure.gravatar.com/avatar/77bcb49e721d6272e07705b8145b7cb9?s=96&d=mm&r=g" class="author-picture margin-s" alt="Marcelo Vaz" title="Marcelo Vaz"></noscript>
+                <div class="author-info">
+                    <p >Por: <strong class="autor-name">Marcelo Vaz</strong>
+                    </p>
+                    <p class="data">6 de December de 2016</p>
+                    <div class="social">
+                        <a href="https://www.facebook.com/agencia3xceler" class="social-icon facebook" target="_blank" title="Nosso Facebook">
+                        <i class="fa fa-facebook-square"></i>
+                        </a>
+                        <a href="https://www.instagram.com/agencia3xceler/" class="social-icon instagram" target="_blank" title="Nosso Instagram">
+                        <i class="fa fa-instagram"></i>
+                        </a>       
+                        <a href="https://br.linkedin.com/organization-guest/company/agencia-3xceler?challengeId=AQG_iY9S8-VyJQAAAXNtNZccJxR6Jal2Vr9ItR0NFsG5oLB_2KeYg03ymoqce7mKXMzTb7LpXOEtlwMDEq3J8_gqfmG0-p7pSA&submissionId=bac6d9e9-2685-2316-29fd-46b7cc4ff00b" target="_blank" class="social-icon linkedin" title="Nosso Linkedin">
+                        <i class="fa fa-linkedin-square"></i>
+                        </a>   
+                    </div>
+                </div>
+            </aside>
+            <div class="wrap-sticky">
+                <h3 class="title">Índice</h3>
+                <ul class="list-dotted container-indice with-borders t-primary bold">
+                </ul>
+            </div>
+        </div>
+        <div class="col-12 col-lg-7 content">
+            <p>Quem ainda nunca ouviu falar do Search Console, a ferramenta gratuita criada pelo Google e que gera uma grande ajuda para&nbsp;analistas. Com esta ferramenta podemos extrair informa&ccedil;&otilde;es valiosas (quando bem interpretadas), podendo melhorar o desempenho de seu site nos resultados de pesquisas org&acirc;nicas do Google. Para saber um pouco mais sobre a ferramenta webmaster tools e como ela pode lhe auxiliar leio o artigo <a href="https://www.3xceler.com.br/blog/seo/tudo-sobre-search-sonsole">tudo sobre Search Console</a>, neste artigo explicamos todos os relat&oacute;rios e como as informa&ccedil;&otilde;es&nbsp;colhidas podem lhe auxiliar em tomadas de decis&otilde;es.&nbsp;</p>
+<h2>Entendendo um Pouco Mais Sobre Liga&ccedil;&otilde;es</h2>
+<p>Todos sabemos que n&atilde;o s&oacute; o Google, como o Bing, dentre outros mecanismos de buscas espalhados pelo mundo, utilizam os links externos (linkbuilding),&nbsp;como sinais relevantes para definir uma suposta credibilidade&nbsp;dos sites e que estes links s&atilde;o fatores de ranqueamento.&nbsp;Quando os mecanismos de buscas olham para as liga&ccedil;&otilde;es entre p&aacute;ginas e dom&iacute;nios externos, eles conseguem captar e analisar a qualidade e&nbsp;o conte&uacute;do da p&aacute;gina e do dom&iacute;nio como um todo onde o link se encontra.&nbsp;</p>
+<p>Voltando&nbsp;um pouco no tempo, para ser mais exato, em 2011, quando come&ccedil;ou a surgir alguns murmuros sobre como medir a&nbsp;qualidade de um link e o quanto isso poderia afetar nos posicionamentos dos sites. Por meados de 2012, j&aacute; haviam centenas de discuss&otilde;es&nbsp;em f&oacute;runs&nbsp;sobre como ter um controle maior sobre suas liga&ccedil;&otilde;es e a capacidade de identificar a qualidade dos mesmos, assim como gerenciar estes links.&nbsp;De olho no que os webmaster discutiam nos f&oacute;runs, o Bing tomou a frente do Google e desenvolveu a ferramenta nomeada de Disavow Link ou traduzindo Repudiar Liga&ccedil;&otilde;es, ela foi lan&ccedil;ada pelo Bing em 27 de junho de 2012. O Google aproveitou o gancho e lan&ccedil;ou sua ferramenta posterioemente&nbsp;em 16 de outubro de 2012, por&eacute;m tal funcionalidade s&oacute; foi realmente divulgada e utilizada quando o Google o tornou realidade.</p>
+<h2>Disavow Link</h2>
+<p><iframe loading="lazy" frameborder="0" height="400" src="about:blank" width="750" data-rocket-lazyload="fitvidscompatible" data-lazy-src="https://www.youtube.com/embed/393nmCYFRtA"></iframe><noscript><iframe frameborder="0" height="400" src="https://www.youtube.com/embed/393nmCYFRtA" width="750"></iframe></noscript></p>
+<h3>Para que serve?</h3>
+<p>Quando voc&ecirc; inicia um trabalho de <a href="https://www.3xceler.com.br/otimizacao-de-sites.php">otimiza&ccedil;&atilde;o de sites (SEO)</a>, eu acredito que voc&ecirc; fara o seu melhor para gerar conte&uacute;do e links de qualidade, al&eacute;m de&nbsp;trabalhar duro para cultiva-los.&nbsp;Mas o que acontece&nbsp;quando come&ccedil;am a surgir liga&ccedil;&otilde;es para seu dom&iacute;nio de baixa qualidade (negative SEO) e n&atilde;o foi voc&ecirc; que gerou, ou por&nbsp;outro ponto de vista, caso voc&ecirc; seja um analista e tenha pegado um novo projeto que tenha passado por uma outra ag&ecirc;ncia, e por sua vez, faziam links de baixa qualidade, como compra de&nbsp;links, agregadores que est&atilde;o repletos de spam entre outros in&uacute;meros problemas de blackhat.</p>
+<p>A disavow link veio para corrigir estes problemas e salvar&nbsp;os analistas possibilitando fazer a limpeza das liga&ccedil;&otilde;es maliciosas ou duvidosas, de modo a dizer para o Google que n&atilde;o s&atilde;o respons&aacute;veis pelos links identificados e que n&atilde;o confiam no dom&iacute;nio, bem como solicitam o descarte destes links.</p>
+<h3>Como Utilizar</h3>
+<p>A forma de utilizar &eacute; bem simples, o problema &eacute; quando voc&ecirc; realmente deve utilizar esta ferramenta. Muito importante ressaltar antes de qualquer coisa, que&nbsp;&nbsp;a <strong>disavow link</strong>&nbsp;&eacute; um recurso avan&ccedil;ado e s&oacute; deve ser utilizado com cautela. Se aplicado erroneamente, ele pode prejudicar o desempenho de seu site nos resultados de pesquisa do Google.</p>
+<blockquote><p>Recomendo que voc&ecirc; rejeite backlinks apenas se confirmar que tem um n&uacute;mero consider&aacute;vel&nbsp;links de spam, artificiais ou de baixa qualidade apontando para seu site, se estes dom&iacute;nios utilizam t&eacute;cnicas de black hat e se tiver certeza de que os links causam problemas para seu site.</p>
+<p>Minha dica&nbsp;&eacute;, se voc&ecirc; tiver acesso a estes sites e conseguir excluir essas liga&ccedil;&otilde;es, fa&ccedil;a isso h&aacute; m&atilde;o, caso n&atilde;o tenha&nbsp;acesso, tente contato com o site respons&aacute;vel,&nbsp;envie e-mail&nbsp;e tente excluir estes backlinks, em &uacute;ltima est&acirc;ncia&nbsp;se nenhuma dessas op&ccedil;&otilde;es tenha resolvido seu problema, documente tudo e siga o processo a baixo.</p>
+<p>Marcelo Vaz</p>
+</blockquote>
+<h3>Como Utilizar</h3>
+<p>Para&nbsp;acessar a disalow link&nbsp;basta clicar&nbsp;<a href="https://www.google.com/webmasters/tools/disavow-links-main" title="Ferramenta Disavow Link">aqui</a>, ou siga os passos a baixo para localizar a ferramenta em seu search console.</p>
+<ol>
+<li>Na p&aacute;gina inicial das Ferramentas do Google para webmasters, clique no site desejado.</li>
+<li>No Painel, clique em&nbsp;<strong>Pesquisar tr&aacute;fego</strong>&nbsp;e, em seguida, em&nbsp;<strong>Links para seu site</strong>.</li>
+<li>Em&nbsp;<strong>Maior quantidade de links</strong>, clique em&nbsp;<strong>Mais</strong>.</li>
+<li>Clique em &nbsp;<strong>Fazer download de mais amostras de links</strong>. Se clicar em&nbsp;<em>Fazer o </em><strong>download dos links mais recentes</strong>, voc&ecirc; tamb&eacute;m ver&aacute; as datas.</li>
+</ol>
+<p style="text-align:center"><img decoding="async" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" style="height:474px; width:750px" data-lazy-src="https://www.3xceler.com.br/uploads/images/rejeitar-links-search-console.jpg" /><noscript><img decoding="async" alt="" src="https://www.3xceler.com.br/uploads/images/rejeitar-links-search-console.jpg" style="height:474px; width:750px" /></noscript></p>
+<p style="text-align:left">Voc&ecirc; chegar&aacute; em&nbsp;uma p&aacute;gina como na imagem a cima, l&aacute; ele vai listar todos os dom&iacute;nio que voc&ecirc; administra, escolha o dom&iacute;nio na qual voc&ecirc; pretende utilizar a ferramenta e clique em <strong>Rejeitar Links</strong>. Voc&ecirc; ser&aacute; redirecionado para uma nova janela como esta abaixo, ser&aacute; um breve comunicado de aten&ccedil;&atilde;o.</p>
+<p style="text-align:center"><img decoding="async" alt="ferramenta-para-rejeitar-links-2" class="aligncenter size-full wp-image-1782" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" style="height:353px; width:750px" title="2º passo para repudiar links" data-lazy-src="https://www.3xceler.com.br/uploads/old_images/2013/06/ferramenta-para-rejeitar-links-21.png" /><noscript><img decoding="async" alt="ferramenta-para-rejeitar-links-2" class="aligncenter size-full wp-image-1782" src="https://www.3xceler.com.br/uploads/old_images/2013/06/ferramenta-para-rejeitar-links-21.png" style="height:353px; width:750px" title="2º passo para repudiar links" /></noscript></p>
+<p style="text-align:left">Caso este site j&aacute; possua uma lista enviada anteriormente, ser&aacute; necess&aacute;rio fazer o download deste arquivo, atualiza-lo com as novas URL&#39;s ou dominios e fazer o upload novamente, caso ainda n&atilde;o tenha nenhuma lista cadastrada basta fazer o upload de sua lista.</p>
+<h3 style="text-align:left"><img decoding="async" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" style="height:474px; width:750px" data-lazy-src="https://www.3xceler.com.br/uploads/images/disavow-link-1.jpg" /><noscript><img decoding="async" alt="" src="https://www.3xceler.com.br/uploads/images/disavow-link-1.jpg" style="height:474px; width:750px" /></noscript></h3>
+<h3 style="text-align:left">
+Entendendo o C&oacute;digo</h3>
+<p style="text-align:left">Abaixo listo um exemplo de como deve ficar seu arquivo .txt, note que h&aacute; algumas diferen&ccedil;as entre listagem de dom&iacute;nio, URL&#39;s e alguns seguidos de # (jogo da velha). Calma iremos falar sobre cada um deles e suas breves regras para que o Google consiga entender sua solicita&ccedil;&atilde;o.</p>
+<p><kbd>#contato realizado com dominio spamdominio.com.br em 07/01/2013</kbd></p>
+<p><kbd>#contato para remo&ccedil;&atilde;o de links, mas n&atilde;o obtvemos respostas<br />
+domain:spamdominio.com.br</kbd></p>
+<p><kbd>#propriet&aacute;rio de www.spamdominio2.com.br removeu boa parte dos links mas ainda rest&atilde;o estes<br />
+http://spamdominio2.com.br/pagina1.php<br />
+http://spamdominio2.com.br/pagina2.php<br />
+http://spamdominio2.com.br/pagina3.php<br />
+http://spamdominio2.com.br/pagina4.php<br />
+http://spamdominio2.com.br/pagina5.php<br />
+http://spamdominio2.com.br/pagina6.php</kbd></p>
+<p style="text-align:left"><strong>Codifica&ccedil;&atilde;o &#8211;</strong>&nbsp;O primeiro ponto &eacute; voc&ecirc; se certificar que seu&nbsp;arquivo.txt seja codificado em UTF-8 ou ASCII de sete bits, caso n&atilde;o esteja dentro deste formato pode ser que o Google n&atilde;o reconhe&ccedil;a o arquivo.</p>
+<p style="text-align:left"><strong>Dom&iacute;nios &#8211;&nbsp;</strong>Quando detectar um site com um n&uacute;mero muito grande URL&#39;s com backlins de baixa qualidade, o melhor a fazer &eacute; bloquear o dom&iacute;nio e para solicitar um dom&iacute;nio inteiro basta inserir uma linha domaim:spamdomnio.com.br.</p>
+<p style="text-align:left"><strong>Coment&aacute;rios &#8211;&nbsp;</strong>&Eacute; importante fazer alguns coment&aacute;rios, quanto mais informa&ccedil;&otilde;es passarmos ao Google melhor e para fazer um coment&aacute;rio basta inserir # antes da mensagem. Lembrando que quando for listar o dom&iacute;nio ou as URL&#39;s voc&ecirc; deve pular uma linha, conforme exemplo acima.</p>
+<p style="text-align:center"><img decoding="async" alt="3º passo para repudiar links" class="aligncenter size-full wp-image-1786" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" style="height:458px; width:713px" title="3º passo para repudiar links" data-lazy-src="https://www.3xceler.com.br/uploads/old_images/2013/06/ferramenta-para-rejeitar-links-3.png" /><noscript><img decoding="async" alt="3º passo para repudiar links" class="aligncenter size-full wp-image-1786" src="https://www.3xceler.com.br/uploads/old_images/2013/06/ferramenta-para-rejeitar-links-3.png" style="height:458px; width:713px" title="3º passo para repudiar links" /></noscript></p>
+<p style="text-align:left">Ap&oacute;s enviar seu primeiro arquivo voc&ecirc; ir&aacute; visualizar uma p&aacute;gina como esta acima.&nbsp;&Eacute; importante ressaltar que este arquivo pode ser editado e atualizado quantas vezes forem necess&aacute;rio,&nbsp;ap&oacute;s voc&ecirc; enviar o arquivo ele lhe dar&aacute; a op&ccedil;&atilde;o de fazer o download em CSV ou em sua plataforma Google Docs!</p>
+            <a href="https://www.instagram.com/vaz.marcelo/" target="_blank"><img class="image-bottom-pro" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="CEO Marcelo Vaz" title="CEO Marcelo Vaz" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/Banner-Instagram-Blog.jpg"><noscript><img class="image-bottom-pro" src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/Banner-Instagram-Blog.jpg" alt="CEO Marcelo Vaz" title="CEO Marcelo Vaz"></noscript></a>
+        </div>
+        <div class="col-12 col-lg-3 d-none d-lg-block">
+            <aside class="sidebar-right">
+                <div class="top-sidebar-banner-wrapper margin-g">
+                    <a href="https://www.3xceler.com.br/otimizacao-de-sites/?utm_source=BannerSite&amp;utm_medium=SEO&amp;utm_campaign=SidebarBlog">
+                    <img class="top-sidebar-banner" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="SEO 3xceler: Alcance as primeiras páginas do Google" title="SEO 3xceler: Alcance as primeiras páginas do Google" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/banner-sidebar.jpg"><noscript><img class="top-sidebar-banner" src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/banner-sidebar.jpg" alt="SEO 3xceler: Alcance as primeiras páginas do Google" title="SEO 3xceler: Alcance as primeiras páginas do Google"></noscript>
+                    </a>
+                </div>
+                                <div class="list-wrapper">
+                    <h4 class="title">Últimos Artigos</h4>
+                    <ul class="list-dotted with-borders t-r t-primary">
+                                                    <li>
+                                <a href="https://3xcelerserv.com.br/3xceler-site/artigo-para-marketing-medico-e-cientifico-entenda-melhor-sobre-este-tipo-de-conteudo/" title="Artigo para Marketing Médico é Científico? Entenda Melhor Sobre Este Tipo de Conteúdo">Artigo para Marketing Médico é Científico? Entenda Melhor Sobre Este Tipo de Conteúdo</a>
+                            </li>
+                                                    <li>
+                                <a href="https://3xcelerserv.com.br/3xceler-site/ainda-vale-a-pena-ter-um-site-em-2022/" title="Ainda Vale a Pena ter um Site em 2022?">Ainda Vale a Pena ter um Site em 2022?</a>
+                            </li>
+                                                    <li>
+                                <a href="https://3xcelerserv.com.br/3xceler-site/5-fatores-que-impedem-seu-e-commerce-de-vender/" title="5 Fatores que Impedem seu E-Commerce de Vender">5 Fatores que Impedem seu E-Commerce de Vender</a>
+                            </li>
+                                                    <li>
+                                <a href="https://3xcelerserv.com.br/3xceler-site/google-meu-negocio-como-destacar-sua-empresa-com-esta-ferramenta/" title="Google Meu Negócio: Como Destacar sua Empresa com Esta Ferramenta?">Google Meu Negócio: Como Destacar sua Empresa com Esta Ferramenta?</a>
+                            </li>
+                                                    <li>
+                                <a href="https://3xcelerserv.com.br/3xceler-site/como-marketing-medico-pode-ajudar-a-aumentar-seus-agendamentos-em-2022/" title="Como Marketing Médico Pode Ajudar a Aumentar seus Agendamentos em 2022?">Como Marketing Médico Pode Ajudar a Aumentar seus Agendamentos em 2022?</a>
+                            </li>
+                                            </ul>
+                </div>
+                                <div class="top-sidebar-banner-wrapper margin-g margin-top-banner-sidebar">
+                    <a href="https://www.instagram.com/vaz.marcelo/" target="_blank">
+                    <img class="top-sidebar-banner" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="CEO Marcelo Vaz" title="CEO Marcelo Vaz" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/Banner-Instagram-Blog-Vertical.jpg"><noscript><img class="top-sidebar-banner" src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/Banner-Instagram-Blog-Vertical.jpg" alt="CEO Marcelo Vaz" title="CEO Marcelo Vaz"></noscript>
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+<hr class="d-none d-lg-block">
+<div class="container d-none d-lg-block">
+    <div class="row line-outher-posts">
+        <div class="col-6">
+                            <a href="https://3xcelerserv.com.br/3xceler-site/teste-de-at/">
+                    <i class="fa fa-long-arrow-left"></i> 
+                    Post Anterior  
+                    <span>
+                     | Teste de                    </span>
+                </a>
+                    
+        </div>
+        <div class="col-6 text-end">
+                                        <a href="https://3xcelerserv.com.br/3xceler-site/vamos-falar-sobre-black-friday/">
+                    <span>
+                        Disavow Link do Search Console | 
+                    </span>  Próximo Post  
+                    <i class="fa fa-long-arrow-right"></i> 
+                </a>
+                    </div>
+    </div>
+</div>
+<hr class="d-none d-lg-block">
+
+</main>
+
+</main>
+
+<footer id="footer" class="blog">
+      <div class="container">
+      <div class="row line-cols">
+        <div class="col-lg-6 col-12">
+          <a class="d-block w-100 margin-2g" href="https://3xcelerserv.com.br/3xceler-site">
+            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="logo-footer d-none d-lg-block" alt="Logotipo ag. 3xceler" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo-footer.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo-footer.png" class="logo-footer d-none d-lg-block" alt="Logotipo ag. 3xceler"></noscript>
+            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="logo-footer d-lg-none" alt="Logotipo ag. 3xceler" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo-minimal-white.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo-minimal-white.png" class="logo-footer d-lg-none" alt="Logotipo ag. 3xceler"></noscript>
+
+            
+          </a>
+          <div class="fones">
+            <a href="tel:01127298581"> 11 2729.8581 | </a>
+            <a href="tel:01127298583"> 11 2729.8583</a>
+          </div>
+          <address>
+            Rua Cantagalo, n°. 1404, Vila Gomes Cardim, São Paulo - SP - CEP: 03.319-001
+          </address>
+        </div>
+        <div class="col-lg-6 col-12 col-nav">
+          <ul class="nav-menu flexed wrap ai-center d-none d-lg-flex">
+            <li class="nav-item" id="menu-item-id-3923">
+              <a href="/">Home</a>
+            </li>
+            <li class="nav-item" id="menu-item-id-4153">
+              <a href="/#sobre-nos">Sobre Nós</a>
+            </li>
+            <li class="nav-item" id="menu-item-id-3924">
+              <a href="https://www.3xceler.com.br/blog/">Blog</a>
+            </li>
+            <li class="nav-item" id="menu-item-id-4156">
+              <a href="/#main-footer">Contato</a>
+            </li>
+          </ul>
+          <div class="social-footer">
+            <span class="follow-title-footer">
+              <span class="text">Siga Nos</span>
+            </span>
+            <span class="line"></span>
+            <a href="https://www.facebook.com/agencia3xceler" target="_blank" title="Nosso Facebook">
+              <i class="fa fa-facebook-square"></i>
+            </a>
+            <a href="https://www.instagram.com/agencia3xceler/" target="_blank" title="Nosso Instagram">
+              <i class="fa fa-instagram"></i>
+            </a>       
+            <a href="https://br.linkedin.com/organization-guest/company/agencia-3xceler?challengeId=AQG_iY9S8-VyJQAAAXNtNZccJxR6Jal2Vr9ItR0NFsG5oLB_2KeYg03ymoqce7mKXMzTb7LpXOEtlwMDEq3J8_gqfmG0-p7pSA&submissionId=bac6d9e9-2685-2316-29fd-46b7cc4ff00b" target="_blank" title="Nosso Linkedin">
+              <i class="fa fa-linkedin-square"></i>
+            </a>   
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="direitos">
+    <p>
+      Agência 3xceler Marketing Performance - Todos os Direitos Reservados | Copyright 2022    </p>
+  </div>
+</footer>
+
+<!-- tracking here -->
+
+
+<!-- Modal CTA triggger -->
+<div id="cta-trigger">
+  <div id="trigger-body">
+    <button close-trigger-body>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7.68" height="7.75"><defs><filter id="a" x="1886.13" y="580.125" width="7.68" height="7.75" filterUnits="userSpaceOnUse"><feFlood result="flood" flood-color="#342d1f"/><feComposite result="composite" operator="in" in2="SourceGraphic"/><feBlend result="blend" in2="SourceGraphic"/></filter></defs><g transform="translate(-1886.13 -580.125)" fill="none" filter="url(#a)"><path id="b" data-name="CLOSE copy" d="M1893.03 580.487l.45.437-6.57 6.359-.45-.439zm-6.57.657l.45-.439 6.57 6.359-.45.44z" stroke="inherit" filter="none" fill="inherit" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" fill-rule="evenodd"/></g><use transform="translate(-1886.13 -580.125)" xlink:href="#b" stroke="#c00d0e" filter="none" fill="none"/></svg>
+    </button>
+    <hgroup>
+      <strong>Olá!</strong>
+      <p>Gostaria de receber uma ligação?</p>
+      <button open-modal-cta>Sim</button>
+    </hgroup>
+  </div>
+  <button open-trigger-body>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20"><image data-name="phone" width="20" height="20" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAA6UlEQVQ4jaWVgQ2CMBBFv8YFWIEVdARXYAVXcAUcAUbAEWAEGQFG0BHOfNImzaVHzfmTkiZ3fT161+tBROBUHZat6fLTH7AlzD8AJgAzgB6M0DFayas7OiO8WQYPkLDKsK1eoCUXsN+xzd6kXEXkrdKy0OZNypSJ9Ll9nRHWmaKpt0viBI4K1kWbB9YpGM+ysoA03IPT+AOMalKfODmLyJBxjr/C83ll7K3eNEa1J31eJiyNUNdUSVlYCrSi0FpCUZtJi4XNQt0Te94DwKXkGxssm6N1I3gDOAgtKn0CmtCWuJBt3drEFoAvywDAFCx16PwAAAAASUVORK5CYII="/></svg>
+  </button>
+</div>
+
+<!-- Modal CTA -->
+<div id="modal-cta">
+  <div id="modal-overlay" modal-close>
+    <div id="modal-container">
+      <div class="wrap-modal-btns">
+        <button modal-tab data-open="me-ligue-agora">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/cta-icon-phone.svg"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/cta-icon-phone.svg"></noscript>
+          Me ligue agora
+        </button>
+        <button modal-tab data-open="me-ligue-depois">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/cta-icon-clock.svg"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/cta-icon-clock.svg"></noscript>  
+          Me ligue depois
+        </button>
+        <button modal-tab data-open="deixe-uma-mensagem">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/cta-icon-comments.svg"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/cta-icon-comments.svg"></noscript>
+          Deixe uma mensagem
+        </button>
+      </div>
+      <div class="modal-content-btns" id="me-ligue-agora">
+        <p>Informe seu telefone que entraremos em contato o mais rápido possível.</p>
+		<form method="post"  name="me-ligue-agora" id="me_ligue_agora" class="form-tracking">
+		  <input type="hidden" name="Formulário" value="Me Ligue Agora" >
+          <input type="hidden" name="g-recaptcha-response" class="token" >
+          <label class="fa fa-user-circle">
+            <input type="text" name="Nome" placeholder="Informe seu nome" required>
+          </label>
+          <label class="fa fa-phone">
+            <input type="text" name="Telefone" placeholder="Informe seu telefone" class="phone-mask" pattern=".{14,}" required>
+          </label>
+          <label class="fa fa-envelope">
+            <input type="email" name="email" placeholder="Informe seu email"  required>
+          </label>
+          <button type="submit" class="btn-submit title-min">Me ligue agora</button>
+        </form>
+        <small>Você já é a <span>27</span> pessoa a solicitar uma ligação.</small>
+      </div>
+      <div class="modal-content-btns" id="me-ligue-depois">
+        <p>Gostaria de agendar e receber uma chamada em outro horário?</p>
+		<form method="post" name="me-ligue-depois" id="me_ligue_depois" class="form-tracking">
+		  <input type="hidden" name="Formulário" value="Me Ligue Depois" >
+          <input type="hidden" name="g-recaptcha-response" class="token" >
+          <label class="icon-user">
+            <input type="text" name="Nome" placeholder="Informe seu nome" required>
+          </label>
+          <label class="half">
+            <input type="date" name="Data" max="2100-12-31" required>
+          </label>
+          <label class="half">
+            <input type="time" name="Horário" placeholder="Informe um horário" required>
+          </label>
+          <label class="icon-phone">
+            <input type="text" name="Telefone" placeholder="Informe seu telefone" class="phone-mask" pattern=".{14,}" required>
+          </label>
+          <label class="fa fa-envelope">
+            <input type="email" name="email" placeholder="Informe seu email"  required>
+          </label>
+          <button type="submit" class="btn-submit title-min">Me ligue depois</button>
+        </form>
+        <small>Você já é a <span>27</span> pessoa a solicitar uma ligação.</small>
+      </div>
+      <div class="modal-content-btns" id="deixe-uma-mensagem">
+        <p>Deixe sua mensagem!<br />Entraremos em contato o mais rápido possível.</p>
+		<form method="post" name="deixar-mensagem"  id="deixar_mensagem" class="form-tracking">
+          <input type="hidden" name="Formulário" value="Deixe Uma Mensagem" >
+          <input type="hidden" name="g-recaptcha-response" class="token" >
+          <label class="icon-user fa fa-user-circle">
+            <input type="text" name="Nome" placeholder="Informe seu nome" required>
+          </label>
+          <label class="icon-phone fa fa-phone">
+            <input type="text" name="Telefone" placeholder="Informe seu telefone" class="phone-mask" pattern=".{14,}" required>
+          </label>
+          <label class="fa fa-envelope">
+            <input type="email" name="E-mail" placeholder="Informe seu email"  required>
+          </label>
+          <label>
+            <textarea name="Mensagem" placeholder="Deixe sua mensagem" required></textarea>
+          </label>
+          <button type="submit" class="btn-submit">Deixar mensagem</button>
+        </form>
+        <small>Você já é a <span>27</span> pessoa a deixar uma mensagem.</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile CTA -->
+<div id="mobile-cta">
+  <div class="wrap">
+	<div class="column-whats">
+        <a id="btn-whatsapp"  href="https://wa.me/+5511949826261"  target="_blank" title="Contato via WhatsApp" class="trigger trigger-whats whats-tracking"><i class="fa fa-whatsapp"></i></a>
+      </div>
+      <div class="column-ligar">
+          <a id="btn-ligar" href="tel:01127298581" title="Telefone fixo">Ligar</a>
+      </div>
+      <div class="column-contato">
+          <button id="btn-open-modal" title="Entre em contato" open-modal-cta>Entre em contato</button>
+      </div>
+  </div>
+</div>
+
+<!-- Whats CTA -->
+<a id="whats-cta" target="_blank"   href="https://wa.me/+5511949826261" title="Contato via WhatsApp" class="trigger-whats whats-tracking">
+	<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="31" height="31" viewBox="0 0 172 172"
+  style=" fill:#000000;">
+		<g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+			<path d="M0,172v-172h172v172z" fill="none"></path>
+			<g fill="#ffffff">
+				<path d="M86.08399,14.33333c-39.45967,0 -71.58235,32.09502 -71.59668,71.55469c-0.00717,12.61333 3.29655,24.92701 9.56022,35.77734l-9.71419,36.00131l37.49902,-8.86035c10.45617,5.70467 22.22697,8.69922 34.20963,8.70638h0.028c39.4525,0 71.56118,-32.10219 71.58268,-71.55469c0.01433,-19.12784 -7.42377,-37.11191 -20.9401,-50.64258c-13.51633,-13.5235 -31.47925,-20.97493 -50.62858,-20.9821zM86.06999,28.66667c15.308,0.00717 29.69396,5.97554 40.50846,16.78288c10.8145,10.82167 16.75522,25.2008 16.74089,40.49447c-0.01433,31.56199 -25.68702,57.23535 -57.26335,57.23535c-9.55317,-0.00717 -19.01607,-2.40588 -27.35091,-6.95671l-4.8291,-2.63151l-5.33301,1.25976l-14.10937,3.33138l3.44336,-12.79362l1.55371,-5.73894l-2.96745,-5.15104c-5.00233,-8.65733 -7.64974,-18.55584 -7.64258,-28.61067c0.01433,-31.54767 25.69452,-57.22135 57.24935,-57.22135zM60.7487,52.85417c-1.19683,0 -3.13195,0.44792 -4.77311,2.23958c-1.64117,1.7845 -6.27083,6.10656 -6.27083,14.90723c0,8.80067 6.41081,17.30772 7.30664,18.50455c0.88867,1.18967 12.37448,19.82031 30.55632,26.98698c15.10733,5.9555 18.17568,4.78017 21.45801,4.47917c3.28233,-0.29383 10.58909,-4.31825 12.07975,-8.49641c1.49066,-4.17817 1.49414,-7.77226 1.0498,-8.51042c-0.44433,-0.74533 -1.6377,-1.18978 -3.42936,-2.08561c-1.7845,-0.89583 -10.57856,-5.21409 -12.21973,-5.80892c-1.64117,-0.59483 -2.84158,-0.89583 -4.03125,0.89583c-1.18967,1.79167 -4.60861,5.80903 -5.65494,6.9987c-1.04633,1.19683 -2.08561,1.35775 -3.87728,0.46191c-1.79167,-0.903 -7.55232,-2.79668 -14.38932,-8.88835c-5.31767,-4.73717 -8.90582,-10.58203 -9.95215,-12.37369c-1.03917,-1.7845 -0.09798,-2.76466 0.79785,-3.65332c0.80267,-0.80267 1.77767,-2.08908 2.6735,-3.13542c0.88867,-1.04633 1.19683,-1.79178 1.79167,-2.98145c0.59483,-1.18966 0.29036,-2.23958 -0.15398,-3.13541c-0.44433,-0.89583 -3.92397,-9.7292 -5.51497,-13.26953c-1.34017,-2.97417 -2.75558,-3.04326 -4.03125,-3.09342c-1.03917,-0.043 -2.2257,-0.04199 -3.41536,-0.04199z">
+				</path>
+			</g>
+		</g>
+	</svg>
+</a>
+
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/3xceler-site(\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$\/|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)\/)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/3xcelerserv.com.br\/3xceler-site","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' id='app-js-js-extra'>
+/* <![CDATA[ */
+var hoist = "{\"theme_url\":\"https:\\\/\\\/3xcelerserv.com.br\\\/3xceler-site\\\/wp-content\\\/themes\\\/3xceler\",\"admin_url\":\"https:\\\/\\\/3xcelerserv.com.br\\\/3xceler-site\\\/wp-admin\\\/admin-ajax.php\",\"home_url\":\"https:\\\/\\\/3xcelerserv.com.br\\\/3xceler-site\\\/\",\"current_url\":\"https:\\\/\\\/3xcelerserv.com.br\\\/3xceler-site\\\/disavow-link\",\"is_single\":true,\"is_front_page\":false,\"page\":{\"ID\":2367,\"post_author\":\"3\",\"post_date\":\"2016-12-06 15:38:13\",\"post_date_gmt\":\"2016-12-06 15:38:13\",\"post_content\":\"<p>Quem ainda nunca ouviu falar do Search Console, a ferramenta gratuita criada pelo Google e que gera uma grande ajuda para\u00a0analistas. Com esta ferramenta podemos extrair informa\u00e7\u00f5es valiosas (quando bem interpretadas), podendo melhorar o desempenho de seu site nos resultados de pesquisas org\u00e2nicas do Google. Para saber um pouco mais sobre a ferramenta webmaster tools e como ela pode lhe auxiliar leio o artigo <a href=\\\"https:\\\/\\\/www.3xceler.com.br\\\/blog\\\/seo\\\/tudo-sobre-search-sonsole\\\">tudo sobre Search Console<\\\/a>, neste artigo explicamos todos os relat\u00f3rios e como as informa\u00e7\u00f5es\u00a0colhidas podem lhe auxiliar em tomadas de decis\u00f5es.\u00a0<\\\/p>\\r\\n\\r\\n<h2>Entendendo um Pouco Mais Sobre Liga\u00e7\u00f5es<\\\/h2>\\r\\n\\r\\n<p>Todos sabemos que n\u00e3o s\u00f3 o Google, como o Bing, dentre outros mecanismos de buscas espalhados pelo mundo, utilizam os links externos (linkbuilding),\u00a0como sinais relevantes para definir uma suposta credibilidade\u00a0dos sites e que estes links s\u00e3o fatores de ranqueamento.\u00a0Quando os mecanismos de buscas olham para as liga\u00e7\u00f5es entre p\u00e1ginas e dom\u00ednios externos, eles conseguem captar e analisar a qualidade e\u00a0o conte\u00fado da p\u00e1gina e do dom\u00ednio como um todo onde o link se encontra.\u00a0<\\\/p>\\r\\n\\r\\n<p>Voltando\u00a0um pouco no tempo, para ser mais exato, em 2011, quando come\u00e7ou a surgir alguns murmuros sobre como medir a\u00a0qualidade de um link e o quanto isso poderia afetar nos posicionamentos dos sites. Por meados de 2012, j\u00e1 haviam centenas de discuss\u00f5es\u00a0em f\u00f3runs\u00a0sobre como ter um controle maior sobre suas liga\u00e7\u00f5es e a capacidade de identificar a qualidade dos mesmos, assim como gerenciar estes links.\u00a0De olho no que os webmaster discutiam nos f\u00f3runs, o Bing tomou a frente do Google e desenvolveu a ferramenta nomeada de Disavow Link ou traduzindo Repudiar Liga\u00e7\u00f5es, ela foi lan\u00e7ada pelo Bing em 27 de junho de 2012. O Google aproveitou o gancho e lan\u00e7ou sua ferramenta posterioemente\u00a0em 16 de outubro de 2012, por\u00e9m tal funcionalidade s\u00f3 foi realmente divulgada e utilizada quando o Google o tornou realidade.<\\\/p>\\r\\n\\r\\n<h2>Disavow Link<\\\/h2>\\r\\n\\r\\n<p><iframe frameborder=\\\"0\\\" height=\\\"400\\\" src=\\\"https:\\\/\\\/www.youtube.com\\\/embed\\\/393nmCYFRtA\\\" width=\\\"750\\\"><\\\/iframe><\\\/p>\\r\\n\\r\\n<h3>Para que serve?<\\\/h3>\\r\\n\\r\\n<p>Quando voc\u00ea inicia um trabalho de <a href=\\\"https:\\\/\\\/www.3xceler.com.br\\\/otimizacao-de-sites.php\\\">otimiza\u00e7\u00e3o de sites (SEO)<\\\/a>, eu acredito que voc\u00ea fara o seu melhor para gerar conte\u00fado e links de qualidade, al\u00e9m de\u00a0trabalhar duro para cultiva-los.\u00a0Mas o que acontece\u00a0quando come\u00e7am a surgir liga\u00e7\u00f5es para seu dom\u00ednio de baixa qualidade (negative SEO) e n\u00e3o foi voc\u00ea que gerou, ou por\u00a0outro ponto de vista, caso voc\u00ea seja um analista e tenha pegado um novo projeto que tenha passado por uma outra ag\u00eancia, e por sua vez, faziam links de baixa qualidade, como compra de\u00a0links, agregadores que est\u00e3o repletos de spam entre outros in\u00fameros problemas de blackhat.<\\\/p>\\r\\n\\r\\n<p>A disavow link veio para corrigir estes problemas e salvar\u00a0os analistas possibilitando fazer a limpeza das liga\u00e7\u00f5es maliciosas ou duvidosas, de modo a dizer para o Google que n\u00e3o s\u00e3o respons\u00e1veis pelos links identificados e que n\u00e3o confiam no dom\u00ednio, bem como solicitam o descarte destes links.<\\\/p>\\r\\n\\r\\n<h3>Como Utilizar<\\\/h3>\\r\\n\\r\\n<p>A forma de utilizar \u00e9 bem simples, o problema \u00e9 quando voc\u00ea realmente deve utilizar esta ferramenta. Muito importante ressaltar antes de qualquer coisa, que\u00a0\u00a0a <strong>disavow link<\\\/strong>\u00a0\u00e9 um recurso avan\u00e7ado e s\u00f3 deve ser utilizado com cautela. Se aplicado erroneamente, ele pode prejudicar o desempenho de seu site nos resultados de pesquisa do Google.<\\\/p>\\r\\n\\r\\n<blockquote>Recomendo que voc\u00ea rejeite backlinks apenas se confirmar que tem um n\u00famero consider\u00e1vel\u00a0links de spam, artificiais ou de baixa qualidade apontando para seu site, se estes dom\u00ednios utilizam t\u00e9cnicas de black hat e se tiver certeza de que os links causam problemas para seu site.<br \\\/>\\r\\n<br \\\/>\\r\\nMinha dica\u00a0\u00e9, se voc\u00ea tiver acesso a estes sites e conseguir excluir essas liga\u00e7\u00f5es, fa\u00e7a isso h\u00e1 m\u00e3o, caso n\u00e3o tenha\u00a0acesso, tente contato com o site respons\u00e1vel,\u00a0envie e-mail\u00a0e tente excluir estes backlinks, em \u00faltima est\u00e2ncia\u00a0se nenhuma dessas op\u00e7\u00f5es tenha resolvido seu problema, documente tudo e siga o processo a baixo.\\r\\n<p>Marcelo Vaz<\\\/p>\\r\\n<\\\/blockquote>\\r\\n\\r\\n<h3>Como Utilizar<\\\/h3>\\r\\n\\r\\n<p>Para\u00a0acessar a disalow link\u00a0basta clicar\u00a0<a href=\\\"https:\\\/\\\/www.google.com\\\/webmasters\\\/tools\\\/disavow-links-main\\\" title=\\\"Ferramenta Disavow Link\\\">aqui<\\\/a>, ou siga os passos a baixo para localizar a ferramenta em seu search console.<\\\/p>\\r\\n\\r\\n<ol>\\r\\n\\t<li>Na p\u00e1gina inicial das Ferramentas do Google para webmasters, clique no site desejado.<\\\/li>\\r\\n\\t<li>No Painel, clique em\u00a0<strong>Pesquisar tr\u00e1fego<\\\/strong>\u00a0e, em seguida, em\u00a0<strong>Links para seu site<\\\/strong>.<\\\/li>\\r\\n\\t<li>Em\u00a0<strong>Maior quantidade de links<\\\/strong>, clique em\u00a0<strong>Mais<\\\/strong>.<\\\/li>\\r\\n\\t<li>Clique em \u00a0<strong>Fazer download de mais amostras de links<\\\/strong>. Se clicar em\u00a0<em>Fazer o <\\\/em><strong>download dos links mais recentes<\\\/strong>, voc\u00ea tamb\u00e9m ver\u00e1 as datas.<\\\/li>\\r\\n<\\\/ol>\\r\\n\\r\\n<p style=\\\"text-align:center\\\"><img alt=\\\"\\\" src=\\\"https:\\\/\\\/www.3xceler.com.br\\\/uploads\\\/images\\\/rejeitar-links-search-console.jpg\\\" style=\\\"height:474px; width:750px\\\" \\\/><\\\/p>\\r\\n\\r\\n<p style=\\\"text-align:left\\\">Voc\u00ea chegar\u00e1 em\u00a0uma p\u00e1gina como na imagem a cima, l\u00e1 ele vai listar todos os dom\u00ednio que voc\u00ea administra, escolha o dom\u00ednio na qual voc\u00ea pretende utilizar a ferramenta e clique em <strong>Rejeitar Links<\\\/strong>. Voc\u00ea ser\u00e1 redirecionado para uma nova janela como esta abaixo, ser\u00e1 um breve comunicado de aten\u00e7\u00e3o.<\\\/p>\\r\\n\\r\\n<p style=\\\"text-align:center\\\"><img alt=\\\"ferramenta-para-rejeitar-links-2\\\" class=\\\"aligncenter size-full wp-image-1782\\\" src=\\\"https:\\\/\\\/www.3xceler.com.br\\\/uploads\\\/old_images\\\/2013\\\/06\\\/ferramenta-para-rejeitar-links-21.png\\\" style=\\\"height:353px; width:750px\\\" title=\\\"2\\u00ba passo para repudiar links\\\" \\\/><\\\/p>\\r\\n\\r\\n<p style=\\\"text-align:left\\\">Caso este site j\u00e1 possua uma lista enviada anteriormente, ser\u00e1 necess\u00e1rio fazer o download deste arquivo, atualiza-lo com as novas URL's ou dominios e fazer o upload novamente, caso ainda n\u00e3o tenha nenhuma lista cadastrada basta fazer o upload de sua lista.<\\\/p>\\r\\n\\r\\n<h3 style=\\\"text-align:left\\\"><img alt=\\\"\\\" src=\\\"https:\\\/\\\/www.3xceler.com.br\\\/uploads\\\/images\\\/disavow-link-1.jpg\\\" style=\\\"height:474px; width:750px\\\" \\\/><\\\/h3>\\r\\n\\r\\n<h3 style=\\\"text-align:left\\\"><br \\\/>\\r\\nEntendendo o C\u00f3digo<\\\/h3>\\r\\n\\r\\n<p style=\\\"text-align:left\\\">Abaixo listo um exemplo de como deve ficar seu arquivo .txt, note que h\u00e1 algumas diferen\u00e7as entre listagem de dom\u00ednio, URL's e alguns seguidos de # (jogo da velha). Calma iremos falar sobre cada um deles e suas breves regras para que o Google consiga entender sua solicita\u00e7\u00e3o.<\\\/p>\\r\\n\\r\\n<p><kbd>#contato realizado com dominio spamdominio.com.br em 07\\\/01\\\/2013<\\\/kbd><\\\/p>\\r\\n\\r\\n<p><kbd>#contato para remo\u00e7\u00e3o de links, mas n\u00e3o obtvemos respostas<br \\\/>\\r\\ndomain:spamdominio.com.br<\\\/kbd><\\\/p>\\r\\n\\r\\n<p><kbd>#propriet\u00e1rio de www.spamdominio2.com.br removeu boa parte dos links mas ainda rest\u00e3o estes<br \\\/>\\r\\nhttp:\\\/\\\/spamdominio2.com.br\\\/pagina1.php<br \\\/>\\r\\nhttp:\\\/\\\/spamdominio2.com.br\\\/pagina2.php<br \\\/>\\r\\nhttp:\\\/\\\/spamdominio2.com.br\\\/pagina3.php<br \\\/>\\r\\nhttp:\\\/\\\/spamdominio2.com.br\\\/pagina4.php<br \\\/>\\r\\nhttp:\\\/\\\/spamdominio2.com.br\\\/pagina5.php<br \\\/>\\r\\nhttp:\\\/\\\/spamdominio2.com.br\\\/pagina6.php<\\\/kbd><\\\/p>\\r\\n\\r\\n<p style=\\\"text-align:left\\\"><strong>Codifica\u00e7\u00e3o -<\\\/strong>\u00a0O primeiro ponto \u00e9 voc\u00ea se certificar que seu\u00a0arquivo.txt seja codificado em UTF-8 ou ASCII de sete bits, caso n\u00e3o esteja dentro deste formato pode ser que o Google n\u00e3o reconhe\u00e7a o arquivo.<\\\/p>\\r\\n\\r\\n<p style=\\\"text-align:left\\\"><strong>Dom\u00ednios -\u00a0<\\\/strong>Quando detectar um site com um n\u00famero muito grande URL's com backlins de baixa qualidade, o melhor a fazer \u00e9 bloquear o dom\u00ednio e para solicitar um dom\u00ednio inteiro basta inserir uma linha domaim:spamdomnio.com.br.<\\\/p>\\r\\n\\r\\n<p style=\\\"text-align:left\\\"><strong>Coment\u00e1rios -\u00a0<\\\/strong>\u00c9 importante fazer alguns coment\u00e1rios, quanto mais informa\u00e7\u00f5es passarmos ao Google melhor e para fazer um coment\u00e1rio basta inserir # antes da mensagem. Lembrando que quando for listar o dom\u00ednio ou as URL's voc\u00ea deve pular uma linha, conforme exemplo acima.<\\\/p>\\r\\n\\r\\n<p style=\\\"text-align:center\\\"><img alt=\\\"3\\u00ba passo para repudiar links\\\" class=\\\"aligncenter size-full wp-image-1786\\\" src=\\\"https:\\\/\\\/www.3xceler.com.br\\\/uploads\\\/old_images\\\/2013\\\/06\\\/ferramenta-para-rejeitar-links-3.png\\\" style=\\\"height:458px; width:713px\\\" title=\\\"3\\u00ba passo para repudiar links\\\" \\\/><\\\/p>\\r\\n\\r\\n<p style=\\\"text-align:left\\\">Ap\u00f3s enviar seu primeiro arquivo voc\u00ea ir\u00e1 visualizar uma p\u00e1gina como esta acima.\u00a0\u00c9 importante ressaltar que este arquivo pode ser editado e atualizado quantas vezes forem necess\u00e1rio,\u00a0ap\u00f3s voc\u00ea enviar o arquivo ele lhe dar\u00e1 a op\u00e7\u00e3o de fazer o download em CSV ou em sua plataforma Google Docs!<\\\/p>\\r\\n\",\"post_title\":\"Disavow Link do Search Console\",\"post_excerpt\":\"Disavow Link do Search Console\",\"post_status\":\"publish\",\"comment_status\":\"closed\",\"ping_status\":\"closed\",\"post_password\":\"\",\"post_name\":\"disavow-link\",\"to_ping\":\"\",\"pinged\":\"\",\"post_modified\":\"2016-12-06 15:38:13\",\"post_modified_gmt\":\"2016-12-06 15:38:13\",\"post_content_filtered\":\"\",\"post_parent\":0,\"guid\":\"https:\\\/\\\/www.3xceler.com.br\\\/3xceler-headless\\\/?p=84\",\"menu_order\":0,\"post_type\":\"post\",\"post_mime_type\":\"\",\"comment_count\":\"0\",\"filter\":\"raw\"},\"currentObjectID\":2367}";
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/js/app.min.js' id='app-js-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/js/bootstrap.min.js' id='bootstrap-js-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/js/popper.min.js' id='popper-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/npm/@splidejs/splide@4.0.1/dist/js/splide.min.js?ver=1670515222' id='splide-js-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6Lek9mQjAAAAAI9nJUTE9s7Qf_MN07l1LICPNlFw' id='recaptcha-js-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/3xceler-site/wp-content/themes/3xceler/dist/js/tracking.js?ver=1670515222' id='tracking-js-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/v2/polyfill.min.js?ver=1670515223' id='polyfill-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://cdn.jsdelivr.net/npm/sweetalert2@9' id='swall-alert-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/lagden/vanilla-masker/lagden/build/vanilla-masker.min.js?ver=1670515223' id='vanilla-js-js'></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://3xcelerserv.com.br/3xceler-site/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script>
+<script type="rocketlazyloadscript">
+  const phoneMask = ['(99) 9999-99999', '(99) 99999-9999']
+  const phones = document.querySelectorAll('.phone-mask')
+  const inputHandler = (masks, max, event) => {
+    const c = event.target;
+    const v = c.value.replace(/\D/g, '');
+    const m = c.value.length > max ? 1 : 0;
+    VMasker(c).unMask();
+    VMasker(c).maskPattern(masks[m]);
+    c.value = VMasker.toPattern(v, masks[m]);
+  }
+  if (phones) {
+    phones.forEach(tel => {
+      VMasker(tel).maskPattern(phoneMask[0]);
+      tel.addEventListener('input', inputHandler.bind(undefined, phoneMask, 14), false);
+    })
+  }
+
+</script>
+
+<script type="rocketlazyloadscript">
+
+  grecaptcha.ready(function() {
+    grecaptcha.execute('6Lek9mQjAAAAAI9nJUTE9s7Qf_MN07l1LICPNlFw', {action: 'submit'}).then(function(token) {
+      
+      var tokens = document.getElementsByClassName("token");
+
+      for (var i = 0; i < tokens.length; i++) {
+        tokens[i].value = token;
+      }
+    });
+  });
+  
+</script>
+<!-- verifica se existe submit -->
+   
+
+
+
+<script>"use strict";function wprRemoveCPCSS(){var preload_stylesheets=document.querySelectorAll('link[data-rocket-async="style"][rel="preload"]');if(preload_stylesheets&&0<preload_stylesheets.length)for(var stylesheet_index=0;stylesheet_index<preload_stylesheets.length;stylesheet_index++){var media=preload_stylesheets[stylesheet_index].getAttribute("media")||"all";if(window.matchMedia(media).matches)return void setTimeout(wprRemoveCPCSS,200)}var elem=document.getElementById("rocket-critical-css");elem&&"remove"in elem&&elem.remove()}window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link rel='stylesheet' id='classic-theme-styles-css' href='https://3xcelerserv.com.br/3xceler-site/wp-includes/css/classic-themes.min.css?ver=1' type='text/css' media='all' /><link rel='stylesheet' id='bootstrap-css-css' href='https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/build/css/bootstrap.min.css?ver=6.1.1' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='main-css-css' href='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/3xceler-site/wp-content/themes/3xceler/dist/css/main.css?ver=1670515333' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='font-awesome-css' href='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/3xceler-site/wp-content/themes/3xceler/dist/css/font-awesome.min.css?ver=1670515333' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='splide-css-css' href='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/npm/@splidejs/splide@4.0.1/dist/css/splide.min.css?ver=1670515333' type='text/css' media='all' /><link rel='stylesheet' id='tracking-css' href='https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/css/tracking.min.css?ver=1.0' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='page-single-css' href='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/3xceler-site/wp-content/themes/3xceler/dist/css/pages/single.css?ver=1670515334' type='text/css' media='all' /></noscript></body>
+</html>
+
+
+
+
+ 
+
+<script type="rocketlazyloadscript">
+    let headings = document.querySelectorAll('.content h2');
+    let containerIndice = document.querySelector('.container-indice');
+
+    let headingsArr = Array.from(headings);
+
+    headings.forEach((heading, idx) => {
+        heading.setAttribute('id', `heading-${idx}`);
+    });
+
+    console.log(headingsArr);
+
+    var listItems = headingsArr.map(function(heading, idx){
+        return "<li key=" + idx+ ">" +
+            "<a href='#heading-" + idx + "'>" +
+                heading.textContent +
+           "</a></li>"
+    });
+    containerIndice.innerHTML = listItems.join('');
+</script>
+
+<script type="rocketlazyloadscript">
+    window.onscroll = function() {myFunction()};
+    function myFunction() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("progress-bar").style.width = scrolled + "%";
+    }
+</script>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1670516772 -->

@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: https://www.3xceler.com.br/sitemap_index.xml
+Sitemap: https://www.3xceler.com.br/post-sitemap.xml
+Sitemap: https://www.3xceler.com.br/page-sitemap.xml

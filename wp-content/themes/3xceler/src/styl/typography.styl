@@ -1,0 +1,191 @@
+@import './global-variables'
+
+
+
+// import fonts
+@font-face {
+  font-family: font-primary; 
+  src: url('../fonts/Cera-Pro-Regular.otf'); 
+  font-weight: weight-normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: font-primary; 
+  src: url('../fonts/Cera-Pro-Bold.otf'); 
+  font-weight: weight-strong;
+  font-display: swap;
+}
+
+
+// configs
+* 
+  font-size size-text-desktop 
+  font-family font-primary
+  padding 0
+  margin 0
+  color secondaryGray
+  font-weight 500
+  line-height 25px 
+  /* Small only */
+  @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+      font-size size-text-mobile 
+
+
+.title-large 
+  font-size size-title-large-desktop 
+  font-weight weight-strong 
+  line-height 71.5508px
+  color primaryColor 
+  margin-bottom 63px  
+    /* Small only */
+  @media screen and (min-width: mobile-min) and (max-width: tablet-max)   
+    font-size size-title-large-mobile 
+    line-height 30.5508px 
+    margin-bottom 18px
+  span 
+    font-size size-title-large-min-desktop  
+    font-weight weight-normal   
+    color secondaryColor 
+    @media screen and (min-width: mobile-min) and (max-width: tablet-max)    
+      font-size size-title-large-min-mobile
+  .bg-title 
+    background-color primaryColor 
+    color branco 
+    font-size size-title-large-desktop 
+    font-weight weight-strong  
+    border-left 15px solid tertiaryColor 
+    padding-left 10px  
+    padding-right 10px
+    display inline-block
+    width fit-content
+    margin-top 21px
+    height 70px
+    padding-top 18px 
+    @media screen and (min-width: mobile-min) and (max-width: tablet-max)    
+      font-size  size-title-large-mobile 
+      height auto
+      padding-top 5px
+      padding-bottom 5px 
+      margin-top 12px 
+      border-left 6px solid #cbdb2a
+
+  .bg-title-green 
+    background-color tertiaryColor 
+    border-color secondaryColor 
+    color primaryColor  
+.title-large.min
+  font-size size-title-large-desktop-2   
+  line-height 39px 
+  margin-bottom 35px  
+  line-height 18px
+  .bg-title 
+    font-size size-title-large-desktop-2   
+    @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+      font-size size-title-large-mobile-2 
+      height auto
+      padding-top 5px
+      padding-bottom 5px  
+      line-height 25px
+  .min
+    font-size size-title-large-min-2-desktop  
+
+
+  // /* Small only */
+  // @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+  //   font-size size-title-large-mobile 
+  
+.title-large-full 
+  font-size size-title-large-full-desktop  
+  line-height 145px  
+  
+  @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+    font-size size-title-large-full-mobile  
+    line-height 48px
+    
+  span
+    font-size size-title-large-min-full-desktop  
+    @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+      font-size size-title-large-min-full-mobile
+.title-large-min 
+  font-size size-title-large-min-full-desktop   
+  color secondaryColor    
+  
+  @media screen and (min-width: mobile-min) and (max-width: tablet-max)   
+    font-size size-title-large-min-full-mobile-2
+
+
+.title-text
+    color primaryColor 
+    font-size 28px 
+    font-weight weight-strong  
+    max-width 571px
+    display block 
+    line-height 42px   
+    @media screen and (min-width: mobile-min) and (max-width: tablet-max)   
+      font-size 20px 
+      line-height 24px
+
+
+.title-text-2 
+  font-size size-text-large-2 
+  color primaryColor
+  font-weight weight-strong 
+  @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+    font-size size-text-large-2-mobile
+
+.title-text-2.bg-title 
+  background-color branco 
+  padding-left 12px 
+  padding-right 12px 
+  margin-bottom 32px 
+  display block 
+  width fit-content
+  padding-right 9px 
+  margin-bottom 15px !important
+  @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+    margin 0 auto
+  
+    
+.title-text.bg-title
+  background-color tertiaryColor
+  padding-left 9px 
+  line-height 31.0001px   
+  width fit-content
+  padding-right 9px 
+  @media screen and (min-width: mobile-min) and (max-width: tablet-max)   
+    margin 0 auto
+    margin-bottom 23px
+    line-height 24.0001px
+
+
+.title-large-green-int 
+  color tertiaryColor 
+  font-weight weight-strong 
+  font-size site-title-large-int-green 
+  line-height 118.333px 
+  margin-bottom 25px 
+  @media screen and (min-width: mobile-min) and (max-width: tablet-max)   
+    font-size site-title-large-int-green-mobile 
+    line-height 62.333px
+  span 
+    color branco 
+    font-size site-title-large-min-int-green  
+    @media screen and (min-width: mobile-min) and (max-width: tablet-max)    
+      font-size site-title-large-min-int-green-mobile
+.title-chamada-int 
+  color branco 
+  font-size 27.6666px   
+  display block 
+  margin-bottom 55px
+
+.text-large 
+  font-size size-text-large 
+
+
+.title-min-cards 
+  font-size size-title-min-items 
+  color secondaryColor
+  
+
+
+

@@ -1,0 +1,262 @@
+@import './global-variables'
+@import './typography'
+
+
+body 
+  overflow-x hidden !important
+  max-width max-layout
+  margin 0 auto
+
+
+
+.grecaptcha-badge
+    z-index 9999 !important
+/* width */
+::-webkit-scrollbar {
+  width: 9px;  
+  border-radius 10px
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: primaryColor; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background tertiaryColor
+  border-radius 10px
+  
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+// .no-scroll 
+//   overflow hidden
+html 
+  scroll-behavior: smooth; 
+
+:target 
+  scroll-margin-top 8em
+
+
+
+    
+
+.container 
+    max-width grid-container-desktop
+
+a 
+    text-decoration none !important 
+    &:hover 
+        color secondaryColor
+        transition 1s  
+        i  
+            color secondaryColor
+            transition 1s     
+.button-green-bg-not 
+  color tertiaryColor 
+  font-weight weight-strong  
+  i
+    color tertiaryColor     
+
+.button-light-green 
+  background-color lightGreen 
+  min-height 54px
+  max-width 340px
+  width 100% 
+  text-transform uppercase
+  font-weight weight-strong 
+  border 0
+  transition all .35s ease-in-out 
+  // display block 
+  color branco 
+  display flex 
+  align-items center 
+  justify-content center
+
+.button-princ 
+  font-size 14px 
+  font-weight weight-strong 
+  display block
+  max-width 165px
+  line-height 34px!important
+  border 2px solid primaryColor
+  position relative
+  padding 0
+  min-height 40px
+  margin-left auto
+  margin-right auto
+  background-color branco
+  text-align center
+  margin 0
+  padding-left 20px 
+  padding-right 20px 
+  &:before 
+    content ""
+    width 100%
+    height 3px
+    background-color secondaryColor
+    left 0
+    bottom 0
+    position absolute
+    transition all .2s ease-in-out 
+  &:hover
+    &:before 
+      height 100% 
+      color branco !important  
+    span  
+      color branco
+  span 
+    position relative
+    z-index 2
+    transition all .2s ease-in-out .2s
+    font-size 14px 
+    font-weight weight-strong 
+    color primaryColor  
+.button-veja-mais 
+  background-color tertiaryColor
+  color primaryColor
+  border 1px solid #cbdb2a
+  width 165px
+  min-height 40px
+  transition all .35s ease-in-out
+  // display block
+  font-weight weight-strong  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover 
+    transform scaleX(1.1) 
+    background-color primaryColor
+    color tertiaryColor
+    border-color tertiaryColor
+
+.link-saiba-mais 
+  color secondaryColor !important
+  font-weight weight-strong  
+  font-size 17px
+  img 
+    margin-left 10px 
+.primary-color 
+  color primaryColor !important 
+
+input, textarea, select 
+  border-radius 0px !important  
+  margin-bottom 10px
+input, select 
+  height 43px !important  
+  // margin-right 10px
+select 
+  padding-left 8px 
+textarea 
+  width 100% 
+  height 91px 
+  padding-left 8px  
+.opaque 
+  opacity .5
+  cursor not-allowed
+  pointer-events none 
+main 
+  margin-top -122px 
+
+#breadcrumb 
+  .box
+    border-width: 2px;
+    border-color: rgb(43, 33, 74);
+    border-style: solid;
+    background-color: rgb(27, 20, 55);
+    height: 34px;
+    width auto  
+    a 
+      color lightgray 
+    .breadcrumb_last
+      color branco   
+    @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+      margin 0 auto 
+      padding-top 5px
+.und 
+  text-decoration underline
+
+.col-left-space 
+  @media screen and (min-width: desktop-min)
+    padding-right 112px
+    p 
+      margin-bottom 30px  
+.col-right-space 
+  @media screen and (min-width: desktop-min)
+    padding-left 69px
+    p 
+      margin-bottom 30px    
+.col-space-block-55-right 
+  @media screen and (min-width: desktop-min)
+    padding-right 55px
+
+strong 
+  color primaryColor 
+.space-text 
+  letter-spacing -2px 
+
+.box-button-100 
+  .button-light-green 
+    max-width 100% 
+    margin-top 30px 
+.box-drag
+  margin-top 78px
+  margin-bottom 78px
+  @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+    margin-top 53px
+  .text 
+    color secondaryColor
+    display block 
+
+.strong 
+  font-weight weight-strong !important 
+
+.margin-0-auto 
+  margin 0  auto
+/* Small only */
+@media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+    * 
+        line-height 19px  
+    .grecaptcha-badge 
+        bottom 76px !important
+    body 
+        text-align center 
+    .container 
+        max-width grid-container-mobile  !important     
+    
+    
+
+/* Large and up */
+@media screen and (min-width: desktop-min) {}
+    
+/* Medium and up */
+@media screen and (min-width: tablet-min) {}
+
+//components
+@import './includes/header'
+@import './includes/footer'
+@import './components/contacts-box'
+@import './components/card-blog'
+
+
+// global sections
+@import './globals-sections/contact-footer'
+@import './globals-sections/agencia-certificada'
+@import './globals-sections/intro-internas'
+@import './globals-sections/como-funciona'
+@import './globals-sections/otimizacao-performance'
+
+
+
+
+
+
+     
+
+
+

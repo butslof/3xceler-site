@@ -1,0 +1,1290 @@
+<!doctype html>
+
+<html lang="pt">
+
+
+
+  <head><meta charset="utf-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+
+    <!-- Required meta tags -->
+
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     
+    
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-37425064-1"></script>
+    <script type="rocketlazyloadscript">
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-37425064-1');
+    </script>
+
+    
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v19.5 (Yoast SEO v19.11) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Agência de Marketing Digital - Marketing Digital | Agência 3xceler</title><style id="rocket-critical-css">:root{--bs-blue:#0d6efd;--bs-indigo:#6610f2;--bs-purple:#6f42c1;--bs-pink:#d63384;--bs-red:#dc3545;--bs-orange:#fd7e14;--bs-yellow:#ffc107;--bs-green:#198754;--bs-teal:#20c997;--bs-cyan:#0dcaf0;--bs-white:#fff;--bs-gray:#6c757d;--bs-gray-dark:#343a40;--bs-gray-100:#f8f9fa;--bs-gray-200:#e9ecef;--bs-gray-300:#dee2e6;--bs-gray-400:#ced4da;--bs-gray-500:#adb5bd;--bs-gray-600:#6c757d;--bs-gray-700:#495057;--bs-gray-800:#343a40;--bs-gray-900:#212529;--bs-primary:#0d6efd;--bs-secondary:#6c757d;--bs-success:#198754;--bs-info:#0dcaf0;--bs-warning:#ffc107;--bs-danger:#dc3545;--bs-light:#f8f9fa;--bs-dark:#212529;--bs-primary-rgb:13,110,253;--bs-secondary-rgb:108,117,125;--bs-success-rgb:25,135,84;--bs-info-rgb:13,202,240;--bs-warning-rgb:255,193,7;--bs-danger-rgb:220,53,69;--bs-light-rgb:248,249,250;--bs-dark-rgb:33,37,41;--bs-white-rgb:255,255,255;--bs-black-rgb:0,0,0;--bs-body-color-rgb:33,37,41;--bs-body-bg-rgb:255,255,255;--bs-font-sans-serif:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--bs-font-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;--bs-gradient:linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));--bs-body-font-family:var(--bs-font-sans-serif);--bs-body-font-size:1rem;--bs-body-font-weight:400;--bs-body-line-height:1.5;--bs-body-color:#212529;--bs-body-bg:#fff}*,::after,::before{box-sizing:border-box}@media (prefers-reduced-motion:no-preference){:root{scroll-behavior:smooth}}body{margin:0;font-family:var(--bs-body-font-family);font-size:var(--bs-body-font-size);font-weight:var(--bs-body-font-weight);line-height:var(--bs-body-line-height);color:var(--bs-body-color);text-align:var(--bs-body-text-align);background-color:var(--bs-body-bg);-webkit-text-size-adjust:100%}h1{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:calc(1.375rem + 1.5vw)}@media (min-width:1200px){h1{font-size:2.5rem}}p{margin-top:0;margin-bottom:1rem}ul{padding-left:2rem}ul{margin-top:0;margin-bottom:1rem}ul ul{margin-bottom:0}strong{font-weight:bolder}small{font-size:.875em}a{color:#0d6efd;text-decoration:underline}img,svg{vertical-align:middle}label{display:inline-block}button{border-radius:0}button,input,textarea{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button{text-transform:none}[type=submit],button{-webkit-appearance:button}::-moz-focus-inner{padding:0;border-style:none}textarea{resize:vertical}::-webkit-datetime-edit-day-field,::-webkit-datetime-edit-fields-wrapper,::-webkit-datetime-edit-hour-field,::-webkit-datetime-edit-minute,::-webkit-datetime-edit-month-field,::-webkit-datetime-edit-text,::-webkit-datetime-edit-year-field{padding:0}::-webkit-inner-spin-button{height:auto}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-color-swatch-wrapper{padding:0}::-webkit-file-upload-button{font:inherit}::file-selector-button{font:inherit}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}.container{width:100%;padding-right:var(--bs-gutter-x,.75rem);padding-left:var(--bs-gutter-x,.75rem);margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.row{--bs-gutter-x:1.5rem;--bs-gutter-y:0;display:flex;flex-wrap:wrap;margin-top:calc(-1 * var(--bs-gutter-y));margin-right:calc(-.5 * var(--bs-gutter-x));margin-left:calc(-.5 * var(--bs-gutter-x))}.row>*{flex-shrink:0;width:100%;max-width:100%;padding-right:calc(var(--bs-gutter-x) * .5);padding-left:calc(var(--bs-gutter-x) * .5);margin-top:var(--bs-gutter-y)}.col-6{flex:0 0 auto;width:50%}.col-12{flex:0 0 auto;width:100%}@media (min-width:992px){.col-lg-3{flex:0 0 auto;width:25%}.col-lg-6{flex:0 0 auto;width:50%}.col-lg-9{flex:0 0 auto;width:75%}}.collapse:not(.show){display:none}.nav-link{display:block;padding:.5rem 1rem;color:#0d6efd;text-decoration:none}.navbar{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding-top:.5rem;padding-bottom:.5rem}.navbar-nav{display:flex;flex-direction:column;padding-left:0;margin-bottom:0;list-style:none}.navbar-nav .nav-link{padding-right:0;padding-left:0}.navbar-collapse{flex-basis:100%;flex-grow:1;align-items:center}@media (min-width:992px){.navbar-expand-lg{flex-wrap:nowrap;justify-content:flex-start}.navbar-expand-lg .navbar-nav{flex-direction:row}.navbar-expand-lg .navbar-nav .nav-link{padding-right:.5rem;padding-left:.5rem}.navbar-expand-lg .navbar-collapse{display:flex!important;flex-basis:auto}}.sticky-top{position:-webkit-sticky;position:sticky;top:0;z-index:1020}.d-block{display:block!important}.d-none{display:none!important}.w-100{width:100%!important}@media (min-width:992px){.d-lg-block{display:block!important}.d-lg-none{display:none!important}}@font-face{font-family:Cera Pro;src:url(https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/fonts/Cera-Pro-Regular.otf);font-weight:400;font-display:swap}@font-face{font-family:Cera Pro;src:url(https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/fonts/Cera-Pro-Bold.otf);font-weight:700;font-display:swap}*{font-size:15.8334px;font-family:Cera Pro;padding:0;margin:0;color:#6d6e71;font-weight:500;line-height:25px}@media screen and (min-width:320px) and (max-width:63.9375em){*{font-size:16px}}.title-large{font-size:76.123px;font-weight:700;line-height:71.5508px;color:#1b1437}@media screen and (min-width:320px) and (max-width:63.9375em){.title-large{font-size:26px;line-height:30.5508px;margin-bottom:18px}}.title-large span{font-size:38.4492px;font-weight:400;color:#b06eab}@media screen and (min-width:320px) and (max-width:63.9375em){.title-large span{font-size:20px}}.title-large .bg-title{background-color:#1b1437;color:#fff;font-size:76.123px;font-weight:700;border-left:15px solid #cbdb2a;padding-left:10px;padding-right:10px;display:inline-block;width:fit-content;margin-top:21px;height:70px;padding-top:18px}@media screen and (min-width:320px) and (max-width:63.9375em){.title-large .bg-title{font-size:26px;height:auto;padding-top:5px;padding-bottom:5px;margin-top:12px;border-left:6px solid #cbdb2a}}.title-large .bg-title-green{background-color:#cbdb2a;border-color:#b06eab;color:#1b1437}body{overflow-x:hidden!important;max-width:1920px;margin:0 auto}::-webkit-scrollbar{width:9px;border-radius:10px}::-webkit-scrollbar-track{background:#1b1437}::-webkit-scrollbar-thumb{background:#cbdb2a;border-radius:10px}::-webkit-scrollbar-thumb:hover{background:#555}html{scroll-behavior:smooth}.container{max-width:1270px}a{text-decoration:none!important}.primary-color{color:#1b1437!important}input,textarea{border-radius:0!important;margin-bottom:10px}input{height:43px!important}textarea{width:100%;height:91px;padding-left:8px}.opaque{opacity:.5}main{margin-top:-122px}strong{color:#1b1437}@media screen and (min-width:320px) and (max-width:63.9375em){*{line-height:19px}body{text-align:center}.container{max-width:320px!important}}header{height:89px}@media screen and (min-width:64em){header{margin-top:33px;background-color:transparent}header .navbar-nav{visibility:hidden}header .button-hamb,header .buttons-tel{visibility:visible!important}}@media screen and (min-width:320px) and (max-width:63.9375em){header{background-color:#1b1437}}header .nav-link{color:#cbdb2a;text-transform:uppercase;font-weight:700;margin-left:25px}header .buttons-tel{margin-left:25px;display:block!important}header .buttons-tel a{color:#fff;font-weight:700}header .button-hamb{padding-left:30px;z-index:99999999999999}header .hamb{font-weight:700;color:#cbdb2a;background:transparent;border:0;text-transform:uppercase;z-index:10000000000000000000}header .hamb span{display:block;width:38px;background-color:#cbdb2a;height:4px;margin-left:auto;margin-top:7px}header .hamb span:last-of-type{width:21px}header .burger-overlay{display:none}header .navbar-nav{display:flex;align-items:center}header #menu-secundary{display:none}header #menu-secundary .btn-voltar{background-color:transparent;border:none}header #menu-secundary .btn-voltar img{margin-top:44px}header .second-level-menu-body{list-style:none;width:100%;max-width:1170px;margin-left:auto;margin-right:auto;left:0;right:0;position:absolute;top:50%;transform:translateY(-50%);display:flex;flex-flow:column wrap;justify-content:space-between;align-content:space-between;height:83vh}header .second-level-menu-body li{margin-bottom:30px}header .second-level-menu-body li a{font-size:25.6666px;font-weight:700;color:#fff}header .second-level-menu-body .has-children{font-size:25.6666px;font-weight:700;color:#fff}@media screen and (min-width:64em){header .second-level-menu-body .second-level-menu-body-sub li::before{content:"•";margin-right:7px;color:#cbdb2a;list-style-type:none}}header .second-level-menu-body .second-level-menu-body-sub{list-style:none;padding-left:0;margin-top:10px}header .second-level-menu-body .second-level-menu-body-sub li{margin-bottom:10px}header .second-level-menu-body .second-level-menu-body-sub a{font-weight:400;font-size:19.8334px}@media screen and (min-width:320px) and (max-width:63.9375em){header{padding-top:17px;padding-bottom:0;height:85px}header .logo-header{z-index:0;position:absolute;left:13px;margin-top:-6px}header .hamb{position:absolute;right:13px;margin-top:5px}header #menu-princ,header #menu-secundary{margin-left:0;background:#1b1437;height:100vh;width:79%;padding:0;padding-top:19px}header #menu-secundary .btn-voltar{width:100%;background:#cbdb2a;height:60px;text-align:left;padding-left:13px;margin-bottom:25px}header #menu-secundary .btn-voltar i{color:#1b1437;font-size:23px}header #menu-secundary .btn-voltar .name-buttom{font-size:26px;color:#1b1437;font-weight:bold}header #menu-princ .row,header #menu-secundary .row{display:block;text-align:left}header #menu-princ .row div,header #menu-secundary .row div{width:100%;display:block}header #menu-princ .row a,header #menu-secundary .row a{border-bottom:2px solid #cbdb2a;display:block;margin-bottom:17px;font-size:16px}header #menu-princ .row a div{width:100%;display:block}header #menu-princ .row a div br{display:none}header #menu-princ .row a span{font-weight:700;color:#fff;padding-bottom:16px;display:block;margin-left:13px}header #menu-princ .fa.fa-chevron-right,header #menu-secundary .fa.fa-chevron-right{float:right;margin-right:13px;margin-top:2px;color:#cbdb2a}header #menu-secundary .has-children{border-bottom:2px solid #cbdb2a;display:block;font-size:16px}header #menu-secundary .has-children .second-level-menu-body-sub{display:none}header #menu-secundary .second-level-menu-body{display:block;position:inherit;padding:0;margin-top:215px;height:auto}header #menu-secundary .second-level-menu-body .fa.fa-chevron-right{margin-top:18px}header #menu-secundary .second-level-menu-body li{margin:0;padding:0;line-height:47px}header #menu-secundary .second-level-menu-body li a{margin:0;padding:0;line-height:47px;padding-left:13px}header #menu-secundary .second-level-menu-body .has-children{padding-left:13px}header #menu-secundary .second-level-menu-body-sub{margin-left:-13px;height:100vh}header #menu-secundary{padding-top:0}}@media screen and (min-width:64em){header .navbar{height:100%}header .navbar #navbarNav{justify-content:end;align-items:center}}#footer.site .line-sobre-mob{margin-top:30px}#footer.site .line-sobre-mob p{color:#1b1437}#footer.site .line-sobre-mob img{margin-bottom:20px}#contact-footer .col-intro .title-large span{color:#fff}@media screen and (min-width:320px) and (max-width:63.9375em){#contact-footer .col-intro .title-large span{font-size:25px}}#contact-footer .col-intro .title-large .bg-title{font-size:63.75px;width:99%}@media screen and (min-width:320px) and (max-width:63.9375em){#contact-footer .col-intro .title-large .bg-title{font-size:26.75px;width:auto;padding-top:2px}}@media screen and (max-width:39.9375em){#whats-cta{display:none}}#btn-whatsapp i{color:white}#cta-trigger{display:flex;flex-direction:column;justify-content:space-between;align-items:center;z-index:999;opacity:0;visibility:hidden;position:fixed;bottom:16%;right:2.5%}#trigger-body{width:142px;height:140px;padding:16px;background:#fff;box-sizing:border-box;font-size:16px;text-align:center;border-radius:7px;box-shadow:2px 3px 0 0 rgba(0,0,0,.2),4px 7px 0 0 rgba(0,0,0,.15)}#trigger-body strong{font-size:1.25em;font-weight:600;color:#1c1835;line-height:1.35;margin-bottom:5px;display:block}#trigger-body p{font-size:14px;font-weight:400;color:#808285;line-height:1;margin-bottom:10px;display:block}button[open-modal-cta]{width:78px;height:33px;background:#25d366;border:none;text-transform:uppercase;font-size:1em;font-weight:600;color:#fff;line-height:30px;outline:0;border-radius:4px}button[open-trigger-body]{width:48px;height:48px;display:flex;justify-content:center;align-items:center;background:#cbdb2a;border-radius:50%;border:none;position:relative;margin-top:40px;margin-left:60px;outline:0}button[open-trigger-body]:before{content:"";width:calc(100% + 16px);height:calc(100% + 16px);position:absolute;top:-8px;left:-8px;background:rgba(42,214,106,.2);border-radius:50%;z-index:-1}button[close-trigger-body]{width:20px;height:20px;background:#fff;border-radius:50%;display:flex;justify-content:center;align-items:center;position:absolute;top:-8px;right:-10px;border:none;box-shadow:2px 3px 0 0 rgba(0,0,0,.2),4px 7px 0 0 rgba(0,0,0,.15)}#modal-cta{width:100%;height:100%;position:fixed;top:0;right:0;bottom:0;left:0;opacity:0;visibility:hidden;z-index:-1}#modal-overlay{width:100%;height:100%;background:#000000cf}#modal-container{width:520px;max-width:90%;height:540px;position:absolute;border-radius:10px;top:60px;right:0;bottom:0;left:0;margin:auto;background:#fff;box-shadow:16px 20px 20px 0 rgba(0,0,0,.3);padding:35px 0}.wrap-modal-btns{display:flex;align-items:center;justify-content:center}.wrap-modal-btns button:nth-child(2){border-left:1px solid rgba(0,0,0,.2);border-right:1px solid rgba(0,0,0,.2)}button[modal-tab]{width:33.333%;background:transparent;font-size:13px;font-weight:400;color:#000;text-transform:uppercase;border:none;display:flex;flex-direction:column;align-items:center;padding:0 8px}button[modal-tab] img{margin-bottom:5px}.modal-content-btns{width:100%;height:calc(100% - 15px);font-size:16px;padding:20px 90px;position:absolute;left:0;right:0;bottom:-81px;opacity:0;visibility:hidden}.modal-content-btns>p{font-size:1.2rem;font-weight:400;color:#58595b;line-height:1.4;margin-bottom:15px;display:block;text-align:center}.modal-content-btns label{display:block;margin-bottom:0px;position:relative}div.modal-content-btns label.fa-phone input[type="text"],div.modal-content-btns label.fa-user-circle input[type="text"],div.modal-content-btns label.fa-envelope input[type="email"]{padding-left:37px}.modal-content-btns label.half{width:48%;display:inline-block}.modal-content-btns label.half:nth-child(2n){float:right}.modal-content-btns label.fa-phone:before,.modal-content-btns label.fa-user-circle:before,.modal-content-btns label.fa-envelope:before{width:15px;height:15px;margin-right:10px;font-size:1rem;color:#b06eab;position:absolute;top:0;bottom:5px;margin:auto;left:10px;font-weight:600}div.modal-content-btns input[type="text"],div.modal-content-btns input[type="date"],div.modal-content-btns input[type="time"],div.modal-content-btns input[type="email"],div.modal-content-btns textarea{font-family:'Open Sans',sans-serif;width:100%;border:1px solid #b06eab;font-size:.875em;font-weight:400;border-radius:5px!important}div.modal-content-btns input[type="text"],div.modal-content-btns input[type="date"],div.modal-content-btns input[type="time"],div.modal-content-btns input[type="email"]{height:40px;padding-left:15px}.modal-content-btns textarea{height:52px;border-radius:5px;padding:15px}.modal-content-btns .btn-submit{width:100%;height:42px;border:0;background-color:#1b1437;border:1px solid #1b1437;display:block;font-size:1.25em;font-weight:600;text-transform:uppercase;line-height:42px;text-align:center;margin-bottom:13px;color:#fff;border-radius:10px}.modal-content-btns small{font-size:.875em;font-weight:400;color:#58595b;text-align:center;display:block}.modal-content-btns small span{width:23px;height:23px;border-radius:50%;background:#cbdb2a;color:#fff;display:inline-block;text-align:center}@media screen and (max-width:991px){#cta-trigger{display:none}#modal-container{padding:15px 0}.modal-content-btns{height:calc(100% - -21px);padding:30px 20px}button[modal-tab]{line-height:15px;font-size:12px}.modal-content-btns>p{font-size:1.2rem}}@media screen and (min-width:991px){#whats-cta{width:47px;height:47px;background:#01c854;border-radius:50%;z-index:999;opacity:0;visibility:hidden;font-size:1.875rem;color:#fff;display:flex;justify-content:center;align-items:center;position:fixed;right:5%;bottom:56%}#whats-cta:before{content:"";width:calc(100% + 14px);height:calc(100% + 14px);position:absolute;top:-7px;left:-7px;z-index:-1;background:rgba(1,200,84,.3);border-radius:50%;animation-name:whats-pulse;animation-duration:2s;animation-iteration-count:infinite}}@media screen and (min-width:991px){#mobile-cta{display:none}}@media screen and (max-width:990px){#cta-trigger{bottom:15%}#mobile-cta{width:100%;background:#5c5c5c;position:fixed;bottom:0;left:0;z-index:999}#mobile-cta:before{content:"";width:100%;height:5px;position:absolute;bottom:100%;left:0;background:#1d305b3d}#mobile-cta .wrap{display:grid;grid-template-columns:1fr 2fr 1fr;align-items:center;justify-content:center;text-align:center;background:#1b1437}#mobile-cta div a,#mobile-cta div button{font-size:16px}#mobile-cta #btn-whatsapp i{margin-top:13px}#mobile-cta .column-whats{background-image:-webkit-linear-gradient(90deg,rgb(85 207 97) 0%,rgb(46 184 67) 100%);height:100%}#mobile-cta #btn-whatsapp i:before{font-size:37px}.column-ligar{border-right:#fff 1px solid}#btn-whatsapp{width:42px;position:relative;font-size:1.75rem;color:#fff;line-height:42px}#btn-whatsapp:before{content:"";width:300px;height:42px;position:absolute;top:0;right:100%}#btn-ligar,#btn-open-modal{font-size:.75rem;font-weight:700;color:#fff;text-align:center;line-height:42px;text-transform:uppercase}#btn-ligar:after{content:"";width:1px;height:35px;position:absolute;top:0;bottom:0;right:0;margin:auto}#btn-open-modal{width:192px;height:45px;border:none;background:0 0}}@-moz-keyframes whats-pulse{0%{transform:scale(1)}50%{transform:scale(.9)}100%{transform:scale(1)}}@-webkit-keyframes whats-pulse{0%{transform:scale(1)}50%{transform:scale(.9)}100%{transform:scale(1)}}@-o-keyframes whats-pulse{0%{transform:scale(1)}50%{transform:scale(.9)}100%{transform:scale(1)}}@keyframes whats-pulse{0%{transform:scale(1)}50%{transform:scale(.9)}100%{transform:scale(1)}}#home #bg-top-home{height:940px;background-position:center top;background-repeat:no-repeat;background-size:cover;margin-top:-122px;padding-top:249px}@media screen and (min-width:64em){#home #bg-top-home{background:url(https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/banner/bg-topo-home.jpg)}}@media screen and (min-width:320px) and (max-width:63.9375em){#home #bg-top-home{margin-top:122px;background:url(https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/banner/bg-topo-home-mobile.jpg);background-repeat:no-repeat;height:284px;padding-top:16px;background-size:cover}}#home #bg-top-home .title-large{margin-bottom:21px;color:#fff}@media screen and (min-width:320px) and (max-width:63.9375em){#home #bg-top-home .title-large{font-size:48px;line-height:41px}}#home #bg-top-home .title-large span{color:#fff;font-size:70px}@media screen and (min-width:320px) and (max-width:63.9375em){#home #bg-top-home .title-large span{font-size:30px}}#home #bg-top-home p{max-width:456px;font-size:16px;color:#fff}#home #bg-top-home .col-img img{margin-left:-31px}#home #sobre .shiny-purple{position:absolute;right:0;margin-top:-235px}#home #social-media .prop-social-media-mob{width:100%;margin-top:30px}</style>
+	<meta name="description" content="Agencia de Marketing Digital - Impulsionada pela inovação e pelo comportamento humano, nossa agência está mudando a forma como as marcas se conectam com o público." />
+	<link rel="canonical" href="https://3xcelerserv.com.br/3xceler-site/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Agência de Marketing Digital" />
+	<meta property="og:description" content="Agencia de Marketing Digital - Impulsionada pela inovação e pelo comportamento humano, nossa agência está mudando a forma como as marcas se conectam com o público." />
+	<meta property="og:url" content="https://3xcelerserv.com.br/3xceler-site/" />
+	<meta property="og:site_name" content="Agência 3xceler" />
+	<meta property="article:modified_time" content="2022-11-21T15:23:11+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://3xcelerserv.com.br/3xceler-site/","url":"https://3xcelerserv.com.br/3xceler-site/","name":"Agência de Marketing Digital - Marketing Digital | Agência 3xceler","isPartOf":{"@id":"https://3xcelerserv.com.br/3xceler-site/#website"},"about":{"@id":"https://3xcelerserv.com.br/3xceler-site/#organization"},"datePublished":"2020-07-13T19:09:40+00:00","dateModified":"2022-11-21T15:23:11+00:00","description":"Agencia de Marketing Digital - Impulsionada pela inovação e pelo comportamento humano, nossa agência está mudando a forma como as marcas se conectam com o público.","breadcrumb":{"@id":"https://3xcelerserv.com.br/3xceler-site/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://3xcelerserv.com.br/3xceler-site/"]}]},{"@type":"BreadcrumbList","@id":"https://3xcelerserv.com.br/3xceler-site/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Início"}]},{"@type":"WebSite","@id":"https://3xcelerserv.com.br/3xceler-site/#website","url":"https://3xcelerserv.com.br/3xceler-site/","name":"Agência 3xceler","description":"Só mais um site WordPress","publisher":{"@id":"https://3xcelerserv.com.br/3xceler-site/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://3xcelerserv.com.br/3xceler-site/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://3xcelerserv.com.br/3xceler-site/#organization","name":"3xceler","url":"https://3xcelerserv.com.br/3xceler-site/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://3xcelerserv.com.br/3xceler-site/#/schema/logo/image/","url":"http://localhost/3xceler-site-novo/wp-content/uploads/2020/08/logo-green.png","contentUrl":"http://localhost/3xceler-site-novo/wp-content/uploads/2020/08/logo-green.png","width":191,"height":59,"caption":"3xceler"},"image":{"@id":"https://3xcelerserv.com.br/3xceler-site/#/schema/logo/image/"}}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//polyfill.io' />
+<link rel='dns-prefetch' href='//cdn.rawgit.com' />
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/3xcelerserv.com.br\/3xceler-site\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='preload'  href='https://3xcelerserv.com.br/3xceler-site/wp-includes/css/classic-themes.min.css?ver=1' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='preload'  href='https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/build/css/bootstrap.min.css?ver=6.1.1' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'  href='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/3xceler-site/wp-content/themes/3xceler/dist/css/main.css?ver=1670515333' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'  href='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/3xceler-site/wp-content/themes/3xceler/dist/css/font-awesome.min.css?ver=1670515333' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'  href='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/npm/@splidejs/splide@4.0.1/dist/css/splide.min.css?ver=1670515333' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link rel='preload'  href='https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/css/tracking.min.css?ver=1.0' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'  href='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/3xceler-site/wp-content/themes/3xceler/dist/css/pages/home.css?ver=1670515333' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link rel="https://api.w.org/" href="https://3xcelerserv.com.br/3xceler-site/wp-json/" /><link rel="alternate" type="application/json" href="https://3xcelerserv.com.br/3xceler-site/wp-json/wp/v2/pages/3678" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://3xcelerserv.com.br/3xceler-site/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://3xcelerserv.com.br/3xceler-site/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1.1" />
+<link rel='shortlink' href='https://3xcelerserv.com.br/3xceler-site/' />
+<link rel="alternate" type="application/json+oembed" href="https://3xcelerserv.com.br/3xceler-site/wp-json/oembed/1.0/embed?url=https%3A%2F%2F3xcelerserv.com.br%2F3xceler-site%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://3xcelerserv.com.br/3xceler-site/wp-json/oembed/1.0/embed?url=https%3A%2F%2F3xcelerserv.com.br%2F3xceler-site%2F&#038;format=xml" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script>
+    <script type="rocketlazyloadscript">
+
+    if ( window.history.replaceState ) {
+
+        window.history.replaceState( null, null, window.location.href );
+
+    }
+
+    </script>
+    
+    <!-- Google Tag Manager -->
+    <script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WN2LCGM');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Facebook Pixel Code -->
+    <script type="rocketlazyloadscript">
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '243281417202559');
+      fbq('track', 'PageView');
+    </script>
+    
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=243281417202559&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+  </head>
+    <body class="page-home" >
+      
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WN2LCGM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- HEADER -->
+
+    <header class="sticky-top" id="menu-top" >
+
+      <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-3 col-12">
+
+              <a href="https://3xcelerserv.com.br/3xceler-site/" title="Agencia 3xceler"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Agencia 3xceler" title="Agencia 3xceler" class="logo-header logo-princ d-lg-block d-none" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo.png" alt="Agencia 3xceler" title="Agencia 3xceler" class="logo-header logo-princ d-lg-block d-none"></noscript></a>
+              <a href="https://3xcelerserv.com.br/3xceler-site/" title="Agencia 3xceler"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Agencia 3xceler" title="Agencia 3xceler" class="logo-princ logo-mob-princ logo-header d-lg-none" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo-3xceler-header-mobile.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo-3xceler-header-mobile.png" alt="Agencia 3xceler" title="Agencia 3xceler" class="logo-princ logo-mob-princ logo-header d-lg-none"></noscript></a>
+              <a href="https://3xcelerserv.com.br/3xceler-site/" title="Agencia 3xceler"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Agencia 3xceler" title="Agencia 3xceler" class="logo-header logo-blog d-none" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo-minimal.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo-minimal.png" alt="Agencia 3xceler" title="Agencia 3xceler" class="logo-header logo-blog d-none"></noscript></a>
+
+              <button class="hamb d-lg-none"><span></span><span></span><span></span></button>
+
+            </div>
+
+            <div class="col-lg-9 col-12" id="nav-menu-container">
+
+              <nav class="navbar navbar-expand-lg">
+
+                <div class="collapse navbar-collapse offcanvas-collapse" id="navbarNav">
+                                    <ul class="navbar-nav">
+                    <!--                     -->
+                    <li class="nav-item">
+                      <a class="nav-link" title="Home" href="https://3xcelerserv.com.br/3xceler-site/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" title="Sobre Nós" href="https://3xcelerserv.com.br/3xceler-site/#sobre">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item button-open-service">
+                      <a class="nav-link" title="Serviços" href="#">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" title="Blog" href="https://3xcelerserv.com.br/3xceler-site/blog/">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" title="Contato" href="https://3xcelerserv.com.br/3xceler-site/#contact-footer">Contato</a>
+                    </li>
+                    <li class="nav-item buttons-tel">
+                      <a href="tel:011272985811" title="telefone">11 2729.8581 /</a>
+                      <a href="tel:01127298583" title="telefone"> 11 2729.8583</a>
+                    </li>
+                    <li class="nav-item redes-sociais-menu-blog d-none">
+                      <a href="https://www.facebook.com/agencia3xceler" target="_blank" title="Nosso Facebook">
+                        <i class="fa fa-facebook-square"></i>
+                      </a>
+                      <a href="https://www.instagram.com/agencia3xceler/" target="_blank" title="Nosso Instagram">
+                        <i class="fa fa-instagram"></i>
+                      </a>       
+                      <a href="https://br.linkedin.com/organization-guest/company/agencia-3xceler?challengeId=AQG_iY9S8-VyJQAAAXNtNZccJxR6Jal2Vr9ItR0NFsG5oLB_2KeYg03ymoqce7mKXMzTb7LpXOEtlwMDEq3J8_gqfmG0-p7pSA&submissionId=bac6d9e9-2685-2316-29fd-46b7cc4ff00b" target="_blank" title="Nosso Linkedin">
+                        <i class="fa fa-linkedin-square"></i>
+                      </a>                    
+                    </li>
+                    <li class="nav-item button-hamb">
+                      <button class="hamb is-open"><span></span><span></span><span></span></button>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+        </div>
+     
+        <div class="burger-overlay">
+            <div class="container" id="menu-princ">
+              <div class="row line-1" >
+                <div class="col-6 box-1 box">
+                  <a href="https://3xcelerserv.com.br/3xceler-site/#sobre" class="close-menu" title="Sobre Nós">
+                    <div class="box-vertical">
+                      <span class="title-menu">
+                        Sobre<br>
+                        Nós
+                      </span>
+                      <p class="d-lg-block d-none">
+                        Movidos pela <br> paixão                   
+                        <i class="fa fa-long-arrow-right"></i>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 box-2 box">
+                  <a href="https://3xcelerserv.com.br/3xceler-site/blog/" title="blog">
+                    <div class="box-horizontal">
+                      <span class="title-menu">
+                        Blog
+                      </span>
+                      <p class="d-lg-block d-none">
+                        Dicas, Novidades e Curiosidades               
+                        <i class="fa fa-long-arrow-right"></i>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="row line-2">
+                <div class="col-12 box-3 box">
+                  <a href="#" title="Portfólio">
+                    <div class="box-horizontal">
+                      <span class="title-menu opaque">
+                        Portfólio
+                      </span>
+                      <p class="opaque d-lg-block d-none">
+                        Orgulho do que fazemos               
+                        <i class="fa fa-long-arrow-right"></i>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="row line-3">
+                <div class="col-6 box-4 box">
+                  <a href="#" class="button-open-service" data-name-button="Serviços" title="Serviços">
+                    <div class="box-horizontal">
+                      <span class="title-menu">
+                        Serviços <i class="fa fa-chevron-right d-lg-none"></i>
+                      </span>
+                      <p class="d-lg-block d-none">
+                        Como podemos te ajudar      
+                        <i class="fa fa-long-arrow-right"></i>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 box-5 box">
+                  <a href="https://3xcelerserv.com.br/3xceler-site/#contact-footer" class="close-menu" title="Contato">
+                    <div class="box-vertical">
+                      <span class="title-menu">
+                        Contato
+                      </span>
+                      <p class="d-lg-block d-none">
+                        Venha tomar um café                   
+                        <i class="fa fa-long-arrow-right"></i>
+                      </p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="container" id="menu-secundary">
+              <div class="row">
+                <div class="col-12">
+                  <button class="btn-voltar button-close-service">
+                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="d-none d-lg-block"  alt="Voltar ao menu anterior" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/icon-arrow-left-tertiary.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/icon-arrow-left-tertiary.png" class="d-none d-lg-block"  alt="Voltar ao menu anterior"></noscript>
+                    <i class="fa fa-long-arrow-left d-lg-none"></i>
+                    <span  class="d-lg-none name-buttom">
+                      
+                    </span>
+                  </button>
+                  <ul class="second-level-menu-body">
+                    <li>
+                      <a href="https://3xcelerserv.com.br/3xceler-site/otimizacao-de-sites/" title="Otimização de Sites">Otimização de Sites</a>
+                    </li>
+                    <li>
+                      <a href="https://3xcelerserv.com.br/3xceler-site/criacao-de-sites/" title="Criação de Sites">Criação de Sites</a>
+                    </li>
+                    <li>
+                      <a href="https://3xcelerserv.com.br/3xceler-site/links-patrocinados/" title="Links Patrocinados">Links Patrocinados</a>
+                    </li>
+                    <li>
+                      <a class="opaque" href="#" title="Landing Pages">Landing Pages</a>
+                    </li>
+                    <li>
+                      <a class="opaque" href="#" title="Social Media">Social Media</a>
+                    </li>
+                    <li class="has-children opaque">Branding <ul class="second-level-menu-body-sub">
+                        <li>
+                          <a class="opaque" href="#" title="Design de Marcas">Design de Marcas</a>
+                        </li>
+                        <li>
+                          <a class="opaque" href="#" title="Identidade Visual">Identidade Visual</a>
+                        </li>
+                        <li>
+                          <a class="opaque" href="#" title="Naming">Naming</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a class="opaque" href="#" title="Marketing de Conteúdo">Marketing de Conteúdo</a>
+                    </li>
+                    <li class="has-children"  data-id-button="performance" data-name-button="Performance">Performance <i class="fa fa-chevron-right d-lg-none"></i>
+                      <ul class="second-level-menu-body-sub" id="body-sub-menu-performance">
+                        <li>
+                          <a class="opaque" href="#" title="FaceAds / InstaAds / WhatsappAds">FaceAds / InstaAds / WhatsappAds</a>
+                        </li>
+                        <li>
+                          <a class="opaque" href="#" title="LinkedinAds">LinkedinAds</a>
+                        </li>
+                        <li>
+                          <a href="https://3xcelerserv.com.br/3xceler-site/links-patrocinados/" title="Gestão de Links Patrocinados">Gestão de Links Patrocinados</a>
+                        </li>
+                        <li>
+                          <a class="opaque" href="#" title="Conversion Rate Optimization (CRO)">Conversion Rate Optimization (CRO)</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="has-children" data-id-button="consultoria" data-name-button="Consultoria">Consultoria <i class="fa fa-chevron-right d-lg-none"></i>
+                      <ul class="second-level-menu-body-sub" id="body-sub-menu-consultoria">
+                        <li>
+                          <a href="https://3xcelerserv.com.br/3xceler-site/otimizacao-de-sites/" title="Otimização de Sites">Otimização de Sites</a>
+                        </li>
+                        <li>
+                          <a href="https://3xcelerserv.com.br/3xceler-site/links-patrocinados/" title="Links Patrocinados" >Links Patrocinados</a>
+                        </li>
+                        <li>
+                          <a class="opaque" href="#" title="Digital Strategy Planning">Digital Strategy Planning</a>
+                        </li>
+                        <li>
+                          <a class="opaque" href="#" title="Conversion Rate Optimization (CRO)">Conversion Rate Optimization (CRO)</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- FIM HEADER -->
+
+    <main id="home" class="">
+
+
+
+
+
+
+
+<section id="bg-top-home">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-12">
+                <h1 class="title-large"><span>Transformação</span><br>Digital</h1>
+                <p>
+                    Impulsionada pela inovação e pelo comportamento humano, nossa agência está mudando a forma como as marcas se conectam com o público em um mundo digital. Descubra por que os líderes de mercado escolhem nossas soluções corporativas.
+                </p>
+                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Role Para baixo" alt="Role Para baixo" class="d-none d-lg-block" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/seta-bg-top.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/seta-bg-top.png" title="Role Para baixo" alt="Role Para baixo" class="d-none d-lg-block"></noscript>
+            </div>
+            <div class="col-lg-6 col-12 col-img">
+                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Agência de Marketing Digital" alt="Agência de Marketing Digital" class="d-none d-lg-block" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/X.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/X.png" title="Agência de Marketing Digital" alt="Agência de Marketing Digital" class="d-none d-lg-block"></noscript>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="sobre">
+    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="shiny-purple d-none d-lg-block" tilte="Agência de Marketing Digital" alt="Agência de Marketing Digital" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/prop-shiny-purple.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/prop-shiny-purple.png" class="shiny-purple d-none d-lg-block" tilte="Agência de Marketing Digital" alt="Agência de Marketing Digital"></noscript>
+    <div class="container">
+        <div class="row line-1">
+            <div class="col-12 col-lg-7 col-text">
+                <h2 class="title-large">
+                    <span class="bg-title">Loucura</span> e
+                    <span class="bg-title">Espontaneidade</span><br>
+                    <span>jovial, somadas a sabedoria dos</span><br>
+                    mais <span class="bg-title">Experientes</span>
+                </h2> 
+                <p>
+                    Fundada em 2013, estamos em um acelerado e consistente ritmo de crescimento, com mais de 400 projetos entregues, somos responsáveis pelo marketing digital contínuo de mais de 70 empresas, trabalhando a interação destas marcas de maneira planejada e eficiente. 
+                </p>
+                <p>
+                    Temos um grande diferencial do mercado, que é um planejamento amplo e completo e com objetivo de tornar nossos clientes referências em seu mercado. 
+                </p>
+                <p>
+                    Nosso objetivo é nos tornarmos um parceiro fundamental para o crescimento das empresas em todos os âmbitos do marketing digital e sermos responsáveis por todo departamento online de nossos clientes.
+                </p>
+            </div>
+            <div class="col-12 col-lg-5 col-img d-none d-lg-block">
+                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Agência de Marketing Digital" alt="Agência de Marketing Digital" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/prop-old-man.png" ><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/prop-old-man.png" title="Agência de Marketing Digital" alt="Agência de Marketing Digital" ></noscript>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="agencia-certificada">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6 col-img d-none d-lg-block">
+                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="img-bg" title="Agência Certificada Google Partner" alt="Agência Certificada Google Partner" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mod-selos.jpg" ><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mod-selos.jpg" class="img-bg" title="Agência Certificada Google Partner" alt="Agência Certificada Google Partner" ></noscript>
+            </div>
+            <div class="col-12 col-lg-6 col-text">
+                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="selos" title="Agência Certificada Google Partner" alt="Agência Certificada Google Partner" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/selos.png" ><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/selos.png" class="selos" title="Agência Certificada Google Partner" alt="Agência Certificada Google Partner" ></noscript>
+                <h2 class="title-large">
+                    <span>Agência Certificada</span>
+                    <span class="bg-title bg-title-green">Google Partner</span>
+                </h2> 
+                <p>Desde 2011, graças aos nossos resultados acima da média e à constância em campanhas de ADS, somos reconhecidos como agência certificada Google Partner Premier!</p>
+                <a href="#contact-footer" title="Entrar em Contato" class="button-green-bg-not">
+                    Entrar em Contato 
+                    <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section><section id="presenca">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-12 col-text contact-box">
+                <h2 class="title-large title-large-full">
+                    <span>Atendimento a Nível</span><br>
+                    Mundial
+                </h2>
+                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="map-mundi d-none d-lg-block" title="Local" alt="Local" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/bg-map.jpg" ><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/bg-map.jpg" class="map-mundi d-none d-lg-block" title="Local" alt="Local" ></noscript>
+                <div class="d-none d-lg-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="city inview" width="565" height="159"><path fill-rule="evenodd" fill="#1B1437" d="M564.214 137.031l-1.703 1.256c-1.697-2.734-4.545-4.241-7.461-4.145 1.847 1.739 3.122 4.136 3.558 6.828l-2.026.388c-.463-2.86-2.105-5.301-4.425-6.669-10.269 3.598-17.609 11.637-19.498 21.272h7.379c.302-3.388 2.929-6.043 6.116-6.043s5.814 2.655 6.116 6.043h2.874l2.038-5.726-5.985-2.402.796-1.199c1.348-2.028 3.524-3.238 5.822-3.238.572 0 1.138.081 1.692.228l.302-.846 1.917.811-.308.866c2.36 1.493 3.793 4.366 3.573 7.396l-.106 1.474-5.773-2.316-1.762 4.952h5.024v2.243h-2.057v-.002h-43.85v-42.017l-1.224-.361a12.16 12.16 0 011.224-3.072v-5.118a8.536 8.536 0 00-1.986 1.372l-1.328-1.711a10.44 10.44 0 013.314-2.071V94.736h-20.56v51.017h-8.696v10.407h16.213v2.241H292.002v-2.241h16.158l4.655-18.534-59.317.001v18.533h11.729v2.241H78.322v-2.241h88.475v-12.588H62.645v12.389h2.836v2.241h-2.836v.007H47.944v-.007H19.866v-23.751h-2.573v-2.844H4.628v2.844H2.057v24.543H0v-26.783h2.571v-2.845H19.35v2.845h2.572v23.75H31.96v-53.735c-4.158.461-7.7 3.675-8.806 8.141l-1.986-.583c1.272-5.132 5.219-8.883 9.929-9.688-3.53-1.742-7.75-1.168-10.787 1.632l-1.329-1.712c3.415-3.147 8.072-3.944 12.132-2.32-1.613-3.482-4.842-5.872-8.541-6.091l.112-2.236c4.477.265 8.373 3.18 10.296 7.415 1.923-4.238 5.833-7.15 10.313-7.415l.112 2.236c-3.755.222-7.026 2.681-8.613 6.249 4.14-1.82 8.968-1.077 12.482 2.162l-1.329 1.711c-3.054-2.815-7.306-3.382-10.849-1.603 4.615.882 8.459 4.607 9.711 9.66l-1.985.583c-1.107-4.466-4.648-7.68-8.806-8.141v53.735h13.928V89.132h133.554v67.028h5.713v-.001h3.496V96.516h-1.517v-2.241h3.933V34.338h2.057v3.11l.561 1.963L201.649-.01l5.909 39.421.561-1.964v-3.109h2.057v15.273h.145v2.242h-.145v34.296c1.788-3.467 4.812-6.076 8.416-7.121v-6.501h2.482v-2.881h2.057v2.881h2.482v6.501c3.604 1.045 6.628 3.654 8.416 7.121V51.853h-.145v-2.242h.145V34.338h2.056v3.109l.562 1.965L242.556-.01l5.908 39.421.561-1.963v-3.11h2.057v59.937h3.932v2.241h-1.516v11.632l68.182-79.37-1.167-6.918h6.574l2.453 10.395h9.74l2.612-10.395h6.582l-1.238 6.728 91.745 106.799h4.459V22.537l7.949-3.012h27.873l7.949 3.012V129.75h6.639V92.496h24.673v5.833c3.055.77 5.642 2.964 7.088 5.956 1.725-3.574 5.077-6.018 8.912-6.244l.111 2.236c-3.028.18-5.683 2.07-7.106 4.848 3.478-1.246 7.398-.503 10.296 2.169l-1.329 1.712c-2.466-2.275-5.849-2.824-8.766-1.585 3.926.863 7.173 4.071 8.247 8.403l-1.986.583c-.929-3.749-3.875-6.463-7.352-6.916v46.47h.522c1.374-19.27 8.287-34.945 17.263-39.561-1.601-2.167-4.037-3.496-6.635-3.544l.034-2.24c3.002.055 5.83 1.494 7.803 3.869-.432-3.41-2.555-6.379-5.616-7.599l.706-2.102c3.67 1.461 6.244 4.958 6.884 9.014 1.57-2.741 1.787-6.247.41-9.246l1.839-1.002c1.719 3.741 1.431 8.126-.562 11.532 3.705-.138 7.314 1.823 9.393 5.339l-1.729 1.213c-1.641-2.777-4.463-4.353-7.384-4.323 2.716 2.675 4.066 6.752 3.372 10.818l-2.023-.409c.594-3.474-.657-6.961-3.109-9.106.96 3.146.685 6.647-.873 9.576l-1.78-1.124c1.429-2.686 1.537-5.965.352-8.744-8.395 4.06-14.926 19.045-16.282 37.639h1.34c1.908-10.686 9.904-19.595 21.137-23.467 1.843-2.024 2.771-4.881 2.473-7.732l2.043-.253a12.651 12.651 0 01-1.17 6.763c2.308-1.493 3.919-4.112 4.21-7.148l2.045.234c-.299 3.118-1.729 5.876-3.839 7.783 2.685.596 5.139 2.293 6.752 4.89zm-1.362 13.089c-.351-1.86-1.566-3.455-3.261-4.136-1.674-.672-3.581-.313-4.942.846l8.203 3.29zm-12.739 5.373c-.457-1.915-2.059-3.333-3.959-3.333s-3.502 1.418-3.959 3.333h7.918zm-487.468-14.16h104.152v-1.33H62.645v1.33zm104.143-32.225v-3.958H62.649v3.958h104.139zm-104.139 2.239v26.417h6.368v-26.417h-6.368zm8.425 0v26.417h6.877v-26.417h-6.877zm8.934 0v26.417h6.878v-26.417h-6.878zm8.935 0v26.417h6.878v-26.417h-6.878zm8.935 0v26.417h6.877v-26.417h-6.877zm8.934 0v26.417h6.878v-26.417h-6.878zm8.935 0v26.417h6.878v-26.417h-6.878zm8.934 0v26.417h6.878v-26.417h-6.878zm8.935 0v26.417h6.878v-26.417h-6.878zm8.935 0v26.417h6.878v-26.417h-6.878zm8.934 0v26.417h6.878v-26.417h-6.878zm8.935 0v26.417h6.368v-26.417h-6.368zm19.021-19.975H50v64.589h10.588v-53.056h108.266v53.255h10.587V91.372zm38.015 64.788h9.294v-14.336c0-2.794-2.087-5.066-4.652-5.066-2.56 0-4.642 2.272-4.642 5.066v14.336zm-3.525 0h1.468v-14.336c0-4.029 3.005-7.307 6.699-7.307 3.699 0 6.708 3.278 6.708 7.307v14.336h1.468v-30.564h-16.343v30.564zm0-32.805h16.343v-22.367l-8.171-16.435-8.172 16.435v22.367zM195.18 44.981v4.629h1.323l-1.323-4.629zm1.69 6.872h-1.69v42.422h1.69V51.853zm4.779-37.959l-4.541 30.3.792 2.768 2.721-9.511v-8.066h2.056v8.066l2.722 9.511.791-2.768-4.541-30.3zm-2.721 37.959v42.422h5.443V51.853h-5.443zm5.075-2.242l-2.354-8.224-2.353 8.224h4.707zm4.116-4.63l-1.324 4.63h1.324v-4.63zm0 6.872h-1.69v42.422h1.69V51.853zm-1.69 44.663h-13.666v59.643h19.111V96.516h-5.445zm4.058-3.097h-.311v.856h4.754l6.548-13.168h-1.979c-5.154 1.291-9.012 6.312-9.012 12.312zm13.069-18.651h-2.907v3.848c.478-.055.962-.092 1.454-.092.491 0 .975.037 1.453.092v-3.848zm10.473 18.651h-.312c0-6-3.857-11.021-9.01-12.312h-1.98l6.548 13.168h4.754v-.856zm2.056-48.438v4.63h1.324l-1.324-4.63zm1.691 6.872h-1.691v42.422h1.691V51.853zm4.78-37.959l-4.542 30.3.792 2.769 2.721-9.511v-8.065h2.057v8.065l2.721 9.51.791-2.767-4.54-30.301zm-2.722 37.959v42.422h5.443V51.853h-5.443zm5.075-2.242l-2.353-8.224-2.354 8.224h4.707zm4.116-4.63l-1.323 4.63h1.323v-4.63zm0 6.872h-1.69v42.422h1.69V51.853zm2.416 44.663H232.33v59.644h19.111V96.516zm165.276 59.644h22.206v-12.838h-22.206v12.838zm-28.306 0h26.168v-5.295h-26.168v5.295zm-12.361 0h10.304v-11.228H376.05v11.228zm-19.375 0l-4.378-18.534h-10.154l3.127 18.534h11.405zM344.365 44.2l-.609 3.315 58.558 87.872h9.678L344.365 44.2zm70.271 91.187h9.591l-78.671-97.663-.665 3.618 69.745 94.045zm-71.43-84.883l-.637 3.463 46.555 81.42h10.649l-56.567-84.883zm-1.227 6.671l-.516 2.806 34.198 75.406h11.04l-44.722-78.212zm-1.178 6.406l-.421 2.287 20.683 69.519h12.304l-32.566-71.806zm-1.247 6.779l-.446 2.425 14.784 62.602h5.009L339.554 70.36zm3.624 85.8l-3.126-18.534h-12.856l-3.408 18.534h19.39zm-3.504-20.773l-5.773-34.227-6.294 34.227h12.067zm-26.297 0l15.726-62.62-.197-1.169-18.624 63.789h3.095zm-5.253 0l19.991-68.473-.377-2.236-31.657 70.709h12.043zm-14.332 0l33.32-74.422-.512-3.033-43.927 77.455h11.119zm-13.537 0l45.79-80.741-.582-3.453-56.227 84.194h11.019zm-13.562 0l58.125-87.039.19.151-.653-3.873-67.192 90.761h9.53zm-13.195 0h1.023l69.343-93.667-.612-3.63-69.754 88.114v9.183zM322.143 31.52l-68.645 79.907v11.345l69.276-87.512-.631-3.74zm7.927 2.977l2.007 8.507h4.502l2.137-8.507h-8.646zm2.536 10.748l1.652 6.996 1.758-6.996h-3.41zm10.855-21.144l-9.266 36.875-8.703-36.875h-2.509l8.228 48.764-20.919 83.295h11.398l12.298-66.879 7.777 46.106h10.004l-14.77-62.54 8.965-48.746h-2.503zm3.279 7.189l-.699 3.798.072-.068 80.852 100.367h9.199L346.74 31.29zm96.7 106.336h-89.019l4.377 18.534h15.196v-13.467h14.417v5.932h26.249v-7.544h26.32v15.079h2.46v-18.534zm6.381-115.135l-4.324 1.638V156.16h4.324V22.491zm11.017 133.669h8.994V65.946h-8.994v90.214zm-.208-92.455h9.391l.841-4.519h-11.073l.841 4.519zm10.65-6.76l.766-4.114h-13.441l.766 4.114h11.909zm-16.226-23.184l.766 4.114h19.011l.766-4.114h-20.543zm20.96-2.242l.767-4.116H453.87l.767 4.116h21.377zm-19.776 8.598l.766 4.116h16.643l.766-4.116h-18.175zm1.184 6.357l.766 4.115h14.275l.767-4.115h-15.808zm-5.544 109.686h6.903V65.046l-6.903-37.072V156.16zm.943-134.395l.632 3.397h23.745l.633-3.397h-25.01zm25.952 6.209l-6.884 36.971v91.215h6.884V27.974zm6.381-3.845l-4.324-1.638V156.16h4.324V24.129zm8.696 107.861h-6.639v11.522h6.639V131.99zm24.673-21.882c1.357-1.296 3.003-2.224 4.802-2.653a8.056 8.056 0 00-4.802-.521v3.174zm0-9.466v4.027a9.97 9.97 0 015.229.578c-1.101-2.226-2.989-3.894-5.229-4.605zm6.058 8.849c-2.463.322-4.656 1.782-6.058 3.938v42.532h6.058v-46.47zm-282.696-9.431l.846 1.335c.666 1.051 2.841 4.618 2.841 6.428v17.773h-7.373v-17.773c0-1.81 2.174-5.377 2.84-6.428l.846-1.335zm-1.63 23.295h3.261v-15.532c0-.571-.746-2.175-1.631-3.74-.884 1.566-1.63 3.169-1.63 3.74v15.532zm2.659 24.651h-2.057V134.17h2.057v13.836zm-1.387-88.571h2.057v26.306h-2.057V59.435zm-42.894 48.388c0-1.81 2.174-5.379 2.841-6.429l.845-1.334.846 1.334c.667 1.05 2.841 4.619 2.841 6.429v17.773h-7.373v-17.773zm2.056 15.532h3.26v-15.532c0-.571-.745-2.174-1.63-3.74-.884 1.566-1.63 3.169-1.63 3.74v15.532zm2.659 24.651h-2.057v-13.838h2.057v13.838zm-2.727-88.571h2.056v26.306h-2.056V59.435zm29.355 51.318c0 4.729-3.532 8.576-7.873 8.576-4.342 0-7.874-3.847-7.874-8.576 0-4.731 3.532-8.578 7.874-8.578 4.341 0 7.873 3.847 7.873 8.578zm-13.69 0c0 3.494 2.609 6.335 5.817 6.335 3.207 0 5.816-2.841 5.816-6.335 0-3.494-2.609-6.338-5.816-6.338-3.208 0-5.817 2.844-5.817 6.338zm9.015 0c0 1.922-1.435 3.485-3.198 3.485-1.764 0-3.2-1.563-3.2-3.485 0-1.923 1.436-3.487 3.2-3.487 1.763 0 3.198 1.564 3.198 3.487zm-4.341 0c0 .686.513 1.245 1.143 1.245.629 0 1.141-.559 1.141-1.245 0-.687-.512-1.245-1.141-1.245-.63 0-1.143.558-1.143 1.245zm185.234-56.58h-2.057c0-2.099-1.568-3.805-3.494-3.805v-2.241c1.865 0 3.515 1.011 4.522 2.553 1.007-1.542 2.656-2.553 4.521-2.553v2.241c-1.926 0-3.492 1.706-3.492 3.805zm-293.537 9.138c-3.223 0-5.845 2.857-5.845 6.366h-2.057c0-3.509-2.622-6.366-5.844-6.366-2.162 0-4.139 1.292-5.159 3.37l-1.814-1.056c1.379-2.809 4.05-4.555 6.973-4.555 2.944 0 5.514 1.767 6.872 4.377 1.359-2.61 3.929-4.377 6.874-4.377 2.923 0 5.594 1.746 6.972 4.555l-1.814 1.056c-1.019-2.079-2.996-3.37-5.158-3.37z"></path></svg>
+                </div>
+                <div class="d-none d-lg-block">
+                                        <span class="title-large-min">
+    São Paulo</span>
+<address>
+    Rua Bom Pastor nº 2.732 | Conj. 56/57 - Ipiranga | São Paulo / SP | Brasil</address>
+<div class="contacts-box">
+    <a href="mailto:contato@3xceler.com.br" class="button button-princ" title="ENVIE UM E-MAIL"><span>ENVIE UM E-MAIL</span></a>
+    <a href="tel:01127298581" target="_blank"  class="button button-princ" title="Telefone Fixo"><span>+55 11 2729.8581</span></a>
+    <a href="https://g.page/agencia3xceler?share" target="_blank"  class="button button-princ" title="VER NO MAPA"><span>VER NO MAPA</span></a>
+</div>                </div>
+               
+            </div>
+            <div class="col-lg-6 col-12 col-imgs">
+                <span class="title-text d-none d-lg-block">
+                    Atendemos clientes em todo o mundo, nos mais diversos segmentos. Nossa pluralidade e jovialidade nos trouxeram até aqui e queremos muito mais.
+                </span>
+                <div class="splide slider-clientes">
+                    <div class="splide__track">
+                        <div class="splide__list">
+                            <div class="splide__slide">
+                                <div class="keeps-flex">
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Escada Super" alt="Escada Super" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-escada.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-escada.png" title="Escada Super" alt="Escada Super"></noscript>
+                                    </div> 
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Just 4 Contact" alt="Just 4 Contact" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-justcontact.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-justcontact.png" title="Just 4 Contact" alt="Just 4 Contact"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Gabaritando" alt="Gabaritando" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-gabaritando.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-gabaritando.png" title="Gabaritando" alt="Gabaritando"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Just 4 Offices" alt="Just 4 Offices" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-justoffices.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-justoffices.png" title="Just 4 Offices" alt="Just 4 Offices"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Haruna Construções" alt="Haruna Construções" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-haruna.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-haruna.png" title="Haruna Construções" alt="Haruna Construções"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Level Group" alt="Level Group" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-level.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-level.png" title="Level Group" alt="Level Group"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Kraus-Muller" alt="Kraus-Muller" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-kraus.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-kraus.png" title="Kraus-Muller" alt="Kraus-Muller"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Mimura" alt="Mimura" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-mimura.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-mimura.png" title="Mimura" alt="Mimura"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Nova Seguros" alt="Nova Seguros" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-nova.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-nova.png" title="Nova Seguros" alt="Nova Seguros"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Monte Cristo Coral e Orquestra" alt="Monte Cristo Coral e Orquestra" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-monte.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-monte.png" title="Monte Cristo Coral e Orquestra" alt="Monte Cristo Coral e Orquestra"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Tubos Oliveira" alt="Tubos Oliveira" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-tubos.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-tubos.png" title="Tubos Oliveira" alt="Tubos Oliveira"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Mundial Intercâmbio" alt="Mundial Intercâmbio" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-mundial.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-mundial.png" title="Mundial Intercâmbio" alt="Mundial Intercâmbio"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Plenna Mulher" alt="Plenna Mulher" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-plenna.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-plenna.png" title="Plenna Mulher" alt="Plenna Mulher"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Mynd" alt="Mynd" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-mynd.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-mynd.png" title="Mynd" alt="Mynd"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Procap Hair" alt="Procap Hair" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-procap.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-procap.png" title="Procap Hair" alt="Procap Hair"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="PCXpress" alt="PCXpress" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-pc.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-pc.png" title="PCXpress" alt="PCXpress"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Revesp" alt="Revesp" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-revesp.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-revesp.png" title="Revesp" alt="Revesp"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Pueri Mundi" alt="Pueri Mundi" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-pueri.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-pueri.png" title="Pueri Mundi" alt="Pueri Mundi"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Zelus Condôs & Hotéis" alt="Zelus Condôs & Hotéis" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-zelus.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-zelus.png" title="Zelus Condôs & Hotéis" alt="Zelus Condôs & Hotéis"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Recoma" alt="Recoma" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-recoma.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-recoma.png" title="Recoma" alt="Recoma"></noscript>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="splide__slide">
+                                <div class="keeps-flex">
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Agmov" alt="Agmov" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-agmov.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-agmov.png" title="Agmov" alt="Agmov"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Dr. Alexandre Wada" alt="Dr. Alexandre Wada" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-wada.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-wada.png" title="Dr. Alexandre Wada" alt="Dr. Alexandre Wada"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Amar e Cuidar" alt="Amar e Cuidar" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-amar-e-cuidar.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-amar-e-cuidar.png" title="Amar e Cuidar" alt="Amar e Cuidar"></noscript>
+                                    </div><div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Dr. Carlos Vinícius" alt="Dr. Carlos Vinícius" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-carlos.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-carlos.png" title="Dr. Carlos Vinícius" alt="Dr. Carlos Vinícius"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="BRlink" alt="BRlink" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-brlink.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-brlink.png" title="BRlink" alt="BRlink"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Dr. Daniel Rebolledo" alt="Dr. Daniel Rebolledo" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-daniel.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-daniel.png" title="Dr. Daniel Rebolledo" alt="Dr. Daniel Rebolledo"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Clean House Faxinas" alt="Clean House Faxinas" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-cleanhouse.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-cleanhouse.png" title="Clean House Faxinas" alt="Clean House Faxinas"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Dr. Iran Sanches" alt="Dr. Iran Sanches" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-iran.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-iran.png" title="Dr. Iran Sanches" alt="Dr. Iran Sanches"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="CDMAR" alt="CDMAR" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-cdmar.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-cdmar.png" title="CDMAR" alt="CDMAR"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="iHome Resort" alt="iHome Resort" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-ihome.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-ihome.png" title="iHome Resort" alt="iHome Resort"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="CoreDrinks" alt="CoreDrinks" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-coredrinks.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-coredrinks.png" title="CoreDrinks" alt="CoreDrinks"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Kiwi Pilates" alt="Kiwi Pilates" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-kiwi.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-kiwi.png" title="Kiwi Pilates" alt="Kiwi Pilates"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Corpus Spa" alt="Corpus Spa" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-corpus.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-corpus.png" title="Corpus Spa" alt="Corpus Spa"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Artcom Vidros" alt="Artcom Vidros" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-artcom.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-artcom.png" title="Artcom Vidros" alt="Artcom Vidros"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="CSSAT" alt="CSSAT" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-cssat.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-cssat.png" title="CSSAT" alt="CSSAT"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Dr. David Di Sessa" alt="Dr. David Di Sessa" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-david.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-david.png" title="Dr. David Di Sessa" alt="Dr. David Di Sessa"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Dr. Caio Araujo" alt="Dr. Caio Araujo" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-drcaio.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-drcaio.png" title="Dr. Caio Araujo" alt="Dr. Caio Araujo"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Dr. Wendell Uguetto" alt="Dr. Wendell Uguetto" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-wendell.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-wendell.png" title="Dr. Wendell Uguetto" alt="Dr. Wendell Uguetto"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Elite Detetives" alt="Elite Detetives" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-elite.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-elite.png" title="Elite Detetives" alt="Elite Detetives"></noscript>
+                                    </div>
+                                    <div class="customer-instance">
+                                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Itaquá Resistências" alt="Itaquá Resistências" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-itaqua.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/clientes/customer-itaqua.png" title="Itaquá Resistências" alt="Itaquá Resistências"></noscript>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="nossos-projetos">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6 col-text">
+                <h2 class="title-large min">
+                    <span class="min">Nossos Projetos</span><br>
+                    <span class="bg-title">Seus Resultados</span>
+                </h2>
+                <p>
+                    Nossos projetos vão além da simples entrega de um site para nossos clientes. O planejamento da arquitetura da informação, linguagem, abordagem, apelo visual e conversão, geram resultados imediatos!
+                </p>
+                <p>
+                    Uma forma poderosa para obter a resposta que você precisa, combinando mensagens de alto impacto e de real-time bidding para impactar as pessoas certas, no momento certo.
+                </p>
+                <a href="#" class="link" title="Entenda nossa abordagem">
+                    Entenda nossa abordagem:<br>
+                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="d-none d-lg-block" title="Entenda nossa abordagem" alt="Entenda nossa abordagem" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/icon-arrow-right.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/icon-arrow-right.png" class="d-none d-lg-block" title="Entenda nossa abordagem" alt="Entenda nossa abordagem"></noscript>
+                </a>
+            </div>
+            <div class="col-12 col-lg-5 col-img">
+                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="notebook d-none d-lg-block" title="Nossos Projetoss" alt="Nossos Projetos" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/note-projeto.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/note-projeto.png" class="notebook d-none d-lg-block" title="Nossos Projetoss" alt="Nossos Projetos"></noscript>
+            </div>
+        </div>
+    </div>
+    <div class="bg-itens">
+        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="prop-shiny-pink d-none d-lg-block" title="prop shiny pink" alt="prop shiny pink" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/prop-shiny-pink.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/prop-shiny-pink.png" class="prop-shiny-pink d-none d-lg-block" title="prop shiny pink" alt="prop shiny pink"></noscript>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 col-text">
+                    <h2>
+                        <span class="number">
+                            01
+                        </span>
+                        <span class="title">Criatividade</span>
+                    </h2>
+                    <p>
+                        É tudo sobre a ideia e a concepção. Trabalhando com agências de publicidade tradicionais e nossos parceiros de mídia, aplicamos nossa metodologia a cada projeto.
+                    </p>
+                </div>
+                <div class="col-12 col-lg-6 col-text">
+                    <h2>
+                        <span class="number">
+                            02
+                        </span>
+                        <span class="title">Segmentação</span>
+                    </h2>
+                    <p>
+                        Nossos detetives em dados rastreiam onde está sua audiência, e onde eles estão propensos a interagir (nem sempre é onde você pensa).
+                    </p>
+                </div>
+                <div class="col-12 col-lg-6 col-text">
+                    <h2>
+                        <span class="number">
+                            03
+                        </span>
+                        <span class="title">Tecnologia</span>
+                    </h2>
+                    <p>
+                        Os nossos sistemas 'aprendem' o que funciona, então você está continuamente construindo sobre o sucesso alcançado – e ao mesmo tempo se aproximando mais do consumidor.
+                    </p>
+                </div>
+                <div class="col-12 col-lg-6 col-text">
+                    <h2>
+                        <span class="number">
+                            04
+                        </span>
+                        <span class="title">Agilidade</span>
+                    </h2>
+                    <p>
+                        Não reportamos apenas. Analisamos constantemente o que está acontecendo, agindo rápido para se certificar de que você está onde precisa estar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="sites-que-vendem-mais">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="title-large title-large-full">
+                    <span>Sites que</span><br>
+                    Vendem Mais!    
+                </h2>
+             
+            </div>
+        </div>
+        <div class="row line-macbook">
+            <div class="col-12">
+                <span id="number-page-sites" class="d-none d-lg-block">01</span>
+                <img  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="prop-shape3d-blue" class="prop-shape3d-blue d-none d-lg-block" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/prop-shape3d-blue.png"><noscript><img  src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/prop-shape3d-blue.png" alt="prop-shape3d-blue" class="prop-shape3d-blue d-none d-lg-block"></noscript>
+                <img  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="quadrado" class="quadrado d-none d-lg-block" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/quadrado.png"><noscript><img  src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/quadrado.png" alt="quadrado" class="quadrado d-none d-lg-block"></noscript>
+                <div class="macbook">
+                    <div class="splide slider-sites">
+                        <div class="splide__track">
+                            <div class="splide__list">
+                                <div class="splide__slide">
+                                    <img  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Desenvolvimento de Sites - Corpus Spa" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/mockup_corpuspa_1300px.jpg"><noscript><img  src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/mockup_corpuspa_1300px.jpg" alt="Desenvolvimento de Sites - Corpus Spa"></noscript>
+                                </div>
+                                <div class="splide__slide">
+                                    <img alt="Desenvolvimento de Sites para imobiliárias - iHome Resort" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/mockup_1300px_ihomeresort.jpg"><noscript><img alt="Desenvolvimento de Sites para imobiliárias - iHome Resort" src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/mockup_1300px_ihomeresort.jpg"></noscript>
+                                </div>
+                                <div class="splide__slide">
+                                    <img alt="Desenvolvimento de sites para empresas - Tubos Oliveira" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/00_home_tubosoliveira-3.jpg"><noscript><img alt="Desenvolvimento de sites para empresas - Tubos Oliveira" src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/00_home_tubosoliveira-3.jpg"></noscript>
+                                </div>
+                                <div class="splide__slide">
+                                    <img alt="Desenvolvimento de sites para médicos - Viventre" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/00_home_viventre2020_final_1300.jpg"><noscript><img alt="Desenvolvimento de sites para médicos - Viventre" src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/00_home_viventre2020_final_1300.jpg"></noscript>
+                                </div>
+                                <div class="splide__slide">
+                                    <img alt="Desenvolvimento de sites profissionais - Yescert" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/00-home-yescert-1300.jpg"><noscript><img alt="Desenvolvimento de sites profissionais - Yescert" src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/00-home-yescert-1300.jpg"></noscript>
+                                </div>
+                                <div class="splide__slide">
+                                    <img alt="Desenvolvimento de sites profissionais - Yescert" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/01_landing_zelus1300.jpg"><noscript><img alt="Desenvolvimento de sites profissionais - Yescert" src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/01_landing_zelus1300.jpg"></noscript>
+                                </div>  
+                                <div class="splide__slide">
+                                    <img alt="Desenvolvimento de sites para empresas - Recoma" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/1300-recoma.jpg"><noscript><img alt="Desenvolvimento de sites para empresas - Recoma" src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/1300-recoma.jpg"></noscript>
+                                </div>  
+                                <div class="splide__slide">
+                                    <img alt="Desenvolvimento de sites para clínicas - Procap Hair" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/00_home_procaphair-1300.jpg"><noscript><img alt="Desenvolvimento de sites para clínicas - Procap Hair" src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/00_home_procaphair-1300.jpg"></noscript>
+                                </div>  
+                                <div class="splide__slide">
+                                    <img alt="Desenvolvimento de sites profissionais - Nova Seguros" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/00_home_novaseguros1300.jpg"><noscript><img alt="Desenvolvimento de sites profissionais - Nova Seguros" src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/00_home_novaseguros1300.jpg"></noscript>
+                                </div>  
+                                <div class="splide__slide">
+                                    <img alt="Sites para empresas - BrLink" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/mockup_brlink_1300px_17122020.jpg"><noscript><img alt="Sites para empresas - BrLink" src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/mockups/mockup_brlink_1300px_17122020.jpg"></noscript>
+                                </div>      
+                            </div>
+                        </div> 
+                        <div class="splide__arrows splide__arrows--ltr">
+                            <button
+                                class="splide__arrow splide__arrow--prev"
+                                type="button"
+                                aria-label="Previous slide"
+                                aria-controls="splide01-track"
+                            >
+                                <i class="fa fa-arrow-left"></i>
+                                Cliente Anterior
+                            </button>
+                            <button
+                                class="splide__arrow splide__arrow--next"
+                                type="button"
+                                aria-label="Next slide"
+                                aria-controls="splide01-track"
+                            >
+                                Próximo Cliente
+                                <i class="fa fa-arrow-right"></i>
+                            </button> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="social-media">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6 col-text">
+                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="prop-shape-green-black d-none d-lg-block" title="prop-shape-green-black" alt="prop-shape-green-black" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/prop-shape-green-black.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/prop-shape-green-black.png" class="prop-shape-green-black d-none d-lg-block" title="prop-shape-green-black" alt="prop-shape-green-black"></noscript>
+                <h2 class="title-large title-large-full">
+                    <span>Social</span><br>
+                    Media
+                </h2> 
+                <p class="title-text">
+                    Atraia clientes, aumente seu público e expanda seu alcance. Serviços de social media orientados para resultados e com o objetivo de melhorar a sua presença digital.
+                </p> 
+                <p>
+                    Mais de 70% dos consumidores esperam que uma marca tenha presença nas redes sociais. Pensando nisso, a 3xceler oferece serviços competitivos de gerenciamento de mídias sociais, com um plano de ação personalizado para que a sua empresa possa começar a construir uma presença estratégica e coesa, gerando receitas a partir do Facebook, Instagram, LinkedIn e outras plataformas.
+                </p>
+                <a href="#" class="link-saiba-mais" title="Saiba Mais">
+                    Saiba Mais 
+                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" title="Saiba Mais " alt="Saiba Mais " data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/icon-arrow-right.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/icon-arrow-right.png" title="Saiba Mais " alt="Saiba Mais "></noscript>
+                </a>
+            </div>
+            <div class="col-12 col-lg-6 col-imgs d-none d-lg-block">
+                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="prop-hand-iphone" title="prop-hand-iphone" alt="prop-hand-iphone" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/prop-hand-iphone.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/prop-hand-iphone.png" class="prop-hand-iphone" title="prop-hand-iphone" alt="prop-hand-iphone"></noscript>
+                <div class="likes-and-heart">
+                    <div class="prop-love-small-blurred" aria-hidden="true"></div>
+                    <div class="prop-love-small-blurred-2" aria-hidden="true"></div>
+                    <div class="prop-like-small-blurred" aria-hidden="true"></div>
+                    <div class="prop-like-small-blurred-2" aria-hidden="true"></div>
+                    <div class="prop-love-medium" aria-hidden="true"></div>
+                    <div class="prop-love-medium-2" aria-hidden="true"></div>
+                    <div class="prop-like-big" aria-hidden="true"></div>
+                    <div class="prop-like-big-2" aria-hidden="true"></div>
+                    <div class="prop-love-small" aria-hidden="true"></div>
+                    <div class="prop-love-small-2" aria-hidden="true"></div>
+                    <div class="prop-like-small-blurred-2" aria-hidden="true"></div>
+                    <div class="prop-love-big-blurred" aria-hidden="true"></div>
+                    <div class="prop-love-big-blurred-2" aria-hidden="true"></div>
+                </div>
+            </div>
+            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="prop-social-media-mob d-lg-none" title="prop-social-media" alt="prop-social-media" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/social-media-mobile.jpg"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/social-media-mobile.jpg" class="prop-social-media-mob d-lg-none" title="prop-social-media" alt="prop-social-media"></noscript>
+            <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="prop-social-media d-none d-lg-block" title="prop-social-media" alt="prop-social-media" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/social-media.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/social-media.png" class="prop-social-media d-none d-lg-block" title="prop-social-media" alt="prop-social-media"></noscript>
+        </div>
+    </div> 
+</section> 
+ <section id="contact-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-intro">
+                <h2 class="title-large">
+                    <span>Se você chegou até aqui, talvez você não esteja</span> <br>
+                    <span class="bg-title primary-color bg-title-green d-none d-lg-block">100% Satisfeito com seus Resultados</span>
+                    <span class="bg-title primary-color bg-title-green d-lg-none">100% Satisfeito</span>
+                    <span class="bg-title primary-color bg-title-green d-lg-none">com seus Resultados</span>
+                </h2>
+            </div>
+        </div>
+        <div class="row line-form">
+            <div class="col-12 col-lg-6 col-text">
+                <p>
+                    Deixe-nos apresentar nossa metodologia 3x. Nosso trabalho é diferenciado do mercado e temos certeza de que você notará isso em um primeiro contato conosco. Não trabalhamos com promessas e sim com perspectivas baseadas em dados e experiências.
+                </p>
+                <h3>
+                    Como Funcionará!
+                </h3>
+                <p>
+                    Assim que você preencher nosso formulário, nós receberemos os seus dados e iniciaremos um contato contigo para entendimento e alinhamento de objetivos e expectativas para/com seu projeto.
+                </p>
+              
+                <p>
+                    Não trabalhamos com preços ou planos pré-formatados, para nós é inadequado seguir uma tabela de valores sem antes haver um planejamento apropriado e personalizado.
+                </p>
+            </div>
+            <div class="col-12 col-lg-6 col-form">
+                <form action="" method="post">
+                    <input type="hidden" name="Formulário" value="Fale Conosco">
+                    <input type="hidden" name="g-recaptcha-response" class="token" >
+                    <input type="text" name="Nome" placeholder="Digite seu nome*" class="form-control" required>
+                    <div class="d-lg-flex">
+                        <div>
+                            <input type="text" class="form-control phone-mask" name="Telefone" pattern=".{14,}" placeholder="Telefone com DDD" required>
+                        </div>
+                        <div>
+                            <input type="text" name="E-mail" placeholder="E-mail*" class="form-control" required>
+                        </div>
+                    </div>
+                    <input type="text" name="Site" placeholder="Site" class="form-control" >
+                    <div class="d-lg-flex">
+                        <div>
+                            <select  name="Plano de Interesse" required>
+                                <option value="">Serviços*</option><option value="Otimização de Sites">Otimização de Sites</option>
+                                <option value="Google Ads">Google Ads</option>
+                                <option value="Social Ads">Social Ads</option>
+                                <option value="Criação de Site">Criação de Site</option>
+                                <option value="Criação de Landing Pages">Criação de Landing Pages</option>
+                                <option value="E-mail Marketing">E-mail Marketing</option>
+                                <option value="Planejamento Estratégico">Planejamento Estratégico</option>
+                                <option value="Consultoria Ads">Consultoria Ads</option>
+                                <option value="Consultoria SEO">Consultoria SEO</option>
+                            </select>
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                    <div class="d-lg-flex">
+                        <input type="text" name="Concorrente 1" placeholder="Concorrente 1*" class="form-control" required>
+                        <input type="text" name="Concorrente 2" placeholder="Concorrente 2" class="form-control" >
+                        <input type="text" name="Concorrente 3" placeholder="Concorrente 3" class="form-control" >
+                    </div>
+                    <textarea name="Mensagem" placeholder="Mensagem*" required></textarea>
+                  
+                    <button class="submit-results-form">ENVIAR <i class="fa fa-paper-plane"></i></button>
+                      
+                </form>
+            </div>
+        </div>
+    </div>
+</section> </main>
+
+<footer id="footer" class="site">
+    <div class="container">
+    <div class="row">
+      <div class="col-12 col-intro">
+        <h2 class="title-large title-large-full">Entre em Contato!</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-12 col-text contact-box">
+                    <span class="title-large-min">
+    São Paulo</span>
+<address>
+    Rua Bom Pastor nº 2.732 | Conj. 56/57 - Ipiranga | São Paulo / SP | Brasil</address>
+<div class="contacts-box">
+    <a href="mailto:contato@3xceler.com.br" class="button button-princ" title="ENVIE UM E-MAIL"><span>ENVIE UM E-MAIL</span></a>
+    <a href="tel:01127298581" target="_blank"  class="button button-princ" title="Telefone Fixo"><span>+55 11 2729.8581</span></a>
+    <a href="https://g.page/agencia3xceler?share" target="_blank"  class="button button-princ" title="VER NO MAPA"><span>VER NO MAPA</span></a>
+</div>      </div>
+      <div class="col-lg-6 col-12 col-text contact-box">
+                    <span class="title-large-min">
+    Natal</span>
+<address>
+    R. Pedro Fonseca Filho, 8989 - Ponta Negra, Natal - RN, 59090-080</address>
+<div class="contacts-box">
+    <a href="mailto:contato@3xceler.com.br" class="button button-princ" title="ENVIE UM E-MAIL"><span>ENVIE UM E-MAIL</span></a>
+    <a href="tel:08431131420" target="_blank"  class="button button-princ" title="Telefone Fixo"><span>+55 84 3113.1420</span></a>
+    <a href="https://g.page/agencia3xceler?share" target="_blank"  class="button button-princ" title="VER NO MAPA"><span>VER NO MAPA</span></a>
+</div>      </div>
+    </div>
+    <nav class="footer-navigation-main row d-none d-lg-flex">
+      <div class="col-3">
+        <a class="d-block w-100 margin-2g" href="https://3xcelerserv.com.br/3xceler-site/#sobre" title="Logotipo ag. 3xceler">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="logo-footer" alt="Logotipo ag. 3xceler" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo-footer.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo-footer.png" class="logo-footer" alt="Logotipo ag. 3xceler"></noscript>
+        </a>
+        <p class="p-sobre-footer">Agregar valores, ações de interação, linguagem e abordagens bem definidas, apelo e impacto visual, são os pilares que sustentam a boa reputação de uma marca em seu respectivo mercado. Acreditamos que gerir marcas é isso, fazer do prefixo uma constante, fazer da sua marca uma potência.</p>
+        <a href="https://3xcelerserv.com.br/3xceler-site/#sobre" class="link-saiba-mais" title="Saiba Mais">Saiba Mais</a>
+      </div>
+      <div class="col-3 footer-column">
+        <ul class="t-primary t-xg upper">
+          <li>
+            <a href="https://3xcelerserv.com.br/3xceler-site/" title="Home">Home</a>
+          </li>
+          <li>
+            <a href="https://3xcelerserv.com.br/3xceler-site/#sobre" title="Sobre nós">SOBRE NÓS</a>
+          </li>
+          <li>
+            <a class="opaque" href="#" title="portfólio">portfólio</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://3xcelerserv.com.br/3xceler-site/blog/" title="blog">BLOG</a>
+          </li>
+          <li>
+            <a href="#contact-footer" title="contato">CONTATO</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-3 footer-column">
+        <ul class="t-primary t-xg upper">
+          <li>
+            <a href="#" title="serviços">Serviços</a>
+            <ul class="t-g bold">
+              <li>
+                <a href="https://3xcelerserv.com.br/3xceler-site/otimizacao-de-sites/" title="otimização de sites">
+                  <i class="fa fa-long-arrow-right"></i>
+                  Otimização de Sites </a>
+              </li>
+              <li>
+                <a href="https://3xcelerserv.com.br/3xceler-site/criacao-de-sites/" title="criação de sites">
+                <i class="fa fa-long-arrow-right"></i>
+                Criação de Sites </a>
+              </li>
+              <li>
+                <a href="https://3xcelerserv.com.br/3xceler-site/links-patrocinados/" title="Links Patrocinados">
+                <i class="fa fa-long-arrow-right"></i>
+                Links Patrocinados </a>
+              </li>
+              <li>
+                <a class="opaque" href="#" title="Landing Pages">
+                <i class="fa fa-long-arrow-right"></i>
+                Landing Pages </a>
+              </li>
+              <li>
+                <a class="opaque" href="#" title="Social Media">
+                <i class="fa fa-long-arrow-right"></i>
+                Social Media </a>
+              </li>
+              <li>
+                <a class="opaque" href="#" title="Branding">Branding</a>
+                <ul class="reg t-s list-dotted">
+                  <li>
+                    <a class="opaque" href="#" title="Design de Marcas">Design de Marcas</a>
+                  </li>
+                  <li>
+                    <a class="opaque" href="#" title="Identidade Visual">Identidade Visual</a>
+                  </li>
+                  <li>
+                    <a class="opaque" href="#" title="Naming">Naming</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="col-3 footer-column">
+        <ul class="t-primary t-xg upper">
+          <li>
+            <ul class="t-g bold">
+              <li>
+                <a href="#" title="Performance" >
+                  <i class="fa fa-long-arrow-right"></i>
+                  Performance </a>
+                <ul class="reg t-s list-dotted">
+                  <li>
+                    <a class="opaque" href="#" title="FaceAds / InstaAds / WhatsappAds">FaceAds / InstaAds / WhatsappAds</a>
+                  </li>
+                  <li>
+                    <a class="opaque" href="#" title="LinkedinAds">LinkedinAds</a>
+                  </li>
+                  <li>
+                    <a href="https://3xcelerserv.com.br/3xceler-site/links-patrocinados/" title="Gestão de Links Patrocinados">Gestão de Links Patrocinados</a>
+                  </li>
+                  <li>
+                    <a class="opaque" href="#" title="Conversion Rate Optimization (CRO)">Conversion Rate Optimization (CRO)</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" title="Consultoria">
+                <i class="fa fa-long-arrow-right"></i>
+                Consultoria </a>
+                <ul class="reg t-s list-dotted">
+                  <li>
+                    <a href="https://3xcelerserv.com.br/3xceler-site/otimizacao-de-sites/" title="Otimização de Sites">Otimização de Sites</a>
+                  </li>
+                  <li>
+                    <a href="https://3xcelerserv.com.br/3xceler-site/links-patrocinados/" title="Links Patrocinados" >Links Patrocinados</a>
+                  </li>
+                  <li>
+                    <a class="opaque" href="#" title="Digital Strategy Planning">Digital Strategy Planning</a>
+                  </li>
+                  <li>
+                    <a class="opaque" href="#" title="Conversion Rate Optimization (CRO)" >Conversion Rate Optimization (CRO)</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="row d-lg-none line-sobre-mob">
+      <div class="col-12">
+        <a class="d-block w-100 margin-2g" href="https://3xcelerserv.com.br/3xceler-site">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" class="logo-footer" alt="Logotipo ag. 3xceler" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo-footer.png"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/logo-footer.png" class="logo-footer" alt="Logotipo ag. 3xceler"></noscript>
+        </a>
+        <p class="p-sobre-footer">Agregar valores, ações de interação, linguagem e abordagens bem definidas, apelo e impacto visual, são os pilares que sustentam a boa reputação de uma marca em seu respectivo mercado. Acreditamos que gerir marcas é isso, fazer do prefixo uma constante, fazer da sua marca uma potência.</p>
+        <!-- <a href="/" class="link-saiba-mais">Saiba Mais</a> -->
+      </div>
+    </div>
+  </div>
+    <div class="direitos">
+    <p>
+      Agência 3xceler Marketing Performance - Todos os Direitos Reservados | Copyright 2022    </p>
+  </div>
+</footer>
+
+<!-- tracking here -->
+
+
+<!-- Modal CTA triggger -->
+<div id="cta-trigger">
+  <div id="trigger-body">
+    <button close-trigger-body>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="7.68" height="7.75"><defs><filter id="a" x="1886.13" y="580.125" width="7.68" height="7.75" filterUnits="userSpaceOnUse"><feFlood result="flood" flood-color="#342d1f"/><feComposite result="composite" operator="in" in2="SourceGraphic"/><feBlend result="blend" in2="SourceGraphic"/></filter></defs><g transform="translate(-1886.13 -580.125)" fill="none" filter="url(#a)"><path id="b" data-name="CLOSE copy" d="M1893.03 580.487l.45.437-6.57 6.359-.45-.439zm-6.57.657l.45-.439 6.57 6.359-.45.44z" stroke="inherit" filter="none" fill="inherit" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" fill-rule="evenodd"/></g><use transform="translate(-1886.13 -580.125)" xlink:href="#b" stroke="#c00d0e" filter="none" fill="none"/></svg>
+    </button>
+    <hgroup>
+      <strong>Olá!</strong>
+      <p>Gostaria de receber uma ligação?</p>
+      <button open-modal-cta>Sim</button>
+    </hgroup>
+  </div>
+  <button open-trigger-body>
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20"><image data-name="phone" width="20" height="20" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAA6UlEQVQ4jaWVgQ2CMBBFv8YFWIEVdARXYAVXcAUcAUbAEWAEGQFG0BHOfNImzaVHzfmTkiZ3fT161+tBROBUHZat6fLTH7AlzD8AJgAzgB6M0DFayas7OiO8WQYPkLDKsK1eoCUXsN+xzd6kXEXkrdKy0OZNypSJ9Ll9nRHWmaKpt0viBI4K1kWbB9YpGM+ysoA03IPT+AOMalKfODmLyJBxjr/C83ll7K3eNEa1J31eJiyNUNdUSVlYCrSi0FpCUZtJi4XNQt0Te94DwKXkGxssm6N1I3gDOAgtKn0CmtCWuJBt3drEFoAvywDAFCx16PwAAAAASUVORK5CYII="/></svg>
+  </button>
+</div>
+
+<!-- Modal CTA -->
+<div id="modal-cta">
+  <div id="modal-overlay" modal-close>
+    <div id="modal-container">
+      <div class="wrap-modal-btns">
+        <button modal-tab data-open="me-ligue-agora">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/cta-icon-phone.svg"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/cta-icon-phone.svg"></noscript>
+          Me ligue agora
+        </button>
+        <button modal-tab data-open="me-ligue-depois">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/cta-icon-clock.svg"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/cta-icon-clock.svg"></noscript>  
+          Me ligue depois
+        </button>
+        <button modal-tab data-open="deixe-uma-mensagem">
+          <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/cta-icon-comments.svg"><noscript><img src="https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/imgs/cta-icon-comments.svg"></noscript>
+          Deixe uma mensagem
+        </button>
+      </div>
+      <div class="modal-content-btns" id="me-ligue-agora">
+        <p>Informe seu telefone que entraremos em contato o mais rápido possível.</p>
+		<form method="post"  name="me-ligue-agora" id="me_ligue_agora" class="form-tracking">
+		  <input type="hidden" name="Formulário" value="Me Ligue Agora" >
+          <input type="hidden" name="g-recaptcha-response" class="token" >
+          <label class="fa fa-user-circle">
+            <input type="text" name="Nome" placeholder="Informe seu nome" required>
+          </label>
+          <label class="fa fa-phone">
+            <input type="text" name="Telefone" placeholder="Informe seu telefone" class="phone-mask" pattern=".{14,}" required>
+          </label>
+          <label class="fa fa-envelope">
+            <input type="email" name="email" placeholder="Informe seu email"  required>
+          </label>
+          <button type="submit" class="btn-submit title-min">Me ligue agora</button>
+        </form>
+        <small>Você já é a <span>27</span> pessoa a solicitar uma ligação.</small>
+      </div>
+      <div class="modal-content-btns" id="me-ligue-depois">
+        <p>Gostaria de agendar e receber uma chamada em outro horário?</p>
+		<form method="post" name="me-ligue-depois" id="me_ligue_depois" class="form-tracking">
+		  <input type="hidden" name="Formulário" value="Me Ligue Depois" >
+          <input type="hidden" name="g-recaptcha-response" class="token" >
+          <label class="icon-user">
+            <input type="text" name="Nome" placeholder="Informe seu nome" required>
+          </label>
+          <label class="half">
+            <input type="date" name="Data" max="2100-12-31" required>
+          </label>
+          <label class="half">
+            <input type="time" name="Horário" placeholder="Informe um horário" required>
+          </label>
+          <label class="icon-phone">
+            <input type="text" name="Telefone" placeholder="Informe seu telefone" class="phone-mask" pattern=".{14,}" required>
+          </label>
+          <label class="fa fa-envelope">
+            <input type="email" name="email" placeholder="Informe seu email"  required>
+          </label>
+          <button type="submit" class="btn-submit title-min">Me ligue depois</button>
+        </form>
+        <small>Você já é a <span>27</span> pessoa a solicitar uma ligação.</small>
+      </div>
+      <div class="modal-content-btns" id="deixe-uma-mensagem">
+        <p>Deixe sua mensagem!<br />Entraremos em contato o mais rápido possível.</p>
+		<form method="post" name="deixar-mensagem"  id="deixar_mensagem" class="form-tracking">
+          <input type="hidden" name="Formulário" value="Deixe Uma Mensagem" >
+          <input type="hidden" name="g-recaptcha-response" class="token" >
+          <label class="icon-user fa fa-user-circle">
+            <input type="text" name="Nome" placeholder="Informe seu nome" required>
+          </label>
+          <label class="icon-phone fa fa-phone">
+            <input type="text" name="Telefone" placeholder="Informe seu telefone" class="phone-mask" pattern=".{14,}" required>
+          </label>
+          <label class="fa fa-envelope">
+            <input type="email" name="E-mail" placeholder="Informe seu email"  required>
+          </label>
+          <label>
+            <textarea name="Mensagem" placeholder="Deixe sua mensagem" required></textarea>
+          </label>
+          <button type="submit" class="btn-submit">Deixar mensagem</button>
+        </form>
+        <small>Você já é a <span>27</span> pessoa a deixar uma mensagem.</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile CTA -->
+<div id="mobile-cta">
+  <div class="wrap">
+	<div class="column-whats">
+        <a id="btn-whatsapp"  href="https://wa.me/+5511949826261"  target="_blank" title="Contato via WhatsApp" class="trigger trigger-whats whats-tracking"><i class="fa fa-whatsapp"></i></a>
+      </div>
+      <div class="column-ligar">
+          <a id="btn-ligar" href="tel:01127298581" title="Telefone fixo">Ligar</a>
+      </div>
+      <div class="column-contato">
+          <button id="btn-open-modal" title="Entre em contato" open-modal-cta>Entre em contato</button>
+      </div>
+  </div>
+</div>
+
+<!-- Whats CTA -->
+<a id="whats-cta" target="_blank"   href="https://wa.me/+5511949826261" title="Contato via WhatsApp" class="trigger-whats whats-tracking">
+	<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="31" height="31" viewBox="0 0 172 172"
+  style=" fill:#000000;">
+		<g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+			<path d="M0,172v-172h172v172z" fill="none"></path>
+			<g fill="#ffffff">
+				<path d="M86.08399,14.33333c-39.45967,0 -71.58235,32.09502 -71.59668,71.55469c-0.00717,12.61333 3.29655,24.92701 9.56022,35.77734l-9.71419,36.00131l37.49902,-8.86035c10.45617,5.70467 22.22697,8.69922 34.20963,8.70638h0.028c39.4525,0 71.56118,-32.10219 71.58268,-71.55469c0.01433,-19.12784 -7.42377,-37.11191 -20.9401,-50.64258c-13.51633,-13.5235 -31.47925,-20.97493 -50.62858,-20.9821zM86.06999,28.66667c15.308,0.00717 29.69396,5.97554 40.50846,16.78288c10.8145,10.82167 16.75522,25.2008 16.74089,40.49447c-0.01433,31.56199 -25.68702,57.23535 -57.26335,57.23535c-9.55317,-0.00717 -19.01607,-2.40588 -27.35091,-6.95671l-4.8291,-2.63151l-5.33301,1.25976l-14.10937,3.33138l3.44336,-12.79362l1.55371,-5.73894l-2.96745,-5.15104c-5.00233,-8.65733 -7.64974,-18.55584 -7.64258,-28.61067c0.01433,-31.54767 25.69452,-57.22135 57.24935,-57.22135zM60.7487,52.85417c-1.19683,0 -3.13195,0.44792 -4.77311,2.23958c-1.64117,1.7845 -6.27083,6.10656 -6.27083,14.90723c0,8.80067 6.41081,17.30772 7.30664,18.50455c0.88867,1.18967 12.37448,19.82031 30.55632,26.98698c15.10733,5.9555 18.17568,4.78017 21.45801,4.47917c3.28233,-0.29383 10.58909,-4.31825 12.07975,-8.49641c1.49066,-4.17817 1.49414,-7.77226 1.0498,-8.51042c-0.44433,-0.74533 -1.6377,-1.18978 -3.42936,-2.08561c-1.7845,-0.89583 -10.57856,-5.21409 -12.21973,-5.80892c-1.64117,-0.59483 -2.84158,-0.89583 -4.03125,0.89583c-1.18967,1.79167 -4.60861,5.80903 -5.65494,6.9987c-1.04633,1.19683 -2.08561,1.35775 -3.87728,0.46191c-1.79167,-0.903 -7.55232,-2.79668 -14.38932,-8.88835c-5.31767,-4.73717 -8.90582,-10.58203 -9.95215,-12.37369c-1.03917,-1.7845 -0.09798,-2.76466 0.79785,-3.65332c0.80267,-0.80267 1.77767,-2.08908 2.6735,-3.13542c0.88867,-1.04633 1.19683,-1.79178 1.79167,-2.98145c0.59483,-1.18966 0.29036,-2.23958 -0.15398,-3.13541c-0.44433,-0.89583 -3.92397,-9.7292 -5.51497,-13.26953c-1.34017,-2.97417 -2.75558,-3.04326 -4.03125,-3.09342c-1.03917,-0.043 -2.2257,-0.04199 -3.41536,-0.04199z">
+				</path>
+			</g>
+		</g>
+	</svg>
+</a>
+
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/3xceler-site(\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$\/|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)\/)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/3xcelerserv.com.br\/3xceler-site","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' id='app-js-js-extra'>
+/* <![CDATA[ */
+var hoist = "{\"theme_url\":\"https:\\\/\\\/3xcelerserv.com.br\\\/3xceler-site\\\/wp-content\\\/themes\\\/3xceler\",\"admin_url\":\"https:\\\/\\\/3xcelerserv.com.br\\\/3xceler-site\\\/wp-admin\\\/admin-ajax.php\",\"home_url\":\"https:\\\/\\\/3xcelerserv.com.br\\\/3xceler-site\\\/\",\"current_url\":\"https:\\\/\\\/3xcelerserv.com.br\\\/3xceler-site\",\"is_single\":false,\"is_front_page\":true,\"page\":{\"ID\":3678,\"post_author\":\"1\",\"post_date\":\"2020-07-13 16:09:40\",\"post_date_gmt\":\"2020-07-13 19:09:40\",\"post_content\":\"\",\"post_title\":\"Ag\\u00eancia de Marketing Digital\",\"post_excerpt\":\"\",\"post_status\":\"publish\",\"comment_status\":\"closed\",\"ping_status\":\"closed\",\"post_password\":\"\",\"post_name\":\"home\",\"to_ping\":\"\",\"pinged\":\"\",\"post_modified\":\"2022-11-21 12:23:11\",\"post_modified_gmt\":\"2022-11-21 15:23:11\",\"post_content_filtered\":\"\",\"post_parent\":0,\"guid\":\"https:\\\/\\\/www.3xceler.com.br\\\/3xceler-headless\\\/?page_id=3678\",\"menu_order\":0,\"post_type\":\"page\",\"post_mime_type\":\"\",\"comment_count\":\"0\",\"filter\":\"raw\"},\"currentObjectID\":3678}";
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/js/app.min.js' id='app-js-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/js/bootstrap.min.js' id='bootstrap-js-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/js/popper.min.js' id='popper-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/npm/@splidejs/splide@4.0.1/dist/js/splide.min.js?ver=1670515222' id='splide-js-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6Lek9mQjAAAAAI9nJUTE9s7Qf_MN07l1LICPNlFw' id='recaptcha-js-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/3xceler-site/wp-content/themes/3xceler/dist/js/tracking.js?ver=1670515222' id='tracking-js-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/v2/polyfill.min.js?ver=1670515223' id='polyfill-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://cdn.jsdelivr.net/npm/sweetalert2@9' id='swall-alert-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/lagden/vanilla-masker/lagden/build/vanilla-masker.min.js?ver=1670515223' id='vanilla-js-js'></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://3xcelerserv.com.br/3xceler-site/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script>
+<script type="rocketlazyloadscript">
+  const phoneMask = ['(99) 9999-99999', '(99) 99999-9999']
+  const phones = document.querySelectorAll('.phone-mask')
+  const inputHandler = (masks, max, event) => {
+    const c = event.target;
+    const v = c.value.replace(/\D/g, '');
+    const m = c.value.length > max ? 1 : 0;
+    VMasker(c).unMask();
+    VMasker(c).maskPattern(masks[m]);
+    c.value = VMasker.toPattern(v, masks[m]);
+  }
+  if (phones) {
+    phones.forEach(tel => {
+      VMasker(tel).maskPattern(phoneMask[0]);
+      tel.addEventListener('input', inputHandler.bind(undefined, phoneMask, 14), false);
+    })
+  }
+
+</script>
+
+<script type="rocketlazyloadscript">
+
+  grecaptcha.ready(function() {
+    grecaptcha.execute('6Lek9mQjAAAAAI9nJUTE9s7Qf_MN07l1LICPNlFw', {action: 'submit'}).then(function(token) {
+      
+      var tokens = document.getElementsByClassName("token");
+
+      for (var i = 0; i < tokens.length; i++) {
+        tokens[i].value = token;
+      }
+    });
+  });
+  
+</script>
+<!-- verifica se existe submit -->
+   
+
+
+
+<script>"use strict";function wprRemoveCPCSS(){var preload_stylesheets=document.querySelectorAll('link[data-rocket-async="style"][rel="preload"]');if(preload_stylesheets&&0<preload_stylesheets.length)for(var stylesheet_index=0;stylesheet_index<preload_stylesheets.length;stylesheet_index++){var media=preload_stylesheets[stylesheet_index].getAttribute("media")||"all";if(window.matchMedia(media).matches)return void setTimeout(wprRemoveCPCSS,200)}var elem=document.getElementById("rocket-critical-css");elem&&"remove"in elem&&elem.remove()}window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link rel='stylesheet' id='classic-theme-styles-css' href='https://3xcelerserv.com.br/3xceler-site/wp-includes/css/classic-themes.min.css?ver=1' type='text/css' media='all' /><link rel='stylesheet' id='bootstrap-css-css' href='https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/build/css/bootstrap.min.css?ver=6.1.1' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='main-css-css' href='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/3xceler-site/wp-content/themes/3xceler/dist/css/main.css?ver=1670515333' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='font-awesome-css' href='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/3xceler-site/wp-content/themes/3xceler/dist/css/font-awesome.min.css?ver=1670515333' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='splide-css-css' href='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/npm/@splidejs/splide@4.0.1/dist/css/splide.min.css?ver=1670515333' type='text/css' media='all' /><link rel='stylesheet' id='tracking-css' href='https://3xcelerserv.com.br/3xceler-site/wp-content/themes/3xceler/dist/css/tracking.min.css?ver=1.0' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='page-home-css' href='https://3xcelerserv.com.br/3xceler-site/wp-content/cache/min/1/3xceler-site/wp-content/themes/3xceler/dist/css/pages/home.css?ver=1670515333' type='text/css' media='all' /></noscript></body>
+</html>
+
+
+
+
+ 
+<script type="rocketlazyloadscript">
+    var splideCliente = new Splide( '.slider-clientes', {
+        perPage: 1,
+        rewind : true, 
+        pagination:  false,
+        arrows:  false,
+        autoplay: true,
+        interval: 3000
+       
+    } );
+    splideCliente.mount();
+</script>
+<script type="rocketlazyloadscript">
+    var splideSites = new Splide( '.slider-sites', {
+        perPage: 1,
+        rewind : true, 
+        pagination: false,
+        classes: {
+            arrows: 'splide__arrows your-class-arrows',
+            arrow : 'splide__arrow your-class-arrow',
+            prev  : 'splide__arrow--prev your-class-prev',
+            next  : 'splide__arrow--next your-class-next',
+        },
+    } );
+    splideSites.mount(); 
+    splideSites.on( 'move', () => {
+       var numberSlide = splideSites.index + 1;
+       if(numberSlide < 10){
+        numberSlide  = '0' + numberSlide; 
+       }
+       document.getElementById('number-page-sites').innerHTML =  numberSlide;
+    } );
+</script>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1670515729 -->

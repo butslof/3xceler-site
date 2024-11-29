@@ -1,0 +1,340 @@
+@import '../global-variables'
+#otimizacao-de-sites 
+    #intro-internas 
+        @media screen and (min-width: desktop-min)   
+            background url('../../imgs/banner/banner-otimizacao-de-sites-topo.jpg')   
+            .title-large 
+                .right 
+                    right 215px 
+        @media screen and (min-width: mobile-min) and (max-width: tablet-max)
+            background url('../../imgs/banner/bg-adwords-mobile.jpg')  
+   
+    #cliente-novo
+        position relative 
+        margin-bottom 20px
+        .col-text
+            .box-palavras 
+                margin-top 20px
+                margin-bottom 32px 
+                @media screen and (min-width: mobile-min) and (max-width: tablet-max)
+                    text-align left
+                p 
+                    font-size 19.8334px  
+                    color primaryColor 
+                    margin-bottom 2px
+                    span
+                        font-size 19.8334px 
+                        color primaryColor  
+                        @media screen and (min-width: mobile-min) and (max-width: tablet-max)
+                            font-size 16.8334px
+                    .no-und 
+                        color tertiaryColor 
+                        font-weight weight-strong 
+        .col-img 
+           
+            img 
+                position absolute
+                right 0
+                max-width 50%
+                margin-top 100px 
+    #pilares 
+        background-color primaryColor 
+        padding-top 40px
+        padding-bottom 30px
+        p 
+            font-size 16px 
+            color branco 
+        .line-pilares 
+            margin-top 20px
+            margin-bottom 38px
+            .title
+                font-size 19.8334px 
+                font-weight weight-strong 
+                color branco
+                margin-bottom 18px  
+                @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+                    font-size 12px
+            .box 
+                position relative
+                &:before 
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100px;
+                    background: linear-gradient(0deg,#1b1437,#1b1437,rgba(27,20,55,.8),transparent);  
+                @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+                    img 
+                        width 100%
+        .line-itens
+            margin-top 25px
+            margin-bottom 68px 
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+                margin-bottom 25px
+            .white-circle 
+                width 80px
+                height 80px
+                // box-shadow 0 0 0 16px #513460d4, 0 0 0 24px #513460d4
+                margin 0 auto
+                margin-bottom 34px 
+                background-color #fff
+                display block
+                border-radius 50%
+                // box-shadow: 7px 12px 20px 0 rgb(0 0 0 / 40%);
+                position relative
+                box-shadow: 0 0 0 8px #513460d4, 0 0 0 12px #513460d4;  
+                @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+                    width 50px
+                    height 50px
+                img 
+                    position absolute
+                    left 0
+                    right 0
+                    margin auto
+                    top 50%
+                    transform translateY(-50%) 
+            .title 
+                font-size 17.8334px 
+                background-color tertiaryColor 
+                font-weight weight-strong 
+                color primaryColor 
+                width fit-content 
+                min-width 108px
+                margin 0 auto
+                @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+                    margin-bottom 34px 
+    #sabe-fazer 
+        @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+            padding-top 22px
+    #on-page 
+        .box-list 
+            margin-top 35px
+            display flex
+            justify-content space-between 
+            .list 
+                ul 
+                    list-style-type none
+                    padding 0px
+                    @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+                        text-align left
+                    li 
+                        line-height 18px 
+                        &:before 
+                            content "•"
+                            color secondaryColor
+                            margin-right 5px  
+                        @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+                            font-size 12px
+
+        .col-img 
+            position relative 
+            img 
+                max-width 800px
+                position absolute
+                right -95px
+                bottom -2vh 
+                margin-top 20px  
+    .columns-two-text-and-img
+        .title-large 
+            margin-bottom 29px 
+        .title-text 
+            margin-bottom 5px 
+    
+    #off-page 
+        .col-img 
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+                margin-top 30px
+            img 
+                max-width 85% 
+            .box-button 
+                display flex 
+                justify-content center
+                margin-top 30px 
+        .box-title-text 
+            margin-top 10px
+            margin-bottom 36px 
+               
+    #principais-duvidas 
+        margin-bottom 30px 
+        @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+            margin-top 37px
+        .line-cards 
+            margin-top 33px
+            .faq-question
+                margin 0 auto
+                position relative
+                box-shadow 2px 3px 21px 0 rgb(0 0 0 / 10%)
+                border-bottom-right-radius 10px
+                border-bottom-left-radius 10px
+                border-top-right-radius 10px
+                border-top-left-radius 10px
+                max-width 510px
+                margin-bottom 45px 
+                min-height 272px
+                &:before 
+                    content ""
+                    display block
+                    position absolute
+                    top 0
+                    left 0
+                    width 100%
+                    height 100%
+                    border 2px solid secondaryColor
+                    border-radius 10px
+                    transform translate(10px,-10px)
+                    pointer-events none
+                .faq-title 
+                    background-color primaryColor
+                    border-top-right-radius 10px
+                    border-top-left-radius 10px
+                    max-width 510px 
+                    margin 0 auto 
+                    display flex  
+                    padding-left 30px 
+                    padding-right 30px 
+                    min-height 108px 
+                    align-items center      
+                    @media screen and (min-width: mobile-min) and (max-width: tablet-max)   
+                        padding-left 18px 
+                        padding-right 18px 
+                    .faq-title-text 
+                        font-size 16px 
+                        font-weight weight-strong 
+                        color branco  
+                        @media screen and (min-width: mobile-min) and (max-width: tablet-max)   
+                            font-size 14px 
+                            text-align left
+                    .question-index 
+                        font-size 45.5703px 
+                        color tertiaryColor 
+                        font-weight weight-strong 
+                        margin-right 27px 
+                        display block
+                        margin-top -12px  
+                        @media screen and (min-width: mobile-min) and (max-width: tablet-max)   
+                            font-size 24.8761px
+                .faq-answer 
+                    font-size 14px 
+                    color primaryBlack 
+                    padding 28px 30px 28px 25px 	
+                    line-height 18px 
+    #como-funciona
+        background url('../../imgs/banner/bg-perks-variant-smaller.jpg')    
+        background-size cover 
+        backgroud-position center 
+        background-repeat no-repeat 
+        padding-bottom 49px
+
+        @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+            padding-top 42px
+
+        .title-large-full 
+            font-size 142.083px 
+            line-height 130px
+            span 
+                color branco  
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+                font-size 37.083px
+                line-height 39px
+        .title-link 
+            color branco
+            font-size 27.6666px 
+            background-color primaryColor 
+            padding-left 5px 
+            padding-right 5px
+            padding-bottom 5px 
+            padding-top 5px 
+            display block 
+            margin-bottom 15px 
+            width fit-content
+            margin-top 20px 
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+                font-size 22px
+
+        .line-items
+            margin-top 20px
+            @media screen and (min-width: desktop-min)   
+                visibility visible
+            .timeline-step+.timeline-step:before {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 99px;
+                left: -58px;
+                width: 60px;
+                background-color: #b06eab;
+                height: 5px;
+            }
+            .timeline-step
+                width 16.53% !important
+                position relative
+                margin-right 54px   
+                @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+                    width 68.53% !important
+                .svg-square-holder 
+                    width 100%
+                    min-height: 225px;
+                    background: url(../../imgs/icon-shape-items.png) no-repeat 50%/contain;
+                    position: relative; 
+                    .icon 
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 0;
+                        right: 0;
+                        margin: auto; 
+                .item-title
+                    font-size 25.8334px 
+                    font-weight weight-strong 
+                    color primaryColor 
+                    min-height 105px 
+                    margin-top 28px 
+                    margin-bottom 20px 
+                    @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+                        font-size 18px
+                        min-height 44px
+                p 
+                    line-height 18px 
+                    color primaryColor   
+                    @media screen and (min-width: mobile-min) and (max-width: tablet-max) 
+                        font-size 12px 
+                        strong 
+                            font-size 12px  
+                        span 
+                            font-size 12px 
+                            strong 
+                                font-size 12px 
+                    span 
+                        line-height 18px 
+                        color primaryColor 
+                    .fa-long-arrow-right
+                        color secondaryColor 
+    #acomp-e-documentacao
+        padding-top 48px
+        .title-large-full 
+            margin-bottom 71px 
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+                line-height 3px
+                span 
+                    display block 
+                    margin-bottom 26px 
+                    line-height 29px
+        .col-img    
+            margin-top -108px
+            img
+                position absolute
+                right 0
+                max-width: 48%   
+                @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+                    max-width 95%
+                    margin-top 136px
+        .col-text 
+            margin-top 23px
+    #contact-footer 
+        margin-top 266px 
+        @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+            margin-top 488px
+
+

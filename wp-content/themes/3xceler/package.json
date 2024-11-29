@@ -1,0 +1,28 @@
+{
+  "name": "3xceler",
+  "version": "1.0.0",
+  "description": "Site 3xceler ",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/ag3xceler/3xceler-site-novo/src/master/"
+  },
+  "keywords": [
+    "3xceler"
+  ],
+  "author": "3xceler",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.27.10",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify": "^3.1.0",
+    "gulp-purgecss": "^5.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-stylus": "^2.7.1"
+  }
+}

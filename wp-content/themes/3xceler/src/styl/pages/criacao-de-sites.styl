@@ -1,0 +1,252 @@
+@import '../global-variables'
+#criacao-de-sites
+    #intro-internas 
+        @media screen and (min-width: desktop-min)   
+            background url('../../imgs/banner/bg-criacao-de-sites-int-top.jpg')   
+            .title-large 
+                .right 
+                    right 346px
+            .col-right .box-button 
+                margin-top 111px
+            
+        @media screen and (min-width: mobile-min) and (max-width: tablet-max)
+            background url('../../imgs/banner/bg-web-development-mobile.jpg')   
+
+    #pq-criar-seu-site
+        margin-top 80px
+        .title-large 
+            margin-bottom 23px
+            @media screen and (min-width: desktop-min)   
+                width 90%  
+            .bg-title 
+                width 100%          
+                @media screen and (min-width: mobile-min) and (max-width: tablet-max)
+                    font-size 27px
+                    line-height 25px
+
+        .container-slides  
+            margin-top 93px
+            @media screen and (min-width: desktop-min)  
+                padding  0
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max)
+                max-width grid-container-mobile !important
+            .row-slide 
+                padding  0
+                .col-slider 
+                    padding  0  
+                    position relative
+                    @media screen and (min-width: mobile-min) and (max-width: tablet-max)
+                        margin-top -74px
+                    .bg-mockup 
+                        @media screen and (min-width: desktop-min)  
+                            background url('../../imgs/canvas-macbook.png')  no-repeat 50%/contain
+                            height 616px  
+                        @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+                            background url('../../imgs/canvas-macbook-mobile-home.png')
+                            height 300px     
+                            background-repeat no-repeat
+                    .slider-clientes 
+                        margin-top -604px
+                        @media screen and (min-width: desktop-min)  
+                            margin-left -4.5px 
+                        @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+                            margin-top -293px
+                            // margin-left -34.7px
+                        .splide__slide  
+                            img
+                                filter grayscale(1)  
+                                opacity 45%   
+                                border-radius 18px  
+                                @media screen and (min-width: mobile-min) and (max-width: tablet-max)   
+                                    height 158px
+                        .splide__slide.is-active   
+                            z-index 1
+                            img 
+                                filter none 
+                                opacity inherit  
+                                margin-left -1.5px  
+                                @media screen and (min-width: mobile-min) and (max-width: tablet-max)   
+                                    margin-left 30.5px
+
+                        .splide__pagination 
+                            top -64px 
+                            bottom auto   
+
+                            // @media screen and (min-width: mobile-min) and (max-width: tablet-max)
+                            //     display none
+                            // z-index 
+                            .splide__pagination__page  
+                                width 68px 
+                                height 50px  
+                                background transparent 
+                                border 10px solid #dfdfdf 
+                                border-bottom none 
+                                border-radius 0  
+                                font-size 20.67px 
+                                color #dfdfdf 
+                                font-weight weight-strong
+                            .splide__pagination__page.is-active
+                                transform inherit 
+                                border-color secondaryColor 
+                                color primaryColor 
+    
+    #como-funciona 
+        background-color primaryColor  
+        position relative
+        .title-large-full 
+            color tertiaryColor 
+            span 
+                color secondaryColor 
+        .row-etapa 
+            .title-large 
+                .bg-title 
+                    // font-size 63.75px 
+                    background-color branco 
+                    color primaryColor 
+            .number 
+                margin-top -83px
+                z-index -4
+                left -19px
+                color #35234b
+                position absolute
+                font-size 290px
+                font-weight 700 
+                @media screen and (min-width: mobile-min) and (max-width: tablet-max)    
+                    font-size 173px 
+                    margin-top -62px 
+                    left -1px
+            .col-etapa 
+                z-index 1  
+                position relative 
+        .line-items
+            margin-top 36px
+            .item-title
+                color tertiaryColor 
+                margin-bottom -15px
+            p 
+                color branco 
+                line-height 23px
+                strong 
+                    color branco 
+                span 
+                    color branco 
+                    strong 
+                    color branco
+            .timeline-step  
+                @media screen and (min-width: desktop-min)  
+                    width 30% !important  
+                    margin-right 70px 
+                    padding-right 30px 
+                @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+                    width 100% !important 
+                    p 
+                        font-size 16px 
+                        strong 
+                            font-size 16px  
+                    .item-title 
+                        br 
+                            display none 
+
+            .timeline-step+.timeline-step:before
+                content none 
+        .bg-arrows 
+            position absolute
+            margin-top -837px
+            right 0  
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+                width 119%
+                bottom -57px
+    #etapa-2 
+        position relative 
+        
+        .icon-papper-1 
+            width 103px
+            margin-top 248px
+            position absolute
+            left 0
+
+        .icon-papper-2
+            width 148px
+            margin-top -266px
+            position absolute 
+            right 0  
+    #etapa-3
+        .notebook 
+            @media screen and (min-width: desktop-min)  
+                position absolute
+                right 0
+                max-width: 30%
+                margin-top 12px 
+        #tecnologias 
+            margin-top 60px
+            .splide__slide 
+                padding-left 100px
+                padding-right 100px  
+                display flex
+                align-items center
+                img 
+                    filter grayscale(100%)
+                    opacity .2
+                    transition all .35s ease
+                    &:hover 
+                        filter none 
+                        opacity 100%
+            .splide__list 
+            //     transform: translate3d(-2060px, 0px, 0px) !important
+                transition: -webkit-transform 30000ms linear 0s !important 
+            .slider-tecnologia-1, .slider-tecnologia-2
+                margin-bottom 36px  
+    .line-blocks
+        margin-top 30px 
+        .title-large 
+            min-height 71px 
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+                min-height auto 
+        .box 
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+                margin-bottom 43px
+
+            
+    .lines-etapas 
+        margin-top 70px 
+        .number 
+            position: absolute;
+            font-size: 290px;
+            font-weight: 700;
+            margin-top: -115px;
+            z-index: -1;
+            /* left: -19px; */
+            color: #b170ac33;
+            margin-left: -52px; 
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+                margin-left 55px 
+                margin-top -86px 
+                font-size 149px
+
+    #mockups-mobs 
+        background url('../../imgs/banner/prop-bg-phone-mockups.png')   
+        background-size cover 
+        background-repeat no-repeat 
+        background-position center 
+        margin-top 88px 
+        background-color #efe8f7 
+        margin-bottom 60px
+        @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+            margin-bottom 10px
+        .container-mockups 
+            @media screen and (min-width: desktop-min)  
+                padding 0
+        .slider-mockups-mob 
+            margin-top -65px
+            .splide__slide
+                padding 29px  
+                img
+                    @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+                        width 90%
+
+    #contact-footer 
+        margin-top 266px 
+        @media screen and (min-width: mobile-min) and (max-width: tablet-max)  
+            margin-top 96px
+    
+

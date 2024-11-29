@@ -1,0 +1,81 @@
+#intro-internas 
+    height 861px
+    background-size cover !important
+    background-repeat no-repeat !important
+    background-position center !important
+    padding-top 138px   
+    @media screen and (min-width: mobile-min) and (max-width: tablet-max)
+        height 504px  
+        padding-top 155px 
+        margin-bottom 600px
+    .title-large 
+        @media screen and (min-width: desktop-min)   
+            display flex 
+            position relative
+
+        // justify-content space-between
+        div 
+            font-size 94.5833px 
+            color branco   
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max)
+                font-size 35px 
+                
+        .left
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max)
+                margin-bottom 21px 
+            @media screen and (min-width: desktop-min)   
+                line-height inherit
+        .right 
+            color tertiaryColor 
+            font-weight weight-strong  
+            @media screen and (min-width: desktop-min)   
+                line-height inherit
+                position absolute
+                text-align left
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max)
+                font-size 48px
+                line-height 44px
+
+    .col-left
+        position relative
+        p
+            font-size 27.9166px
+            font-weight weight-strong 
+            color branco 
+            max-width 489px  
+            line-height 50px  
+            position relative
+            &:before
+                height 12px
+                width 110px
+                bottom 217px
+                content ""
+                position absolute
+                background-color #cbdb2a 
+                bottom -34px
+                @media screen and (min-width: mobile-min) and (max-width: tablet-max)
+                    height 8px
+                    width 49px
+                    bottom -16px
+                    margin-left 109px
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max)
+                font-size 16px 
+                line-height 23px
+    .col-right 
+        @media screen and (min-width: mobile-min) and (max-width: tablet-max)
+            margin-top 115px
+        .box-button 
+            margin-top 139px  
+            @media screen and (min-width: mobile-min) and (max-width: tablet-max)
+                margin-top 0
+        @media screen and (min-width: desktop-min)   
+            padding-left 68px   
+            margin-top -102px 
+    .line-breadcrumb
+        margin-top 90px
+        margin-bottom 46px  
+        @media screen and (min-width: mobile-min) and (max-width: tablet-max)
+            margin-top 12px
+            margin-bottom -1px
+        .col-bread 
+            padding 0
